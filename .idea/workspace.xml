@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb83a2b7-2212-4679-80f7-dafa1accdb9b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/notes.md" afterDir="false" />
+    <list default="true" id="fb83a2b7-2212-4679-80f7-dafa1accdb9b" name="Changes" comment="docs: add notes about EPSG 4326 vs 5514">
       <change afterPath="$PROJECT_DIR$/src/compute.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/StreetNameAnalyzer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/StreetNameAnalyzer.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,15 +85,28 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763290247931</updated>
-      <workItem from="1763290248977" duration="5201000" />
+      <workItem from="1763290248977" duration="7041000" />
     </task>
+    <task id="LOCAL-00001" summary="docs: add notes about EPSG 4326 vs 5514">
+      <option name="closed" value="true" />
+      <created>1763296383368</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1763296383368</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="docs: add notes about EPSG 4326 vs 5514" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: add notes about EPSG 4326 vs 5514" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/StreetNameAnalyzer$compute.coverage" NAME="compute Coverage Results" MODIFIED="1763291975746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/StreetNameAnalyzer$compute.coverage" NAME="compute Coverage Results" MODIFIED="1763306353282" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
