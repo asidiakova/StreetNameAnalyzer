@@ -18,9 +18,9 @@ def parse_args():
     )
     p.add_argument("--db", "-d", required=False, default=os.getenv("DATABASE_URL"),
                    help="Postgres connection URI or use DATABASE_URL env var")
-    p.add_argument("--limit", type=int, default=100,
+    p.add_argument("--limit", type=int, default=None,
                    help="Print only top N rows (no limit means full CSV if --out is provided)")
-    p.add_argument("--out", default=None, help="Output CSV file path. If omitted, prints top rows to stdout.")
+    p.add_argument("--out", default="output.csv", help="Output CSV file path. If omitted, prints top rows to stdout.")
     p.add_argument("--epsg", type=int, default=4326,
                    help="Target EPSG code for length calculation (default: 4326). Supported: 4326, 5514(SK/CZ)")
     return p.parse_args()
@@ -72,7 +72,7 @@ def main():
 
         if args.out:
             copy_sql = f"COPY ({sql}) TO STDOUT WITH CSV HEADER"
-            with open(args.out, "w", newline='') as fh:
+            with open(args.out, "w", newline='', encoding="utf-8") as fh:
                 cur.copy_expert(copy_sql, fh)
             print(f"Wrote results to {args.out}")
         else:
