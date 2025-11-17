@@ -1,0 +1,13 @@
+__pycache__/
+venv/
+.env/
+build/
+dist/
+
+.idea/
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/*.iml
+
+/src/*.csv
+/src/.env
