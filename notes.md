@@ -94,3 +94,55 @@ WHERE name IS NOT NULL
   AND highway IS NOT NULL
 GROUP BY name
 ORDER BY total_length_m DESC;`
+
+
+
+## Wikidata Etymology Tags as Ground Truth
+
+OSM supports `name:etymology:wikidata` tag linking street names to Wikidata entities.
+https://wiki.openstreetmap.org/wiki/Key:name:etymology:wikidata
+
+Example: Both "M. R. Štefánika" and "Štefánikova" map to Q319962 (Milan Rastislav Štefánik).
+This provides automatic ground truth for evaluating normalization methods.
+
+
+### Data Quality Issues
+The etymology tags are crowd-sourced and contain noise:
+
+1. **Over-tagging**: Mappers sometimes tag entire neighborhoods with the etymology of the district name, resulting in unrelated streets (e.g., "Dopravná") being linked to a person (e.g., Štefánik).
+
+2. **Tagging errors**: Simple mistakes by volunteers.
+
+3. **Indirect naming**: Streets inside named areas (e.g., "Štefánikova štvrť") may inherit the area's etymology tag even if the street itself isn't named after that person.
+
+Raw etymology data cannot be used directly as ground truth. Requires filtering to keep only entries where the street name actually derives from the linked entity.
+
+### Useful Queries
+
+Check table structure:
+`SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_name = 'planet_osm_line'
+ORDER BY ordinal_position;`
+
+Extract etymology data:
+`SELECT name, tags->'name:etymology:wikidata' AS wikidata_id, COUNT(*)
+FROM planet_osm_line
+WHERE tags->'name:etymology:wikidata' IS NOT NULL
+GROUP BY name, tags->'name:etymology:wikidata'
+ORDER BY COUNT(*) DESC;`
+
+Find multi-variant entities:
+`SELECT 
+    tags->'name:etymology:wikidata' AS wikidata_id,
+    COUNT(DISTINCT name) AS variant_count,
+    STRING_AGG(DISTINCT name, '; ' ORDER BY name) AS variants
+FROM planet_osm_line
+WHERE tags->'name:etymology:wikidata' IS NOT NULL AND name IS NOT NULL
+GROUP BY tags->'name:etymology:wikidata'
+HAVING COUNT(DISTINCT name) > 1
+ORDER BY variant_count DESC;`
+
+### Ground Truth Generation
+
+The `ground_truth.py` script creates a validated dataset by cross-referencing OSM etymology tags with Wikidata. For each street-entity pair, it fetches the entity's labels/aliases from Wikidata API and computes a match confidence score using Slovak morphological stemming. Entries are classified as "gold" (high confidence match), "silver" (partial match), or "excluded" (likely noise). Entity types are simplified to "human" (Q5) vs "place" (everything else), with type-specific matching logic.

@@ -126,7 +126,7 @@ def main(input_csv, output_csv):
         g["total_count"] += count
         g["variants"][name] = g["variants"].get(name, 0.0) + length
 
-    # choose representative: variant with highest length
+    # choose representative: variant with the highest length
     for g in groups.values():
         g["representative"] = max(
             g["variants"].items(), key=lambda x: x[1]
@@ -150,6 +150,6 @@ def main(input_csv, output_csv):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python simple_normalize.py input.csv output.csv")
+        print("Usage: python normalize.py input.csv output.csv")
         sys.exit(1)
     main(sys.argv[1], sys.argv[2])
