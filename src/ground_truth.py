@@ -32,7 +32,6 @@ def parse_args():
     p.add_argument("--out", "-o", default="ground_truth.csv", help="Output CSV path")
     p.add_argument("--cache", default=WIKIDATA_CACHE_FILE, help="Wikidata metadata cache file")
     p.add_argument("--no-fetch", action="store_true", help="Skip Wikidata API calls, use cache only")
-    p.add_argument("--epsg", type=int, default=4326, help="EPSG for length calculation")
     return p.parse_args()
 
 
@@ -42,17 +41,6 @@ def ascii_normalize(s: str) -> str:
     s = re.sub(r"[^a-z0-9\s]", " ", s.lower())
     s = re.sub(r"\s+", " ", s).strip()
     return s
-
-
-def extract_surname(full_name: str) -> str:
-    """Extract likely surname from a full name (usually last word)."""
-    parts = full_name.strip().split()
-    if not parts:
-        return ""
-    # Handle "Jr.", "II", etc. at the end
-    while len(parts) > 1 and (parts[-1] in ("Jr.", "Sr.", "II", "III", "IV") or len(parts[-1]) <= 2):
-        parts.pop()
-    return parts[-1] if parts else ""
 
 
 def extract_name_parts(full_name: str) -> list[str]:
@@ -181,33 +169,25 @@ def save_wikidata_cache(cache: dict, path: str):
         json.dump(cache, f, ensure_ascii=False, indent=2)
 
 
-def extract_etymology_data(conn, epsg: int) -> list[dict]:
+def extract_etymology_data(conn) -> list[dict]:
     """Extract all streets with etymology tags from the database."""
     cur = conn.cursor()
     
-    length_expr = f"ST_Length(ST_Transform(way, {epsg})::geography)" if epsg == 4326 else f"ST_Length(ST_Transform(way, {epsg}))"
-    
     sql = f"""
-        SELECT 
+        SELECT DISTINCT
             name,
-            tags->'name:etymology:wikidata' AS wikidata_id,
-            SUM({length_expr}) AS total_length,
-            COUNT(*) AS segments
+            tags->'name:etymology:wikidata' AS wikidata_id
         FROM {TABLE}
         WHERE name IS NOT NULL 
           AND highway IS NOT NULL
           AND tags->'name:etymology:wikidata' IS NOT NULL
-        GROUP BY name, tags->'name:etymology:wikidata'
-        ORDER BY total_length DESC
+        ORDER BY name
     """
     
     cur.execute(sql)
     rows = cur.fetchall()
     
-    return [
-        {"name": row[0], "wikidata_id": row[1], "total_length": row[2], "segments": row[3]}
-        for row in rows
-    ]
+    return [{"name": row[0], "wikidata_id": row[1]} for row in rows]
 
 
 def main():
@@ -221,7 +201,7 @@ def main():
     conn = psycopg2.connect(args.db)
     try:
         print("Extracting etymology-tagged streets...")
-        raw_data = extract_etymology_data(conn, args.epsg)
+        raw_data = extract_etymology_data(conn)
         print(f"Found {len(raw_data)} street-entity pairs")
     finally:
         conn.close()
@@ -254,12 +234,10 @@ def main():
         if entity:
             entity_type = "human" if entity["is_human"] else "place"
             confidence = compute_match_confidence(row["name"], entity["labels"], entity_type)
-            tier = "gold" if confidence >= 0.7 else "silver" if confidence >= 0.5 else "excluded"
             primary_label = entity["primary_label"]
             is_human = entity["is_human"]
         else:
             confidence = 0.0
-            tier = "unknown"
             primary_label = qid
             is_human = None
         
@@ -268,37 +246,32 @@ def main():
             "wikidata_id": qid,
             "entity_label": primary_label,
             "is_human": is_human,
-            "confidence": confidence,
-            "tier": tier,
-            "total_length": row["total_length"],
-            "segments": row["segments"]
+            "confidence": confidence
         })
     
 
     with open(args.out, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=[
-            "street_name", "wikidata_id", "entity_label", "is_human", 
-            "confidence", "tier", "total_length", "segments"
+            "street_name", "wikidata_id", "entity_label", "is_human", "confidence"
         ])
         writer.writeheader()
         writer.writerows(results)
     
-
-    tiers = {}
-    for r in results:
-        tiers[r["tier"]] = tiers.get(r["tier"], 0) + 1
+    # Summary by confidence
+    valid_count = sum(1 for r in results if r["confidence"] >= 0.7)
+    excluded_count = len(results) - valid_count
     
     print(f"\nResults written to {args.out}")
-    print(f"Tier breakdown:")
-    for tier, count in sorted(tiers.items()):
-        print(f"  {tier}: {count}")
+    print(f"Confidence breakdown:")
+    print(f"  Valid (>=0.7): {valid_count}")
+    print(f"  Excluded (<0.7): {excluded_count}")
     
 
     grouped_out = args.out.replace(".csv", "_grouped.csv")
 
     groups = defaultdict(list)
     for r in results:
-        if r["tier"] in ("gold", "silver"):
+        if r["confidence"] >= 0.7:
             groups[r["wikidata_id"]].append(r)
     
 
@@ -306,14 +279,13 @@ def main():
     
     with open(grouped_out, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["wikidata_id", "entity_label", "is_human", "variant_count", "street_names", "total_length"])
+        writer.writerow(["wikidata_id", "entity_label", "is_human", "street_names"])
         
-        for qid, entries in sorted(multi_variant_groups.items(), key=lambda x: -sum(e["total_length"] for e in x[1])):
+        for qid, entries in sorted(multi_variant_groups.items(), key=lambda x: x[0]):
             names = "; ".join(sorted(set(e["street_name"] for e in entries)))
-            total_len = sum(e["total_length"] for e in entries)
             entity_label = entries[0]["entity_label"]
             is_human = entries[0]["is_human"]
-            writer.writerow([qid, entity_label, is_human, len(entries), names, f"{total_len:.1f}"])
+            writer.writerow([qid, entity_label, is_human, names])
     
     print(f"\nGrouped ground truth (multi-variant entities): {grouped_out}")
     print(f"  Entities with multiple name variants: {len(multi_variant_groups)}")
