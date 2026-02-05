@@ -12,6 +12,7 @@ import csv
 from collections import Counter, defaultdict
 from typing import Callable
 
+from config import EVALUATE_GROUND_TRUTH_DEFAULT, PROBLEM_ENTITIES_TOP_N, COLLISIONS_DISPLAY_N
 from normalize import normalize_key
 
 
@@ -97,7 +98,7 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
             })
     
     # Find worst-performing entities (lowest grouping scores)
-    problem_entities = sorted(entity_scores, key=lambda x: x["score"])[:10]
+    problem_entities = sorted(entity_scores, key=lambda x: x["score"])[:PROBLEM_ENTITIES_TOP_N]
     
     return {
         "grouping_rate": grouping_rate,
@@ -131,15 +132,15 @@ def print_results(method_name: str, results: dict, verbose: bool = False):
                       f"{e['unique_groups']} groups)")
         
         print(f"\n--- Collisions ({results['colliding_groups']} groups) ---")
-        for c in results["collisions"][:10]:  # Show first 10
+        for c in results["collisions"][:COLLISIONS_DISPLAY_N]:
             entities_str = ", ".join(f"{label} ({wid})" for wid, label in c["entities"].items())
             print(f"  '{c['group_id']}' merges: {entities_str}")
 
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate street name normalization methods")
-    parser.add_argument("ground_truth", nargs="?", default="ground_truth_grouped.csv",
-                        help="Path to ground truth CSV (default: ground_truth_grouped.csv)")
+    parser.add_argument("ground_truth", nargs="?", default=EVALUATE_GROUND_TRUTH_DEFAULT,
+                        help="Path to ground truth CSV")
     parser.add_argument("-v", "--verbose", action="store_true",
                         help="Show detailed breakdown of problems")
     args = parser.parse_args()

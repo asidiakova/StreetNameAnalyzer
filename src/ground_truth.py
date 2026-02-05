@@ -15,21 +15,27 @@ import time
 import unicodedata
 import psycopg2
 import requests
-from dotenv import load_dotenv
 from unidecode import unidecode
 from collections import defaultdict
 
-load_dotenv()
-
-TABLE = "planet_osm_line"
-WIKIDATA_CACHE_FILE = "wikidata_cache.json"
-REQUEST_DELAY = 0.1  
+from config import (
+    DB_TABLE,
+    WIKIDATA_CACHE_FILE,
+    REQUEST_DELAY,
+    WIKIDATA_TIMEOUT,
+    WIKIDATA_LABEL_LANGUAGES,
+    CONFIDENCE_THRESHOLD,
+    CONFIDENCE_EXACT,
+    CONFIDENCE_STEM,
+    CONFIDENCE_PREFIX,
+    GROUND_TRUTH_CSV,
+)
 
 
 def parse_args():
     p = argparse.ArgumentParser(description="Generate ground truth from OSM etymology tags + Wikidata validation")
     p.add_argument("--db", "-d", default=os.getenv("DATABASE_URL"), help="Postgres connection URI")
-    p.add_argument("--out", "-o", default="ground_truth.csv", help="Output CSV path")
+    p.add_argument("--out", "-o", default=GROUND_TRUTH_CSV, help="Output CSV path")
     p.add_argument("--cache", default=WIKIDATA_CACHE_FILE, help="Wikidata metadata cache file")
     p.add_argument("--no-fetch", action="store_true", help="Skip Wikidata API calls, use cache only")
     return p.parse_args()
@@ -83,35 +89,29 @@ def compute_match_confidence(street_name: str, entity_labels: list[str], entity_
         
         # Direct containment (highest confidence)
         if label_norm in street_norm or street_norm in label_norm:
-            return 1.0
-        
-        # For places: extract core place name and match
+            return CONFIDENCE_EXACT
+
         if entity_type == "place":
             place_core = extract_place_core(label)
             if place_core:
                 place_norm = ascii_normalize(place_core)
                 place_stem = stem_slovak(place_core)
-                
                 if place_norm in street_norm:
-                    return 1.0
+                    return CONFIDENCE_EXACT
                 if len(place_stem) >= 3 and place_stem in street_stem:
-                    return 0.9
-        
-        # For humans: check all name parts (not just surname)
+                    return CONFIDENCE_STEM
+
         name_parts = extract_name_parts(label)
         for part in name_parts:
             part_norm = ascii_normalize(part)
             part_stem = stem_slovak(part)
-            
             if part_norm in street_norm:
-                return 1.0
-            
+                return CONFIDENCE_EXACT
             if len(part_stem) >= 3 and part_stem in street_stem:
-                return 0.9
-            
+                return CONFIDENCE_STEM
             if len(part_stem) >= 4 and street_stem.startswith(part_stem[:4]):
-                return 0.7
-    
+                return CONFIDENCE_PREFIX
+
     return 0.0
 
 
@@ -122,13 +122,13 @@ def fetch_wikidata_entity(qid: str) -> dict | None:
         "User-Agent": "StreetNameAnalyzer/1.0 (academic research project; contact: your@email.com)"
     }
     try:
-        resp = requests.get(url, headers=headers, timeout=10)
+        resp = requests.get(url, headers=headers, timeout=WIKIDATA_TIMEOUT)
         resp.raise_for_status()
         data = resp.json()
         entity = data.get("entities", {}).get(qid, {})
         
         labels = []
-        for lang in ["sk", "cs", "en", "de", "hu"]:
+        for lang in WIKIDATA_LABEL_LANGUAGES:
             if lang in entity.get("labels", {}):
                 labels.append(entity["labels"][lang]["value"])
             for alias in entity.get("aliases", {}).get(lang, []):
@@ -177,7 +177,7 @@ def extract_etymology_data(conn) -> list[dict]:
         SELECT DISTINCT
             name,
             tags->'name:etymology:wikidata' AS wikidata_id
-        FROM {TABLE}
+        FROM {DB_TABLE}
         WHERE name IS NOT NULL 
           AND highway IS NOT NULL
           AND tags->'name:etymology:wikidata' IS NOT NULL
@@ -258,12 +258,12 @@ def main():
         writer.writerows(results)
     
     # Summary by confidence
-    valid_count = sum(1 for r in results if r["confidence"] >= 0.7)
+    valid_count = sum(1 for r in results if r["confidence"] >= CONFIDENCE_THRESHOLD)
     excluded_count = len(results) - valid_count
-    
+
     print(f"\nResults written to {args.out}")
     print(f"Confidence breakdown:")
-    print(f"  Valid (>=0.7): {valid_count}")
+    print(f"  Valid (>={CONFIDENCE_THRESHOLD}): {valid_count}")
     print(f"  Excluded (<0.7): {excluded_count}")
     
 
@@ -271,7 +271,7 @@ def main():
 
     groups = defaultdict(list)
     for r in results:
-        if r["confidence"] >= 0.7:
+        if r["confidence"] >= CONFIDENCE_THRESHOLD:
             groups[r["wikidata_id"]].append(r)
     
 

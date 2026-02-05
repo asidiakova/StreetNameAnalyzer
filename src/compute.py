@@ -5,11 +5,7 @@ import argparse
 import os
 import sys
 import psycopg2
-from dotenv import load_dotenv
-
-load_dotenv()
-
-table = "planet_osm_line"
+from config import DB_TABLE, COMPUTE_OUTPUT_DEFAULT
 
 
 def parse_args():
@@ -20,7 +16,7 @@ def parse_args():
                    help="Postgres connection URI or use DATABASE_URL env var")
     p.add_argument("--limit", type=int, default=None,
                    help="Print only top N rows (no limit means full CSV if --out is provided)")
-    p.add_argument("--out", default="output.csv", help="Output CSV file path. If omitted, prints top rows to stdout.")
+    p.add_argument("--out", default=COMPUTE_OUTPUT_DEFAULT, help="Output CSV file path. If omitted, prints top rows to stdout.")
     p.add_argument("--epsg", type=int, default=4326,
                    help="Target EPSG code for length calculation (default: 4326). Supported: 4326, 5514(SK/CZ)")
     return p.parse_args()
@@ -52,7 +48,7 @@ def main():
             "Warning: script tested for EPSG 4326 and 5514. Other EPSGs will be treated as 'projected' -- proceed with caution.",
             file=sys.stderr)
 
-    schema, tbl = split_table(table)
+    schema, tbl = split_table(DB_TABLE)
     conn = psycopg2.connect(args.db)
     try:
         cur = conn.cursor()
