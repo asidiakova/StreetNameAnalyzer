@@ -13,7 +13,7 @@ from collections import Counter, defaultdict
 from typing import Callable
 
 from config import EVALUATE_GROUND_TRUTH_DEFAULT, PROBLEM_ENTITIES_TOP_N, COLLISIONS_DISPLAY_N
-from normalize import normalize_key
+from normalization_methods import NORMALIZATION_METHODS, get_method, method_ids
 
 
 def load_ground_truth(path: str) -> list[tuple[str, str, list[str]]]:
@@ -141,18 +141,27 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluate street name normalization methods")
     parser.add_argument("ground_truth", nargs="?", default=EVALUATE_GROUND_TRUTH_DEFAULT,
                         help="Path to ground truth CSV")
+    parser.add_argument("-m", "--method", metavar="ID",
+                        help=f"Evaluate only this method (choices: {', '.join(method_ids())})")
     parser.add_argument("-v", "--verbose", action="store_true",
                         help="Show detailed breakdown of problems")
     args = parser.parse_args()
-    
-    # Load ground truth
+
+    if args.method:
+        entry = get_method(args.method)
+        if entry is None:
+            parser.error(f"Unknown method '{args.method}'. Available: {', '.join(method_ids())}")
+        methods_to_run = [entry]
+    else:
+        methods_to_run = NORMALIZATION_METHODS
+
     print(f"Loading ground truth from {args.ground_truth}...")
     ground_truth = load_ground_truth(args.ground_truth)
     print(f"Loaded {len(ground_truth)} entities with multiple variants")
-    
-    # Evaluate baseline method
-    results = evaluate(normalize_key, ground_truth)
-    print_results("Suffix Stripping (normalize.py)", results, verbose=args.verbose)
+
+    for method_name, normalize_fn in methods_to_run:
+        results = evaluate(normalize_fn, ground_truth)
+        print_results(method_name, results, verbose=args.verbose)
 
 
 if __name__ == "__main__":

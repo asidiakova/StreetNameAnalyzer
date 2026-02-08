@@ -19,14 +19,7 @@ import json
 from typing import Callable
 
 from config import COMPUTE_OUTPUT_DEFAULT
-from normalize import normalize_key
-
-
-# Registry of normalization methods.
-# Add new methods here as: ("method_name", normalize_function)
-METHODS: list[tuple[str, Callable[[str], str]]] = [
-    ("suffix_stripping", normalize_key),
-]
+from normalization_methods import NORMALIZATION_METHODS
 
 
 def load_street_names(input_csv: str) -> list[tuple[str, float, int]]:
@@ -116,7 +109,7 @@ def main():
     print(f"Loaded {len(street_data)} unique street names")
 
     result = {}
-    for method_name, normalize_fn in METHODS:
+    for method_name, normalize_fn in NORMALIZATION_METHODS:
         print(f"Running method: {method_name}...")
         result[method_name] = build_method_data(normalize_fn, street_data)
         n_groups = len(result[method_name]["groups"])

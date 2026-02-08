@@ -264,7 +264,7 @@ def main():
     print(f"\nResults written to {args.out}")
     print(f"Confidence breakdown:")
     print(f"  Valid (>={CONFIDENCE_THRESHOLD}): {valid_count}")
-    print(f"  Excluded (<0.7): {excluded_count}")
+    print(f"  Excluded (<{CONFIDENCE_THRESHOLD}): {excluded_count}")
     
 
     grouped_out = args.out.replace(".csv", "_grouped.csv")
