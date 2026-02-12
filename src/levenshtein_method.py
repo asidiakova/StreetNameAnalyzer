@@ -5,26 +5,22 @@ Levenshtein distance-based street name normalization.
 Uses greedy clustering: for each new name, compare it to existing group
 representatives. If similar enough (above threshold), join that group.
 Otherwise, start a new group.
+
+This is a fundamentally different approach from suffix stripping:
+- Suffix stripping is rule-based (strips known suffixes)
+- Levenshtein is similarity-based (compares character-by-character)
+
+Note: This method is stateful — it builds groups incrementally as names
+are processed. The module-level state resets naturally between script runs.
 """
 
-import re
-import unicodedata
 from rapidfuzz import fuzz
-from unidecode import unidecode
-
-# Reuse the same street types and patterns as suffix_stripping.py for fair comparison
-NONLETTER = re.compile(r"[^a-z0-9\s\-]", re.IGNORECASE)
-INITIAL = re.compile(r"^[a-z]\.?$", re.IGNORECASE)
-
-STREET_TYPES = {
-    "ulica", "ul", "cesta", "namestie", "nam", "trieda",
-    "aleja", "park", "sady", "most", "nabr", "nabrezie",
-    "chodnik", "plac", "ut", "utca", "dolina",
-}
+from text_utils import ascii_norm, INITIAL, STREET_TYPES
 
 # Similarity threshold (0-100). Higher = stricter (fewer merges, more groups).
 THRESHOLD = 80
 
+# Module-level state for greedy clustering
 _groups: dict[str, str] = {}    # preprocessed representative → group_id
 _mapping: dict[str, str] = {}   # original name → group_id
 
@@ -32,13 +28,11 @@ _mapping: dict[str, str] = {}   # original name → group_id
 def preprocess(name: str) -> str:
     """
     Preprocess a street name before Levenshtein comparison.
-    Same logic as suffix_stripping.py (ASCII normalize, remove street types, remove initials),
-    but keeps all remaining tokens instead of just the last one.
+    Same base preprocessing as suffix stripping (ASCII normalize, remove
+    street types, remove initials), but keeps all remaining tokens
+    instead of just the last one.
     """
-    s = unicodedata.normalize("NFC", name)
-    s = unidecode(s)
-    s = NONLETTER.sub(" ", s).lower().strip()
-    s = re.sub(r"\s+", " ", s)
+    s = ascii_norm(name)
 
     tokens = s.split()
     if not tokens:
@@ -57,7 +51,7 @@ def preprocess(name: str) -> str:
     return " ".join(tokens)
 
 
-def normalize_levenshtein(name: str, threshold: int = THRESHOLD) -> str:
+def normalize_levenshtein(name: str) -> str:
     """
     Normalize a street name using greedy Levenshtein clustering.
 
@@ -83,12 +77,12 @@ def normalize_levenshtein(name: str, threshold: int = THRESHOLD) -> str:
             best_score = score
             best_match = representative
 
-    if best_match and best_score >= threshold:
+    if best_match and best_score >= THRESHOLD:
         # Similar enough — join existing group
         group_id = _groups[best_match]
     else:
         # Not similar enough — create new group
-        # Use the preprocessed name as group_id
+        # Use the preprocessed name as group_id (readable in output)
         group_id = preprocessed
         _groups[preprocessed] = group_id
 

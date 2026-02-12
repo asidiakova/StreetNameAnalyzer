@@ -9,14 +9,13 @@ import argparse
 import csv
 import json
 import os
-import re
 import sys
 import time
-import unicodedata
 import psycopg2
 import requests
-from unidecode import unidecode
 from collections import defaultdict
+
+from text_utils import ascii_norm
 
 from config import (
     DB_TABLE,
@@ -41,14 +40,6 @@ def parse_args():
     return p.parse_args()
 
 
-def ascii_normalize(s: str) -> str:
-    s = unicodedata.normalize("NFC", s)
-    s = unidecode(s)
-    s = re.sub(r"[^a-z0-9\s]", " ", s.lower())
-    s = re.sub(r"\s+", " ", s).strip()
-    return s
-
-
 def extract_name_parts(full_name: str) -> list[str]:
     """Extract all significant name parts (for matching first names too)."""
     parts = full_name.strip().split()
@@ -68,7 +59,7 @@ def extract_place_core(place_name: str) -> str:
 
 def stem_slovak(word: str) -> str:
     """Simple Slovak suffix stripping for matching."""
-    word = ascii_normalize(word)
+    word = ascii_norm(word)
     suffixes = ["oveho", "ovej", "ova", "ovo", "ov", "eho", "ej", "a", "o", "u", "y", "i", "e"]
     for suf in suffixes:
         if word.endswith(suf) and len(word) - len(suf) >= 3:
@@ -81,11 +72,11 @@ def compute_match_confidence(street_name: str, entity_labels: list[str], entity_
     Compute confidence that street_name is actually named after the entity.
     Returns 1.0 for high confidence, 0.5 for partial, 0.0 for no match.
     """
-    street_norm = ascii_normalize(street_name)
+    street_norm = ascii_norm(street_name)
     street_stem = stem_slovak(street_name)
     
     for label in entity_labels:
-        label_norm = ascii_normalize(label)
+        label_norm = ascii_norm(label)
         
         # Direct containment (highest confidence)
         if label_norm in street_norm or street_norm in label_norm:
@@ -94,7 +85,7 @@ def compute_match_confidence(street_name: str, entity_labels: list[str], entity_
         if entity_type == "place":
             place_core = extract_place_core(label)
             if place_core:
-                place_norm = ascii_normalize(place_core)
+                place_norm = ascii_norm(place_core)
                 place_stem = stem_slovak(place_core)
                 if place_norm in street_norm:
                     return CONFIDENCE_EXACT
@@ -103,7 +94,7 @@ def compute_match_confidence(street_name: str, entity_labels: list[str], entity_
 
         name_parts = extract_name_parts(label)
         for part in name_parts:
-            part_norm = ascii_normalize(part)
+            part_norm = ascii_norm(part)
             part_stem = stem_slovak(part)
             if part_norm in street_norm:
                 return CONFIDENCE_EXACT
