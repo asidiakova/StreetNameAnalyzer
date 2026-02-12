@@ -1,17 +1,8 @@
 #!/usr/bin/env python3
 """
-Levenshtein distance-based street name normalization.
+Levenshtein distance-based street name normalization using greedy clustering.
 
-Uses greedy clustering: for each new name, compare it to existing group
-representatives. If similar enough (above threshold), join that group.
-Otherwise, start a new group.
-
-This is a fundamentally different approach from suffix stripping:
-- Suffix stripping is rule-based (strips known suffixes)
-- Levenshtein is similarity-based (compares character-by-character)
-
-Note: This method is stateful — it builds groups incrementally as names
-are processed. The module-level state resets naturally between script runs.
+See docs/levenshtein.md for detailed description, examples, and known limitations.
 """
 
 from rapidfuzz import fuzz
@@ -20,7 +11,6 @@ from text_utils import ascii_norm, INITIAL, STREET_TYPES
 # Similarity threshold (0-100). Higher = stricter (fewer merges, more groups).
 THRESHOLD = 80
 
-# Module-level state for greedy clustering
 _groups: dict[str, str] = {}    # preprocessed representative → group_id
 _mapping: dict[str, str] = {}   # original name → group_id
 
@@ -82,7 +72,7 @@ def normalize_levenshtein(name: str) -> str:
         group_id = _groups[best_match]
     else:
         # Not similar enough — create new group
-        # Use the preprocessed name as group_id (readable in output)
+        # Use the preprocessed name as group_id
         group_id = preprocessed
         _groups[preprocessed] = group_id
 

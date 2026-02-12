@@ -6,20 +6,10 @@ Rule-based deterministic method for Slovak street names. Strips morphological
 suffixes (-ová, -ovo, -ského, etc.), removes street types and initials,
 and uses the stem of the last significant token as the group key.
 
-Known limitations documented below — these are intentional for method comparison.
+See docs/suffix_stripping.md for detailed description, examples, and known limitations.
 """
 import re
 from text_utils import ascii_norm, INITIAL, STREET_TYPES
-
-#   CURRENT PROBLEMS:
-#   1. Over-merges different people with same surname:
-#   e.g., Janka Kráľa + Fraňa Kráľa + Kráľovská cesta → all become "kral"
-#   2. Over-merges different groups/concepts sharing a common noun root:
-#   e.g., Československej armády + Červenej armády + Sovietskej armády → "armad"
-#   3. Over-merges unrelated places with common noun roots:
-#   e.g., Červená hora + Stará hora + Pavla Horova → "hora"
-#   4. Groups everything ending with Roman numerals together:
-#   e.g., Zelená voda II. + Jána Pavla II. + Sídlisko II → "II"
 
 ORDINAL = re.compile(r"^\d+[\.\-]?$")
 

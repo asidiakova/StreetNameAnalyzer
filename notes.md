@@ -158,28 +158,6 @@ The `ground_truth.py` script creates a validated dataset by cross-referencing OS
 
 ## Normalization Methods
 
-### 1. Suffix Stripping (baseline) — `normalize.py`
-Rule-based deterministic method. Strips Slovak morphological suffixes (-ová, -ovo, -ského, etc.), removes street types (ulica, cesta, námestie), removes initials, and uses the stem of the last significant token as the group key.
-
-**Results**: Grouping Rate 94.1%, Collision Rate 5.3% (245 groups from 729 variants)
-
-**Strengths**: Simple, fast, high grouping rate.
-**Weaknesses**: Over-merges different people with same surname (e.g., Janka Kráľa + Fraňa Kráľa → "kral"). Language-specific rules.
-
-### 2. Levenshtein Greedy Clustering — `levenshtein_method.py`
-Similarity-based method using edit distance (`rapidfuzz.fuzz.ratio`). For each name, preprocess it (ASCII normalize, remove street types and initials), then compare to existing group representatives. If similarity >= threshold, join that group; otherwise, start a new group.
-
-**Results** (threshold sweep on 216 entities, 729 variants):
-| Threshold | Grouping Rate | Collision Rate | Groups |
-|-----------|---------------|----------------|--------|
-| 70        | 71.7%         | 20.2%          | 302    |
-| 75        | 68.2%         | 11.8%          | 365    |
-| 80        | 63.6%         | 7.2%           | 418    |
-| 85        | 59.8%         | 4.3%           | 463    |
-
-**Default threshold**: 80
-
-**Strengths**: Language-agnostic (no Slovak-specific rules), catches spelling variants and typos (e.g., "Štúrová" vs "Štúrova").
-**Weaknesses**:
-- *Greedy ordering dependency*: Each name is compared only to existing group representatives, and the first name processed becomes the representative. Different input ordering can produce different groupings, since a name that could match multiple potential groups always joins the first one found.
-- *No morphological understanding*: Levenshtein counts character edits, so `fuzz.ratio("sturova", "ludovita stura")` ≈ 45% — far below any threshold — even though both derive from "Štúr". Suffix stripping recognizes `-ova` and `-a` as grammatical endings; Levenshtein treats every character difference equally.
+Detailed documentation for each method is in the `docs/` folder:
+- `docs/suffix_stripping.md` — rule-based baseline (Slovak morphological suffix removal)
+- `docs/levenshtein.md` — similarity-based greedy clustering (edit distance)
