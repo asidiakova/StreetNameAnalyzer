@@ -1,0 +1,96 @@
+#!/usr/bin/env python3
+"""
+Levenshtein distance-based street name normalization.
+
+Uses greedy clustering: for each new name, compare it to existing group
+representatives. If similar enough (above threshold), join that group.
+Otherwise, start a new group.
+"""
+
+import re
+import unicodedata
+from rapidfuzz import fuzz
+from unidecode import unidecode
+
+# Reuse the same street types and patterns as suffix_stripping.py for fair comparison
+NONLETTER = re.compile(r"[^a-z0-9\s\-]", re.IGNORECASE)
+INITIAL = re.compile(r"^[a-z]\.?$", re.IGNORECASE)
+
+STREET_TYPES = {
+    "ulica", "ul", "cesta", "namestie", "nam", "trieda",
+    "aleja", "park", "sady", "most", "nabr", "nabrezie",
+    "chodnik", "plac", "ut", "utca", "dolina",
+}
+
+# Similarity threshold (0-100). Higher = stricter (fewer merges, more groups).
+THRESHOLD = 80
+
+_groups: dict[str, str] = {}    # preprocessed representative → group_id
+_mapping: dict[str, str] = {}   # original name → group_id
+
+
+def preprocess(name: str) -> str:
+    """
+    Preprocess a street name before Levenshtein comparison.
+    Same logic as suffix_stripping.py (ASCII normalize, remove street types, remove initials),
+    but keeps all remaining tokens instead of just the last one.
+    """
+    s = unicodedata.normalize("NFC", name)
+    s = unidecode(s)
+    s = NONLETTER.sub(" ", s).lower().strip()
+    s = re.sub(r"\s+", " ", s)
+
+    tokens = s.split()
+    if not tokens:
+        return ""
+
+    # Remove street type tokens
+    tokens = [t for t in tokens if t not in STREET_TYPES]
+    if not tokens:
+        return ""
+
+    # Remove single-letter initials (e.g., "m", "r", "j")
+    tokens = [t for t in tokens if not INITIAL.match(t)]
+    if not tokens:
+        return ""
+
+    return " ".join(tokens)
+
+
+def normalize_levenshtein(name: str, threshold: int = THRESHOLD) -> str:
+    """
+    Normalize a street name using greedy Levenshtein clustering.
+
+    Preprocesses the name, then compares it to all existing group
+    representatives using character similarity (rapidfuzz.fuzz.ratio).
+    If the best match is >= THRESHOLD, the name joins that group.
+    Otherwise, a new group is created.
+    """
+    # Return cached result if already seen
+    if name in _mapping:
+        return _mapping[name]
+
+    preprocessed = preprocess(name)
+    if not preprocessed:
+        return ""
+
+    # Find best match among existing group representatives
+    best_match = None
+    best_score = 0
+    for representative in _groups:
+        score = fuzz.ratio(preprocessed, representative)
+        if score > best_score:
+            best_score = score
+            best_match = representative
+
+    if best_match and best_score >= threshold:
+        # Similar enough — join existing group
+        group_id = _groups[best_match]
+    else:
+        # Not similar enough — create new group
+        # Use the preprocessed name as group_id
+        group_id = preprocessed
+        _groups[preprocessed] = group_id
+
+    _mapping[name] = group_id
+    return group_id

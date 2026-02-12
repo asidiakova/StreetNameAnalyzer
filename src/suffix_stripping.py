@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-import csv
-import sys
 import re
 import unicodedata
 from unidecode import unidecode
@@ -61,7 +59,7 @@ def strip_suffix(token: str) -> str:
     return token
 
 
-def normalize_key(name: str) -> str:
+def normalize_key_suffix_stripping(name: str) -> str:
     s = ascii_norm(name)
     tokens = s.split()
     if not tokens:
@@ -96,60 +94,3 @@ def normalize_key(name: str) -> str:
     return stem
 
 
-def main(input_csv, output_csv):
-    rows = []
-    with open(input_csv, newline='', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        next(reader, None)
-        for line in reader:
-            if len(line) < 3:
-                continue
-            name = line[0].strip()
-            length = float(line[1])
-            count = int(line[2])
-            rows.append((name, length, count))
-
-    groups = {}
-    for name, length, count in rows:
-        root = normalize_key(name)
-        if not root:
-            continue
-        if root not in groups:
-            groups[root] = {
-                "root": root,
-                "total_length": 0.0,
-                "total_count": 0,
-                "variants": {}
-            }
-        g = groups[root]
-        g["total_length"] += length
-        g["total_count"] += count
-        g["variants"][name] = g["variants"].get(name, 0.0) + length
-
-    # choose representative: variant with the highest length
-    for g in groups.values():
-        g["representative"] = max(
-            g["variants"].items(), key=lambda x: x[1]
-        )[0]
-
-    with open(output_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
-        writer.writerow(["root", "representative", "total_length", "variant_count", "variants"])
-        for g in sorted(groups.values(), key=lambda x: x["total_length"], reverse=True):
-            variants_str = "; ".join(f"{v}:{l:.1f}" for v, l in g["variants"].items())
-            writer.writerow([
-                g["root"],
-                g["representative"],
-                f"{g['total_length']:.3f}",
-                len(g["variants"]),
-                variants_str
-            ])
-
-    print(f"Wrote normalized data to {output_csv}")
-
-
-if __name__ == "__main__":
-    if len(sys.argv) != 3:
-        print("Usage: python normalize.py input.csv output.csv")
-        sys.exit(1)
-    main(sys.argv[1], sys.argv[2])

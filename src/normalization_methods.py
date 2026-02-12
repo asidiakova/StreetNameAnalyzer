@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
 from typing import Callable
-from normalize import normalize_key
+from suffix_stripping import normalize_key_suffix_stripping
+from levenshtein_method import normalize_levenshtein
 
 NORMALIZATION_METHODS: list[tuple[str, Callable[[str], str]]] = [
-    ("suffix_stripping", normalize_key),
+    ("suffix_stripping", normalize_key_suffix_stripping),
+    ("levenshtein", normalize_levenshtein),
 ]
 
 
