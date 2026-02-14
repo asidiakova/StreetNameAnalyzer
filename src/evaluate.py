@@ -9,6 +9,7 @@ Metrics:
 
 import argparse
 import csv
+import json
 from collections import Counter, defaultdict
 from typing import Callable
 
@@ -97,8 +98,8 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
                 "entities": labels
             })
     
-    # Find worst-performing entities (lowest grouping scores)
-    problem_entities = sorted(entity_scores, key=lambda x: x["score"])[:PROBLEM_ENTITIES_TOP_N]
+    # All entities sorted by grouping score (worst first)
+    problem_entities = sorted(entity_scores, key=lambda x: x["score"])
     
     return {
         "grouping_rate": grouping_rate,
@@ -125,7 +126,7 @@ def print_results(method_name: str, results: dict, verbose: bool = False):
     
     if verbose:
         print(f"\n--- Problem Entities (lowest grouping) ---")
-        for e in results["problem_entities"]:
+        for e in results["problem_entities"][:PROBLEM_ENTITIES_TOP_N]:
             if e["score"] < 1.0:
                 print(f"  {e['entity_label']}: {e['score']:.0%} "
                       f"({e['dominant_count']}/{e['total_variants']} variants, "
@@ -137,6 +138,49 @@ def print_results(method_name: str, results: dict, verbose: bool = False):
             print(f"  '{c['group_id']}' merges: {entities_str}")
 
 
+def prepare_json_results(all_results: dict) -> dict:
+    """
+    Prepare evaluation results for JSON export.
+
+    Rounds floats and converts sets to lists for JSON serialization.
+    The full dataset is included (all collisions, all problem entities)
+    so the frontend can paginate/filter as needed.
+    """
+    output = {}
+    for method_name, results in all_results.items():
+        output[method_name] = {
+            "grouping_rate": round(results["grouping_rate"], 4),
+            "collision_rate": round(results["collision_rate"], 4),
+            "total_entities": results["total_entities"],
+            "total_variants": results["total_variants"],
+            "total_groups": results["total_groups"],
+            "colliding_groups": results["colliding_groups"],
+            "collisions": [
+                {
+                    "group_id": c["group_id"],
+                    "entities": [
+                        {"wikidata_id": wid, "label": label}
+                        for wid, label in c["entities"].items()
+                    ]
+                }
+                for c in results["collisions"]
+            ],
+            "problem_entities": [
+                {
+                    "wikidata_id": e["wikidata_id"],
+                    "entity_label": e["entity_label"],
+                    "score": round(e["score"], 4),
+                    "total_variants": e["total_variants"],
+                    "dominant_count": e["dominant_count"],
+                    "unique_groups": e["unique_groups"],
+                }
+                for e in results["problem_entities"]
+                if e["score"] < 1.0  # only include imperfect entities
+            ],
+        }
+    return output
+
+
 def main():
     parser = argparse.ArgumentParser(description="Evaluate street name normalization methods")
     parser.add_argument("ground_truth", nargs="?", default=EVALUATE_GROUND_TRUTH_DEFAULT,
@@ -145,6 +189,8 @@ def main():
                         help=f"Evaluate only this method (choices: {', '.join(method_ids())})")
     parser.add_argument("-v", "--verbose", action="store_true",
                         help="Show detailed breakdown of problems")
+    parser.add_argument("--json", metavar="PATH", default="evaluation.json",
+                        help="Export results as JSON to this path")
     args = parser.parse_args()
 
     if args.method:
@@ -159,9 +205,17 @@ def main():
     ground_truth = load_ground_truth(args.ground_truth)
     print(f"Loaded {len(ground_truth)} entities with multiple variants")
 
+    all_results = {}
     for method_name, normalize_fn in methods_to_run:
         results = evaluate(normalize_fn, ground_truth)
+        all_results[method_name] = results
         print_results(method_name, results, verbose=args.verbose)
+
+    if args.json:
+        json_data = prepare_json_results(all_results)
+        with open(args.json, "w", encoding="utf-8") as f:
+            json.dump(json_data, f, ensure_ascii=False, indent=2)
+        print(f"\nEvaluation JSON written to {args.json}")
 
 
 if __name__ == "__main__":
