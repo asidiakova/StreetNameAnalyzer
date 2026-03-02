@@ -2241,5 +2241,1219 @@
         "unique_groups": 2
       }
     ]
+  },
+  "ngram": {
+    "grouping_rate": 0.7994,
+    "collision_rate": 0.0965,
+    "total_entities": 216,
+    "total_variants": 729,
+    "total_groups": 311,
+    "colliding_groups": 30,
+    "collisions": [
+      {
+        "group_id": "moyzesa",
+        "entities": [
+          {
+            "wikidata_id": "Q1029499",
+            "label": "Alexander Moyzes"
+          },
+          {
+            "wikidata_id": "Q392368",
+            "label": "Štefan Moyzes"
+          }
+        ]
+      },
+      {
+        "group_id": "bazovskeho",
+        "entities": [
+          {
+            "wikidata_id": "Q10545875",
+            "label": "Ľudovít Bazovský"
+          },
+          {
+            "wikidata_id": "Q391641",
+            "label": "Šimon Jurovský"
+          }
+        ]
+      },
+      {
+        "group_id": "tranovskeho",
+        "entities": [
+          {
+            "wikidata_id": "Q1080664",
+            "label": "Juraj Tranovský"
+          },
+          {
+            "wikidata_id": "Q204338",
+            "label": "Rodion Jakovlevič Malinovskij"
+          },
+          {
+            "wikidata_id": "Q93419",
+            "label": "Móric Beňovský"
+          }
+        ]
+      },
+      {
+        "group_id": "horovova",
+        "entities": [
+          {
+            "wikidata_id": "Q1092622",
+            "label": "Pavol Horov"
+          },
+          {
+            "wikidata_id": "Q154232",
+            "label": "Alexandr Vasilievič Suvorov"
+          }
+        ]
+      },
+      {
+        "group_id": "palarika",
+        "entities": [
+          {
+            "wikidata_id": "Q1102385",
+            "label": "Ján Palárik"
+          },
+          {
+            "wikidata_id": "Q12768593",
+            "label": "Ján Paľo"
+          }
+        ]
+      },
+      {
+        "group_id": "laskomerskeho",
+        "entities": [
+          {
+            "wikidata_id": "Q11736366",
+            "label": "Gustáv Kazimír Zechenter-Laskomerský"
+          },
+          {
+            "wikidata_id": "Q12735",
+            "label": "Jan Amos Komenský"
+          }
+        ]
+      },
+      {
+        "group_id": "medveckej",
+        "entities": [
+          {
+            "wikidata_id": "Q11787765",
+            "label": "Mária Medvecká"
+          },
+          {
+            "wikidata_id": "Q13538888",
+            "label": "Samuel Medvecký"
+          }
+        ]
+      },
+      {
+        "group_id": "urbankova",
+        "entities": [
+          {
+            "wikidata_id": "Q12004160",
+            "label": "Ferko Urbánek"
+          },
+          {
+            "wikidata_id": "Q933685",
+            "label": "Jozef Miloslav Hurban"
+          },
+          {
+            "wikidata_id": "Q951434",
+            "label": "Milo Urban"
+          }
+        ]
+      },
+      {
+        "group_id": "dr markovica",
+        "entities": [
+          {
+            "wikidata_id": "Q12021963",
+            "label": "Ivan Markovič"
+          },
+          {
+            "wikidata_id": "Q1268173",
+            "label": "Dušan Jurkovič"
+          }
+        ]
+      },
+      {
+        "group_id": "marka culena",
+        "entities": [
+          {
+            "wikidata_id": "Q12035321",
+            "label": "Marek Čulen"
+          },
+          {
+            "wikidata_id": "Q13441465",
+            "label": "Martin Čulen"
+          }
+        ]
+      },
+      {
+        "group_id": "ladislava exnara",
+        "entities": [
+          {
+            "wikidata_id": "Q12770108",
+            "label": "Ladislav Exnár"
+          },
+          {
+            "wikidata_id": "Q12770129",
+            "label": "Ladislav Sára"
+          }
+        ]
+      },
+      {
+        "group_id": "pavlovicova",
+        "entities": [
+          {
+            "wikidata_id": "Q12771549",
+            "label": "Michal Pavlovič"
+          },
+          {
+            "wikidata_id": "Q5934650",
+            "label": "Hugolín Gavlovič"
+          }
+        ]
+      },
+      {
+        "group_id": "uherova",
+        "entities": [
+          {
+            "wikidata_id": "Q12771735",
+            "label": "Miloš Uher"
+          },
+          {
+            "wikidata_id": "Q454",
+            "label": "mier"
+          }
+        ]
+      },
+      {
+        "group_id": "jasikova",
+        "entities": [
+          {
+            "wikidata_id": "Q12775548",
+            "label": "Rudolf Jašík"
+          },
+          {
+            "wikidata_id": "Q1363993",
+            "label": "Samo Tomášik"
+          },
+          {
+            "wikidata_id": "Q706268",
+            "label": "Juraj Jánošík"
+          }
+        ]
+      },
+      {
+        "group_id": "majakovskeho",
+        "entities": [
+          {
+            "wikidata_id": "Q132964",
+            "label": "Vladimir Vladimirovič Majakovskij"
+          },
+          {
+            "wikidata_id": "Q1603028",
+            "label": "Jozef Gregor Tajovský"
+          },
+          {
+            "wikidata_id": "Q2055549",
+            "label": "Dušan Makovický"
+          },
+          {
+            "wikidata_id": "Q7315",
+            "label": "Piotr Iľjič Čajkovskij"
+          }
+        ]
+      },
+      {
+        "group_id": "holleho",
+        "entities": [
+          {
+            "wikidata_id": "Q13421293",
+            "label": "Ján Hollý"
+          },
+          {
+            "wikidata_id": "Q1383201",
+            "label": "Ján Hollý"
+          }
+        ]
+      },
+      {
+        "group_id": "martina kukucina",
+        "entities": [
+          {
+            "wikidata_id": "Q1384769",
+            "label": "Martin Kukučín"
+          },
+          {
+            "wikidata_id": "Q1903455",
+            "label": "Martin Benka"
+          }
+        ]
+      },
+      {
+        "group_id": "fucikova",
+        "entities": [
+          {
+            "wikidata_id": "Q142059",
+            "label": "Julius Fučík"
+          },
+          {
+            "wikidata_id": "Q432927",
+            "label": "Jozef Gabčík"
+          }
+        ]
+      },
+      {
+        "group_id": "benkova",
+        "entities": [
+          {
+            "wikidata_id": "Q1903455",
+            "label": "Martin Benka"
+          },
+          {
+            "wikidata_id": "Q9368136",
+            "label": "Valentín Beniak"
+          }
+        ]
+      },
+      {
+        "group_id": "krala",
+        "entities": [
+          {
+            "wikidata_id": "Q2354020",
+            "label": "Fraňo Kráľ"
+          },
+          {
+            "wikidata_id": "Q376416",
+            "label": "Janko Kráľ"
+          }
+        ]
+      },
+      {
+        "group_id": "trnavska",
+        "entities": [
+          {
+            "wikidata_id": "Q26175",
+            "label": "Trnava"
+          },
+          {
+            "wikidata_id": "Q3506661",
+            "label": "Mikuláš Schneider-Trnavský"
+          }
+        ]
+      },
+      {
+        "group_id": "sama chalupku",
+        "entities": [
+          {
+            "wikidata_id": "Q262637",
+            "label": "Samo Chalupka"
+          },
+          {
+            "wikidata_id": "Q925563",
+            "label": "Ján Chalupka"
+          }
+        ]
+      },
+      {
+        "group_id": "stura",
+        "entities": [
+          {
+            "wikidata_id": "Q315222",
+            "label": "Ľudovít Štúr"
+          },
+          {
+            "wikidata_id": "Q905900",
+            "label": "Dionýz Štúr"
+          }
+        ]
+      },
+      {
+        "group_id": "ludovita stura",
+        "entities": [
+          {
+            "wikidata_id": "Q315222",
+            "label": "Ľudovít Štúr"
+          },
+          {
+            "wikidata_id": "Q345078",
+            "label": "Ľudovít Fulla"
+          }
+        ]
+      },
+      {
+        "group_id": "fullova",
+        "entities": [
+          {
+            "wikidata_id": "Q345078",
+            "label": "Ľudovít Fulla"
+          },
+          {
+            "wikidata_id": "Q730241",
+            "label": "Jozef Karol Hell"
+          }
+        ]
+      },
+      {
+        "group_id": "stodolu",
+        "entities": [
+          {
+            "wikidata_id": "Q3499681",
+            "label": "Ivan Stodola"
+          },
+          {
+            "wikidata_id": "Q666875",
+            "label": "Aurel Stodola"
+          }
+        ]
+      },
+      {
+        "group_id": "jozefa skultetyho",
+        "entities": [
+          {
+            "wikidata_id": "Q3563704",
+            "label": "Jozef Škultéty"
+          },
+          {
+            "wikidata_id": "Q3629542",
+            "label": "August Horislav Škultéty"
+          }
+        ]
+      },
+      {
+        "group_id": "andreja hlinku",
+        "entities": [
+          {
+            "wikidata_id": "Q467797",
+            "label": "Andrej Hlinka"
+          },
+          {
+            "wikidata_id": "Q765368",
+            "label": "Andrej Kubina"
+          }
+        ]
+      },
+      {
+        "group_id": "metodova",
+        "entities": [
+          {
+            "wikidata_id": "Q470621",
+            "label": "svätý Metod"
+          },
+          {
+            "wikidata_id": "Q765336",
+            "label": "Andrej Kmeť"
+          }
+        ]
+      },
+      {
+        "group_id": "bellusova",
+        "entities": [
+          {
+            "wikidata_id": "Q6739796",
+            "label": "Emil Belluš"
+          },
+          {
+            "wikidata_id": "Q964103",
+            "label": "Ján Levoslav Bella"
+          }
+        ]
+      }
+    ],
+    "problem_entities": [
+      {
+        "wikidata_id": "Q12035321",
+        "entity_label": "Marek Čulen",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q12765357",
+        "entity_label": "Emo Bohúň",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q12767691",
+        "entity_label": "Ivan Vladimír Roy",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q156070",
+        "entity_label": "Otakar Jaroš",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q17590",
+        "entity_label": "Vavrinec Rímsky",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q265676",
+        "entity_label": "Jozef Ignác Bajza",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q432927",
+        "entity_label": "Jozef Gabčík",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q443963",
+        "entity_label": "František Hečko",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q769613",
+        "entity_label": "Marián Blaha",
+        "score": 0.3333,
+        "total_variants": 6,
+        "dominant_count": 2,
+        "unique_groups": 4
+      },
+      {
+        "wikidata_id": "Q9368136",
+        "entity_label": "Valentín Beniak",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q951434",
+        "entity_label": "Milo Urban",
+        "score": 0.375,
+        "total_variants": 8,
+        "dominant_count": 3,
+        "unique_groups": 5
+      },
+      {
+        "wikidata_id": "Q1392478",
+        "entity_label": "Michal Miloslav Hodža",
+        "score": 0.4,
+        "total_variants": 5,
+        "dominant_count": 2,
+        "unique_groups": 4
+      },
+      {
+        "wikidata_id": "Q345078",
+        "entity_label": "Ľudovít Fulla",
+        "score": 0.4,
+        "total_variants": 5,
+        "dominant_count": 2,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q366978",
+        "entity_label": "Juraj Dóža",
+        "score": 0.4,
+        "total_variants": 5,
+        "dominant_count": 2,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q1040777",
+        "entity_label": "Martin Hattala",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1121255",
+        "entity_label": "Pavol Križko",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q11878597",
+        "entity_label": "Emil Boleslav Lukáč",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12004160",
+        "entity_label": "Ferko Urbánek",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12026992",
+        "entity_label": "Jozef Horák",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1268173",
+        "entity_label": "Dušan Jurkovič",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12768363",
+        "entity_label": "Juraj Sklenár",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12770108",
+        "entity_label": "Ladislav Exnár",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12770129",
+        "entity_label": "Ladislav Sára",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12771192",
+        "entity_label": "Matej Hrebenda",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12771733",
+        "entity_label": "Miloš Vesel",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q13375709",
+        "entity_label": "Arpád Vojtech Felcán",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q13420909",
+        "entity_label": "Jozef Kačka",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q13421320",
+        "entity_label": "Ján Klempa",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1357554",
+        "entity_label": "Svetozár Hurban-Vajanský",
+        "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q142059",
+        "entity_label": "Julius Fučík",
+        "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q150543",
+        "entity_label": "Alexander Dubček",
+        "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q163780",
+        "entity_label": "Slovenské národné povstanie",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q184933",
+        "entity_label": "Leoš Janáček",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q185024",
+        "entity_label": "Ivan Stepanovič Konev",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1903455",
+        "entity_label": "Martin Benka",
+        "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q204338",
+        "entity_label": "Rodion Jakovlevič Malinovskij",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q222534",
+        "entity_label": "Matúš Čák Trenčiansky",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q239925",
+        "entity_label": "Cyril a Metod",
+        "score": 0.5,
+        "total_variants": 6,
+        "dominant_count": 3,
+        "unique_groups": 4
+      },
+      {
+        "wikidata_id": "Q28437",
+        "entity_label": "rumanček kamilkový",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q315222",
+        "entity_label": "Ľudovít Štúr",
+        "score": 0.5,
+        "total_variants": 10,
+        "dominant_count": 5,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q347148",
+        "entity_label": "Rastislav",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q3506294",
+        "entity_label": "Andrej Bagar",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q3701605",
+        "entity_label": "Daniel Gabriel Lichard",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q391641",
+        "entity_label": "Šimon Jurovský",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q41309",
+        "entity_label": "Franz Liszt",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q440577",
+        "entity_label": "Božena Slančíková-Timrava",
+        "score": 0.5,
+        "total_variants": 6,
+        "dominant_count": 3,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q454",
+        "entity_label": "mier",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q46100",
+        "entity_label": "Eugen Suchoň",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q4767243",
+        "entity_label": "Janko Borodáč",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q532174",
+        "entity_label": "Jan Šverma",
+        "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q706268",
+        "entity_label": "Juraj Jánošík",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q730241",
+        "entity_label": "Jozef Karol Hell",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q765336",
+        "entity_label": "Andrej Kmeť",
+        "score": 0.5,
+        "total_variants": 6,
+        "dominant_count": 3,
+        "unique_groups": 4
+      },
+      {
+        "wikidata_id": "Q905900",
+        "entity_label": "Dionýz Štúr",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q974206",
+        "entity_label": "Ján Botto",
+        "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q979946",
+        "entity_label": "Jozef Cíger-Hronský",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q319962",
+        "entity_label": "Milan Rastislav Štefánik",
+        "score": 0.5556,
+        "total_variants": 18,
+        "dominant_count": 10,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q262637",
+        "entity_label": "Samo Chalupka",
+        "score": 0.5714,
+        "total_variants": 7,
+        "dominant_count": 4,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q933685",
+        "entity_label": "Jozef Miloslav Hurban",
+        "score": 0.6,
+        "total_variants": 5,
+        "dominant_count": 3,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q310000",
+        "entity_label": "Ludvík Svoboda",
+        "score": 0.6154,
+        "total_variants": 13,
+        "dominant_count": 8,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q467797",
+        "entity_label": "Andrej Hlinka",
+        "score": 0.6364,
+        "total_variants": 11,
+        "dominant_count": 7,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q10416721",
+        "entity_label": "Štefan Furdek",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1104940",
+        "entity_label": "Karol Salva",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q11874240",
+        "entity_label": "Eduard Urx",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12765281",
+        "entity_label": "Elena Maróthy-Šoltésová",
+        "score": 0.6667,
+        "total_variants": 6,
+        "dominant_count": 4,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12771735",
+        "entity_label": "Miloš Uher",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12775548",
+        "entity_label": "Rudolf Jašík",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12777541",
+        "entity_label": "Tichomír Milkin",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1603028",
+        "entity_label": "Jozef Gregor Tajovský",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q164902",
+        "entity_label": "Martin Rázus",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q2055549",
+        "entity_label": "Dušan Makovický",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q255678",
+        "entity_label": "Štefan Marko Daxner",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q3489752",
+        "entity_label": "Mikuláš Galanda",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q3506661",
+        "entity_label": "Mikuláš Schneider-Trnavský",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q355900",
+        "entity_label": "Pribina",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q3563677",
+        "entity_label": "Samuel Jurkovič",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q385147",
+        "entity_label": "Ján Nálepka",
+        "score": 0.6667,
+        "total_variants": 12,
+        "dominant_count": 8,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q392368",
+        "entity_label": "Štefan Moyzes",
+        "score": 0.6667,
+        "total_variants": 6,
+        "dominant_count": 4,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q43718",
+        "entity_label": "Nikolaj Vasilievič Gogoľ",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q43977",
+        "entity_label": "Ján Hus",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q552703",
+        "entity_label": "Martin Hamuljak",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q617674",
+        "entity_label": "Dominik Tatarka",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q6373046",
+        "entity_label": "Karol Kmeťko",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q702651",
+        "entity_label": "Rudolf Viest",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q765368",
+        "entity_label": "Andrej Kubina",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q83326",
+        "entity_label": "Béla Bartók",
+        "score": 0.6667,
+        "total_variants": 6,
+        "dominant_count": 4,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q93419",
+        "entity_label": "Móric Beňovský",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q158354",
+        "entity_label": "Pavel Jozef Šafárik",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q48173",
+        "entity_label": "Bedřich Smetana",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q697179",
+        "entity_label": "Matej Bel",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q702648",
+        "entity_label": "Ján Golian",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q7192701",
+        "entity_label": "Viliam Pauliny-Tóth",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q964103",
+        "entity_label": "Ján Levoslav Bella",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1363993",
+        "entity_label": "Samo Tomášik",
+        "score": 0.8,
+        "total_variants": 5,
+        "dominant_count": 4,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1384769",
+        "entity_label": "Martin Kukučín",
+        "score": 0.8,
+        "total_variants": 5,
+        "dominant_count": 4,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q12735",
+        "entity_label": "Jan Amos Komenský",
+        "score": 0.8333,
+        "total_variants": 6,
+        "dominant_count": 5,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q508663",
+        "entity_label": "Pavol Országh Hviezdoslav",
+        "score": 0.8333,
+        "total_variants": 6,
+        "dominant_count": 5,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q823247",
+        "entity_label": "Laco Novomeský",
+        "score": 0.8333,
+        "total_variants": 6,
+        "dominant_count": 5,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q470621",
+        "entity_label": "svätý Metod",
+        "score": 0.8571,
+        "total_variants": 7,
+        "dominant_count": 6,
+        "unique_groups": 2
+      }
+    ]
   }
 }

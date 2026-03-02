@@ -22,21 +22,21 @@ Minimum stem length: 3 characters (prevents over-stripping short names).
 
 ## Example
 
-| Input | ASCII normalized | After filtering | Last token | Stem |
-|-------|-----------------|-----------------|------------|------|
-| "Štefánikova" | "stefanikova" | ["stefanikova"] | "stefanikova" | **"stefanik"** |
-| "M. R. Štefánika" | "m r stefanika" | ["stefanika"] | "stefanika" | **"stefanik"** |
-| "Námestie Ľ. Štúra" | "namestie l stura" | ["stura"] | "stura" | **"stur"** |
-| "Štúrova" | "sturova" | ["sturova"] | "sturova" | **"stur"** |
-| "1. mája" | "1 maja" | ordinal detected | — | **"1_maja"** |
+| Input               | ASCII normalized   | After filtering  | Last token    | Stem           |
+|---------------------|--------------------|------------------|---------------|----------------|
+| "Štefánikova"       | "stefanikova"      | ["stefanikova"]  | "stefanikova" | **"stefanik"** |
+| "M. R. Štefánika"   | "m r stefanika"    | ["stefanika"]    | "stefanika"   | **"stefanik"** |
+| "Námestie Ľ. Štúra" | "namestie l stura" | ["stura"]        | "stura"       | **"stur"**     |
+| "Štúrova"           | "sturova"          | ["sturova"]      | "sturova"     | **"stur"**     |
+| "1. mája"           | "1 maja"           | ordinal detected | —             | **"1_maja"**   |
 
 ## Evaluation Results
 
-| Metric | Value |
-|--------|-------|
-| Grouping Rate | 94.7% |
-| Collision Rate | 5.4% |
-| Groups | 240 (from 729 variants, 216 entities) |
+| Metric         | Value                                 |
+|----------------|---------------------------------------|
+| Grouping Rate  | 94.7%                                 |
+| Collision Rate | 5.4%                                  |
+| Groups         | 240 (from 729 variants, 216 entities) |
 
 ## Strengths
 

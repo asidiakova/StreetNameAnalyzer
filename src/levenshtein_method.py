@@ -6,39 +6,13 @@ See docs/levenshtein.md for detailed description, examples, and known limitation
 """
 
 from rapidfuzz import fuzz
-from text_utils import ascii_norm, INITIAL, STREET_TYPES
+from text_utils import preprocess_name
 
 # Similarity threshold (0-100). Higher = stricter (fewer merges, more groups).
 THRESHOLD = 80
 
 _groups: dict[str, str] = {}    # preprocessed representative → group_id
 _mapping: dict[str, str] = {}   # original name → group_id
-
-
-def preprocess(name: str) -> str:
-    """
-    Preprocess a street name before Levenshtein comparison.
-    Same base preprocessing as suffix stripping (ASCII normalize, remove
-    street types, remove initials), but keeps all remaining tokens
-    instead of just the last one.
-    """
-    s = ascii_norm(name)
-
-    tokens = s.split()
-    if not tokens:
-        return ""
-
-    # Remove street type tokens
-    tokens = [t for t in tokens if t not in STREET_TYPES]
-    if not tokens:
-        return ""
-
-    # Remove single-letter initials (e.g., "m", "r", "j")
-    tokens = [t for t in tokens if not INITIAL.match(t)]
-    if not tokens:
-        return ""
-
-    return " ".join(tokens)
 
 
 def normalize_levenshtein(name: str) -> str:
@@ -54,7 +28,7 @@ def normalize_levenshtein(name: str) -> str:
     if name in _mapping:
         return _mapping[name]
 
-    preprocessed = preprocess(name)
+    preprocessed = preprocess_name(name)
     if not preprocessed:
         return ""
 

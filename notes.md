@@ -160,4 +160,5 @@ The `ground_truth.py` script creates a validated dataset by cross-referencing OS
 
 Detailed documentation for each method is in the `docs/` folder:
 - `docs/suffix_stripping.md` — rule-based baseline (Slovak morphological suffix removal)
-- `docs/levenshtein.md` — similarity-based greedy clustering (edit distance)
+- `docs/levenshtein.md` — similarity-based greedy clustering (sequential edit distance)
+- `docs/ngram.md` — similarity-based greedy clustering (set-based Jaccard on character bigrams)

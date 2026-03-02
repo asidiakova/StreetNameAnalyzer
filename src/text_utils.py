@@ -32,3 +32,28 @@ def ascii_norm(s: str) -> str:
     s = _NONLETTER.sub(" ", s).lower().strip()
     s = re.sub(r"\s+", " ", s)
     return s
+
+
+def preprocess_name(name: str) -> str:
+    """
+    Preprocess a street name for similarity-based methods.
+
+    Applies ASCII normalization, removes street type tokens and
+    single-letter initials, and returns all remaining tokens joined
+    by spaces. Used by Levenshtein, N-gram, and other similarity methods.
+    """
+    s = ascii_norm(name)
+
+    tokens = s.split()
+    if not tokens:
+        return ""
+
+    tokens = [t for t in tokens if t not in STREET_TYPES]
+    if not tokens:
+        return ""
+
+    tokens = [t for t in tokens if not INITIAL.match(t)]
+    if not tokens:
+        return ""
+
+    return " ".join(tokens)

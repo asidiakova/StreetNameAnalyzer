@@ -23,11 +23,11 @@ The method is **stateful** — it builds groups incrementally as names are proce
 
 Processing order: "Štefánikova" → "Štefánikovo námestie" → "Komenského"
 
-| Step | Input | Preprocessed | Best match | Score | Action |
-|------|-------|-------------|------------|-------|--------|
-| 1 | "Štefánikova" | "stefanikova" | — | — | New group: `"stefanikova"` |
-| 2 | "Štefánikovo námestie" | "stefanikovo" | "stefanikova" | 91 | Joins `"stefanikova"` |
-| 3 | "Komenského" | "komenskeho" | "stefanikova" | 50 | New group: `"komenskeho"` |
+| Step | Input                  | Preprocessed  | Best match    | Score | Action                     |
+|------|------------------------|---------------|---------------|-------|----------------------------|
+| 1    | "Štefánikova"          | "stefanikova" | —             | —     | New group: `"stefanikova"` |
+| 2    | "Štefánikovo námestie" | "stefanikovo" | "stefanikova" | 91    | Joins `"stefanikova"`      |
+| 3    | "Komenského"           | "komenskeho"  | "stefanikova" | 50    | New group: `"komenskeho"`  |
 
 Note: "M. R. Štefánika" → preprocessed to `"stefanika"` → compared to `"stefanikova"` → score ≈ 87 → **joins** the group (above threshold 80). But "Ľudovíta Štúra" → `"ludovita stura"` → compared to `"stefanikova"` → score ≈ 30 → correctly starts a new group.
 
@@ -35,22 +35,22 @@ Note: "M. R. Štefánika" → preprocessed to `"stefanika"` → compared to `"st
 
 Threshold sweep on 216 entities, 729 variants:
 
-| Threshold | Grouping Rate | Collision Rate | Groups |
-|-----------|---------------|----------------|--------|
-| 70 | 71.7% | 20.2% | 302 |
-| 75 | 68.2% | 11.8% | 365 |
-| **80** | **63.6%** | **7.2%** | **418** |
-| 85 | 59.8% | 4.3% | 463 |
+| Threshold | Grouping Rate | Collision Rate | Groups  |
+|-----------|---------------|----------------|---------|
+| 70        | 71.7%         | 20.2%          | 302     |
+| 75        | 68.2%         | 11.8%          | 365     |
+| **80**    | **63.6%**     | **7.2%**       | **418** |
+| 85        | 59.8%         | 4.3%           | 463     |
 
 **Default threshold**: 80 (collision rate close to suffix stripping baseline, while clearly showing the grouping tradeoff)
 
 ### Comparison with suffix stripping
 
-| Metric | Suffix Stripping | Levenshtein (t=80) |
-|--------|------------------|--------------------|
-| Grouping Rate | 94.7% | 63.6% |
-| Collision Rate | 5.4% | 7.2% |
-| Groups | 240 | 418 |
+| Metric         | Suffix Stripping | Levenshtein (t=80) |
+|----------------|------------------|--------------------|
+| Grouping Rate  | 94.7%            | 63.6%              |
+| Collision Rate | 5.4%             | 7.2%               |
+| Groups         | 240              | 418                |
 
 ## Strengths
 
