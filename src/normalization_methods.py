@@ -4,11 +4,20 @@ from typing import Callable
 from suffix_stripping import normalize_key_suffix_stripping
 from levenshtein_method import normalize_levenshtein
 from ngram_method import normalize_ngram
+from embedding_method import create_embedding_normalizer
 
 NORMALIZATION_METHODS: list[tuple[str, Callable[[str], str]]] = [
     ("suffix_stripping", normalize_key_suffix_stripping),
     ("levenshtein", normalize_levenshtein),
     ("ngram", normalize_ngram),
+    ("embedding_minilm", create_embedding_normalizer(
+        "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+        threshold=0.80,
+    )),
+    ("embedding_mpnet", create_embedding_normalizer(
+        "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+        threshold=0.80,
+    )),
 ]
 
 

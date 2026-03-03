@@ -22,10 +22,8 @@
 
 N-grams are generated **per token**, then combined. This avoids creating misleading fragments across word boundaries.
 
-Example: `"ludovita stefanika"` (preprocessed from "Ľudovíta Štefánika") → tokens `["ludovita", "stefanika"]`
-- `"ludovita"` → {lu, ud, do, ov, vi, it, ta}
-- `"stefanika"` → {st, te, ef, fa, an, ni, ik, ka}
-- Combined: {lu, ud, do, ov, vi, it, ta, st, te, ef, fa, an, ni, ik, ka} = 15 unique bigrams
+Example: `"antona bernolaka"` (preprocessed from "Antona Bernoláka") → tokens `["antona", "bernolaka"]`
+{'be', 'no', 'on', 'ak', 'an', 'rn', 'na', 'er', 'ol', 'nt', 'to', 'la', 'ka'}
 
 ### Jaccard similarity
 
