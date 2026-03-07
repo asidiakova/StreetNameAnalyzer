@@ -5,6 +5,7 @@ from suffix_stripping import normalize_key_suffix_stripping
 from levenshtein_method import normalize_levenshtein
 from ngram_method import normalize_ngram
 from embedding_method import create_embedding_normalizer
+from llm_method import create_llm_normalizer
 
 NORMALIZATION_METHODS: list[tuple[str, Callable[[str], str]]] = [
     ("suffix_stripping", normalize_key_suffix_stripping),
@@ -18,6 +19,9 @@ NORMALIZATION_METHODS: list[tuple[str, Callable[[str], str]]] = [
         "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
         threshold=0.80,
     )),
+    ("llm_gpt4o_mini", create_llm_normalizer("openai", "gpt-4o-mini")),
+    ("llm_claude_haiku", create_llm_normalizer("anthropic", "claude-haiku-4-5-20251001")),
+    ("llm_gemini_flash", create_llm_normalizer("gemini", "gemini-2.5-flash")),
 ]
 
 
