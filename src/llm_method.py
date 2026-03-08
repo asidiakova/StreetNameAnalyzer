@@ -62,6 +62,14 @@ PROVIDERS = {
 }
 
 LLM_REQUEST_DELAY = 0.05
+BATCH_SIZE = 40
+
+BATCH_SYSTEM_PROMPT = (
+    SYSTEM_PROMPT +
+    "\n\nYou will receive multiple street names at once. "
+    "Return a JSON object mapping each input street name (exactly as given) "
+    "to its canonical form. Return ONLY valid JSON, no markdown or code blocks."
+)
 
 
 def _sanitize_for_filename(name: str) -> str:
@@ -154,6 +162,88 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = "."):
             )
             return response.text.strip()
 
+    def _call_batch_api(names: list[str]) -> dict[str, str]:
+        names_list = "\n".join(f'"{n}"' for n in names)
+        user_msg = f'{FEW_SHOT}\nProcess these street names:\n{names_list}'
+
+        if config["type"] == "openai":
+            response = _state["client"].chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": BATCH_SYSTEM_PROMPT},
+                    {"role": "user", "content": user_msg},
+                ],
+                max_tokens=4096,
+                temperature=0,
+            )
+            raw = response.choices[0].message.content.strip()
+        elif config["type"] == "anthropic":
+            response = _state["client"].messages.create(
+                model=model,
+                max_tokens=4096,
+                temperature=0,
+                system=BATCH_SYSTEM_PROMPT,
+                messages=[{"role": "user", "content": user_msg}],
+            )
+            raw = response.content[0].text.strip()
+        else:
+            response = _state["client"].models.generate_content(
+                model=model,
+                contents=user_msg,
+                config=GenerateContentConfig(
+                    system_instruction=BATCH_SYSTEM_PROMPT,
+                    max_output_tokens=4096,
+                    temperature=0,
+                ),
+            )
+            raw = response.text.strip()
+
+        if raw.startswith("```"):
+            raw = raw.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+
+        return json.loads(raw)
+
+    def batch_warm(names: list[str]):
+        """Pre-populate cache by sending names in batches instead of one-by-one."""
+        if _state["cache"] is None:
+            _state["cache"] = _load_cache()
+
+        uncached = [n for n in names if n not in _state["cache"]]
+        if not uncached:
+            print(f"    All {len(names)} names already cached")
+            return
+
+        if _state["client"] is None:
+            _state["client"] = _init_client()
+
+        total_batches = (len(uncached) + BATCH_SIZE - 1) // BATCH_SIZE
+        print(f"    Batch warming {len(uncached)} uncached names "
+              f"({total_batches} batches of up to {BATCH_SIZE})...")
+
+        for i in range(0, len(uncached), BATCH_SIZE):
+            batch = uncached[i:i + BATCH_SIZE]
+            batch_num = i // BATCH_SIZE + 1
+
+            if _state["call_count"] > 0:
+                time.sleep(LLM_REQUEST_DELAY)
+
+            try:
+                results = _call_batch_api(batch)
+                for name in batch:
+                    canonical = results.get(name, name)
+                    _state["cache"][name] = ascii_norm(canonical)
+            except Exception as e:
+                print(f"    Batch {batch_num}/{total_batches} failed: {e}")
+                for name in batch:
+                    if name not in _state["cache"]:
+                        _state["cache"][name] = ascii_norm(name)
+
+            _state["call_count"] += 1
+            _save_cache()
+
+            if batch_num % 10 == 0 or batch_num == total_batches:
+                print(f"    {batch_num}/{total_batches} batches done")
+
     def normalize(name: str) -> str:
         if _state["cache"] is None:
             _state["cache"] = _load_cache()
@@ -183,4 +273,5 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = "."):
 
         return group_id
 
+    normalize.batch_warm = batch_warm
     return normalize

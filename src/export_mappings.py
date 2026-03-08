@@ -108,9 +108,13 @@ def main():
     street_data = load_street_names(args.input)
     print(f"Loaded {len(street_data)} unique street names")
 
+    all_names = [name for name, _, _ in street_data]
+
     result = {}
     for method_name, normalize_fn in NORMALIZATION_METHODS:
         print(f"Running method: {method_name}...")
+        if hasattr(normalize_fn, "batch_warm"):
+            normalize_fn.batch_warm(all_names)
         result[method_name] = build_method_data(normalize_fn, street_data)
         n_groups = len(result[method_name]["groups"])
         print(f"  {len(result[method_name]['mapping'])} names → {n_groups} groups")
