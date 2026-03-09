@@ -2,12 +2,7 @@
 """
 LLM-based street name normalization.
 
-Uses large language models' world knowledge to identify the person, place,
-or concept a street is named after. Supports multiple providers (OpenAI,
-Anthropic, Google Gemini) through a single factory function — each call
-creates an independent normalizer with its own state and disk cache.
-
-See docs/llm.md for detailed description, examples, and known limitations.
+Uses large language models to identify the person, place, or concept a street is named after.
 """
 
 import json
@@ -32,6 +27,13 @@ SYSTEM_PROMPT = (
     "- Return ONLY the canonical name, no explanation or extra punctuation"
 )
 
+BATCH_SYSTEM_PROMPT = (
+    SYSTEM_PROMPT +
+    "\n\nYou will receive multiple street names at once. "
+    "Return a JSON object mapping each input street name (exactly as given) "
+    "to its canonical form. Return ONLY valid JSON, no markdown or code blocks."
+)
+
 FEW_SHOT = (
     'Examples:\n'
     '"Štefánikova" → Milan Rastislav Štefánik\n'
@@ -45,17 +47,14 @@ FEW_SHOT = (
 
 PROVIDERS = {
     "openai": {
-        "base_url": None,
         "api_key_env": "OPENAI_API_KEY",
         "type": "openai",
     },
     "anthropic": {
-        "base_url": None,
         "api_key_env": "ANTHROPIC_API_KEY",
         "type": "anthropic",
     },
     "gemini": {
-        "base_url": None,
         "api_key_env": "GEMINI_API_KEY",
         "type": "gemini",
     },
@@ -64,35 +63,17 @@ PROVIDERS = {
 LLM_REQUEST_DELAY = 0.05
 BATCH_SIZE = 40
 
-BATCH_SYSTEM_PROMPT = (
-    SYSTEM_PROMPT +
-    "\n\nYou will receive multiple street names at once. "
-    "Return a JSON object mapping each input street name (exactly as given) "
-    "to its canonical form. Return ONLY valid JSON, no markdown or code blocks."
-)
-
-
-def _sanitize_for_filename(name: str) -> str:
-    return re.sub(r"[^a-zA-Z0-9_-]", "_", name)
-
 
 def create_llm_normalizer(provider: str, model: str, cache_dir: str = "."):
     """
     Factory that returns a normalize function for a given LLM provider/model.
 
-    The API client is created lazily on the first call. Results are cached
-    to a JSON file on disk so repeated runs incur zero API cost.
-
-    Args:
-        provider: One of "openai", "anthropic", "gemini"
-        model: Model identifier (e.g., "gpt-4o-mini", "claude-haiku-4-5-20251001", "gemini-2.0-flash")
-        cache_dir: Directory for the per-model cache file
+    The API client is created on the first call. Results are cached to a JSON file.
     """
-    if provider not in PROVIDERS:
-        raise ValueError(f"Unknown provider '{provider}'. Available: {list(PROVIDERS.keys())}")
 
     config = PROVIDERS[provider]
-    cache_file = os.path.join(cache_dir, f"llm_cache_{_sanitize_for_filename(model)}.json")
+    filename = re.sub(r"[^a-zA-Z0-9_-]", "_", model)
+    cache_file = os.path.join(cache_dir, f"llm_cache_{filename}.json")
 
     _state = {
         "client": None,
@@ -112,15 +93,9 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = "."):
 
     def _init_client():
         api_key = os.environ.get(config["api_key_env"])
-        if not api_key:
-            raise RuntimeError(
-                f"Set {config['api_key_env']} environment variable for provider '{provider}'"
-            )
 
         if config["type"] == "openai":
             kwargs = {"api_key": api_key}
-            if config["base_url"]:
-                kwargs["base_url"] = config["base_url"]
             return OpenAI(**kwargs)
         elif config["type"] == "anthropic":
             return Anthropic(api_key=api_key)
@@ -204,14 +179,10 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = "."):
         return json.loads(raw)
 
     def batch_warm(names: list[str]):
-        """Pre-populate cache by sending names in batches instead of one-by-one."""
         if _state["cache"] is None:
             _state["cache"] = _load_cache()
 
         uncached = [n for n in names if n not in _state["cache"]]
-        if not uncached:
-            print(f"    All {len(names)} names already cached")
-            return
 
         if _state["client"] is None:
             _state["client"] = _init_client()

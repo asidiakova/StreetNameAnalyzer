@@ -31,29 +31,17 @@ from config import (
 )
 
 
-def parse_args():
-    p = argparse.ArgumentParser(description="Generate ground truth from OSM etymology tags + Wikidata validation")
-    p.add_argument("--db", "-d", default=os.getenv("DATABASE_URL"), help="Postgres connection URI")
-    p.add_argument("--out", "-o", default=GROUND_TRUTH_CSV, help="Output CSV path")
-    p.add_argument("--cache", default=WIKIDATA_CACHE_FILE, help="Wikidata metadata cache file")
-    p.add_argument("--no-fetch", action="store_true", help="Skip Wikidata API calls, use cache only")
-    return p.parse_args()
-
-
 def extract_name_parts(full_name: str) -> list[str]:
-    """Extract all significant name parts (for matching first names too)."""
+    """Extract all significant name parts"""
     parts = full_name.strip().split()
-    # Filter out short words, prepositions, articles
-    skip = {"a", "and", "und", "von", "van", "de", "the", "pri", "nad", "pod", "na", "v"}
-    return [p for p in parts if len(p) >= 3 and p.lower() not in skip]
+    return [p for p in parts if len(p) >= 3]
 
 
 def extract_place_core(place_name: str) -> str:
-    """Extract core place name from complex names like 'Vranov nad Topľou'."""
+    """Extract core place name from complex names"""
     parts = place_name.strip().split()
     if not parts:
         return ""
-    # Usually the first word is the core place name
     return parts[0]
 
 
@@ -77,8 +65,7 @@ def compute_match_confidence(street_name: str, entity_labels: list[str], entity_
     
     for label in entity_labels:
         label_norm = ascii_norm(label)
-        
-        # Direct containment (highest confidence)
+
         if label_norm in street_norm or street_norm in label_norm:
             return CONFIDENCE_EXACT
 
@@ -110,7 +97,7 @@ def fetch_wikidata_entity(qid: str) -> dict | None:
     """Fetch entity metadata from Wikidata API."""
     url = f"https://www.wikidata.org/wiki/Special:EntityData/{qid}.json"
     headers = {
-        "User-Agent": "StreetNameAnalyzer/1.0 (academic research project; contact: your@email.com)"
+        "User-Agent": "StreetNameAnalyzer"
     }
     try:
         resp = requests.get(url, headers=headers, timeout=WIKIDATA_TIMEOUT)
@@ -182,14 +169,13 @@ def extract_etymology_data(conn) -> list[dict]:
 
 
 def main():
-    args = parse_args()
-    
-    if not args.db:
-        print("Error: provide --db or set DATABASE_URL env var.", file=sys.stderr)
-        sys.exit(1)
-    
+    parser = argparse.ArgumentParser(description="Generate ground truth from OSM etymology tags + Wikidata validation")
+    parser.add_argument("--out", "-o", default=GROUND_TRUTH_CSV, help="Output CSV path")
+    parser.add_argument("--cache", default=WIKIDATA_CACHE_FILE, help="Wikidata metadata cache file")
+    args = parser.parse_args()
 
-    conn = psycopg2.connect(args.db)
+    db_conn_str = os.getenv("DATABASE_URL")
+    conn = psycopg2.connect(db_conn_str)
     try:
         print("Extracting etymology-tagged streets...")
         raw_data = extract_etymology_data(conn)
@@ -200,21 +186,17 @@ def main():
 
     unique_qids = set(row["wikidata_id"] for row in raw_data if row["wikidata_id"])
     print(f"Unique Wikidata entities: {len(unique_qids)}")
-    
 
     cache = load_wikidata_cache(args.cache)
-    
-    if not args.no_fetch:
-        missing = [qid for qid in unique_qids if qid not in cache]
-        if missing:
-            for i, qid in enumerate(missing):
-                if (i + 1) % 10 == 0:
-                    print(f"  {i + 1}/{len(missing)}...")
-                entity = fetch_wikidata_entity(qid)
-                if entity:
-                    cache[qid] = entity
-                time.sleep(REQUEST_DELAY)
-            save_wikidata_cache(cache, args.cache)
+
+    missing = [qid for qid in unique_qids if qid not in cache]
+    if missing:
+        for _, qid in enumerate(missing):
+            entity = fetch_wikidata_entity(qid)
+            if entity:
+                cache[qid] = entity
+            time.sleep(REQUEST_DELAY)
+        save_wikidata_cache(cache, args.cache)
 
     
     results = []
@@ -247,8 +229,7 @@ def main():
         ])
         writer.writeheader()
         writer.writerows(results)
-    
-    # Summary by confidence
+
     valid_count = sum(1 for r in results if r["confidence"] >= CONFIDENCE_THRESHOLD)
     excluded_count = len(results) - valid_count
 
@@ -256,7 +237,6 @@ def main():
     print(f"Confidence breakdown:")
     print(f"  Valid (>={CONFIDENCE_THRESHOLD}): {valid_count}")
     print(f"  Excluded (<{CONFIDENCE_THRESHOLD}): {excluded_count}")
-    
 
     grouped_out = args.out.replace(".csv", "_grouped.csv")
 

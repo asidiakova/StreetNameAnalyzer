@@ -5,14 +5,12 @@ Suffix stripping normalization method.
 Rule-based deterministic method for Slovak street names. Strips morphological
 suffixes (-ová, -ovo, -ského, etc.), removes street types and initials,
 and uses the stem of the last significant token as the group key.
-
-See docs/suffix_stripping.md for detailed description, examples, and known limitations.
 """
+
 import re
 from text_utils import ascii_norm, INITIAL, STREET_TYPES
 
 ORDINAL = re.compile(r"^\d+[\.\-]?$")
-
 SUFFIXES = ["ovska", "ovske", "ovskeho", "ovskej", "ov", "ova", "ovo", "sky", "ska", "ske", "ski", "eho", "ej", "a",
             "o", "u", "y", "i"]
 SUFFIXES = sorted(set(SUFFIXES), key=lambda x: -len(x))
@@ -31,26 +29,20 @@ def normalize_key_suffix_stripping(name: str) -> str:
     if not tokens:
         return ""
 
-    # detect ordinals = dates like  1. maja, 9. maja,  etc.
     for i in range(len(tokens) - 1):
         if ORDINAL.match(tokens[i]):
             nxt = tokens[i + 1]
-            # skip if next token is a street-type or an initial or too short
             if nxt not in STREET_TYPES and not INITIAL.match(nxt) and len(nxt) >= 2:
-                # normalize ordinal to digits only (strip '.' or '-')
                 number = re.sub(r"\D", "", tokens[i])
                 return f"{number}_{nxt}"
 
-    # preserve ordinals/numeric-prefixed streets that start the name (keep prior behavior)
     if ORDINAL.match(tokens[0]) or tokens[0].isdigit():
         return "_".join(tokens)
 
-    # remove street-type tokens
     tokens = [t for t in tokens if t not in STREET_TYPES]
     if not tokens:
         return ""
 
-    # remove single-letter initials (and single letters with dot already removed by ascii_norm)
     tokens = [t for t in tokens if not INITIAL.match(t)]
     if not tokens:
         return ""

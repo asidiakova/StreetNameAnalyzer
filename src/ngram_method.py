@@ -1,23 +1,16 @@
 #!/usr/bin/env python3
 """
-N-gram Jaccard similarity normalization method using greedy clustering.
-
-See docs/ngram.md for detailed description, examples, and known limitations.
+N-gram Jaccard similarity normalization method.
 """
 
 from text_utils import preprocess_name
 
-# N-gram size (2 = bigrams, 3 = trigrams).
-# Bigrams are standard for short strings like names
-N = 2
+N = 2   # N-gram size
+THRESHOLD = 0.50    # Minimum Jaccard similarity (0.0–1.0) to join an existing group.
 
-# Minimum Jaccard similarity (0.0–1.0) to join an existing group.
-THRESHOLD = 0.50
-
-# Module-level state for greedy clustering
-_groups: dict[str, str] = {}            # preprocessed representative → group_id
-_group_ngrams: dict[str, frozenset] = {}  # preprocessed representative → cached n-gram set
-_mapping: dict[str, str] = {}           # original name → group_id
+_groups: dict[str, str] = {}    # preprocessed representative → group_id
+_group_ngrams: dict[str, frozenset] = {}    # preprocessed representative → cached n-gram set
+_mapping: dict[str, str] = {}   # original name → group_id
 
 
 def generate_ngrams(text: str, n: int = N) -> frozenset[str]:
@@ -25,8 +18,6 @@ def generate_ngrams(text: str, n: int = N) -> frozenset[str]:
     Generate character n-grams from a preprocessed name.
 
     N-grams are generated per token (word), then combined into a single set.
-    This avoids creating misleading n-grams across word boundaries
-    (e.g., "namestie stefanika" won't produce a boundary bigram "es").
     Tokens shorter than n are included as-is.
     """
     ngrams: set[str] = set()
@@ -50,10 +41,9 @@ def jaccard(a: frozenset, b: frozenset) -> float:
 
 def normalize_ngram(name: str) -> str:
     """
-    Normalize a street name using greedy N-gram Jaccard clustering.
+    Normalize a street name using N-gram Jaccard clustering.
 
-    Preprocesses the name, generates character n-grams, then compares
-    the n-gram set to existing group representatives using Jaccard similarity.
+    Preprocesses the name, generates character n-grams, then compares the n-gram set to existing group representatives using Jaccard similarity.
     If the best match is >= THRESHOLD, the name joins that group.
     Otherwise, a new group is created.
     """
@@ -66,7 +56,6 @@ def normalize_ngram(name: str) -> str:
 
     name_ngrams = generate_ngrams(preprocessed)
 
-    # Find best match among existing group representatives
     best_match = None
     best_score = 0.0
     for rep, rep_ngrams in _group_ngrams.items():

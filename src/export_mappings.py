@@ -2,15 +2,10 @@
 """
 Export normalization mappings as JSON for the frontend application.
 
-Reads unique street names from output.csv (produced by compute.py),
+Reads unique street names from output produced by compute.py,
 runs each normalization method, and outputs a JSON file containing:
-- mapping: street_name → canonical_name (for coloring map segments)
-- groups: canonical_name → {representative, total_length, variants} (for statistics)
-
-Usage:
-    python export_mappings.py                       # uses default output.csv
-    python export_mappings.py --input output.csv    # explicit input
-    python export_mappings.py --out mappings.json   # custom output path
+- mapping: street_name → canonical_name
+- groups: canonical_name → {representative, total_length, variants}
 """
 
 import argparse
@@ -18,7 +13,7 @@ import csv
 import json
 from typing import Callable
 
-from config import COMPUTE_OUTPUT_DEFAULT
+from config import COMPUTE_OUTPUT_DEFAULT, MAPPINGS_OUTPUT_DEFAULT
 from normalization_methods import NORMALIZATION_METHODS
 
 
@@ -27,7 +22,7 @@ def load_street_names(input_csv: str) -> list[tuple[str, float, int]]:
     rows = []
     with open(input_csv, newline="", encoding="utf-8") as f:
         reader = csv.reader(f)
-        next(reader, None)  # skip header
+        next(reader, None)
         for line in reader:
             if len(line) < 3:
                 continue
@@ -44,20 +39,6 @@ def build_method_data(
 ) -> dict:
     """
     Run a normalization method and produce mapping + group statistics.
-
-    Returns:
-        {
-            "mapping": {"Štefánikova": "stefan", ...},
-            "groups": {
-                "stefan": {
-                    "representative": "Štefánikova",
-                    "total_length": 145916.9,
-                    "segment_count": 523,
-                    "variants": ["Štefánikova", "M. R. Štefánika", ...]
-                },
-                ...
-            }
-        }
     """
     mapping = {}
     groups = {}
@@ -75,7 +56,7 @@ def build_method_data(
                 "total_length": 0.0,
                 "segment_count": 0,
                 "variants": [],
-                "_max_length": 0.0,  # internal, for picking representative
+                "_max_length": 0.0,
             }
 
         g = groups[canonical]
@@ -88,7 +69,6 @@ def build_method_data(
             g["_max_length"] = length
             g["representative"] = name
 
-    # Clean up internal fields and round lengths
     for g in groups.values():
         del g["_max_length"]
         g["total_length"] = round(g["total_length"], 1)
@@ -99,9 +79,9 @@ def build_method_data(
 def main():
     parser = argparse.ArgumentParser(description="Export normalization mappings as JSON")
     parser.add_argument("--input", "-i", default=COMPUTE_OUTPUT_DEFAULT,
-                        help=f"Input CSV from compute.py (default: {COMPUTE_OUTPUT_DEFAULT})")
-    parser.add_argument("--out", "-o", default="mappings.json",
-                        help="Output JSON path (default: mappings.json)")
+                        help=f"Input CSV from compute.py")
+    parser.add_argument("--out", "-o", default=MAPPINGS_OUTPUT_DEFAULT,
+                        help="Output JSON path")
     args = parser.parse_args()
 
     print(f"Loading street names from {args.input}...")

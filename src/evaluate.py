@@ -13,14 +13,14 @@ import json
 from collections import Counter, defaultdict
 from typing import Callable
 
-from config import EVALUATE_GROUND_TRUTH_DEFAULT, PROBLEM_ENTITIES_TOP_N, COLLISIONS_DISPLAY_N
+from config import PROBLEM_ENTITIES_TOP_N, COLLISIONS_DISPLAY_N, \
+    GROUND_TRUTH_GROUPED_CSV, EVALUATION_OUTPUT_DEFAULT
 from normalization_methods import NORMALIZATION_METHODS, get_method, method_ids
 
 
 def load_ground_truth(path: str) -> list[tuple[str, str, list[str]]]:
     """
     Load ground truth from CSV.
-    Returns: [(wikidata_id, entity_label, [variant1, variant2, ...]), ...]
     """
     entries = []
     with open(path, newline="", encoding="utf-8") as f:
@@ -44,20 +44,18 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
     Returns:
         Dict with grouping_rate, collision_rate, and details
     """
-    # Track all normalizations
-    all_normalizations = []  # [(name, wikidata_id, group_id), ...]
-    entity_scores = []  # Grouping scores per entity
+
+    all_normalizations = []
+    entity_scores = []
     
     for wikidata_id, entity_label, variants in ground_truth:
-        # Normalize all variants for this entity
         group_ids = []
         for name in variants:
             group_id = normalize_fn(name)
-            if group_id:  # Skip empty results
-                group_ids.append(group_id)
-                all_normalizations.append((name, wikidata_id, group_id))
+            group_ids.append(group_id)
+            all_normalizations.append((name, wikidata_id, group_id))
         
-        # Calculate grouping score for this entity
+
         if group_ids:
             counter = Counter(group_ids)
             dominant_count = counter.most_common(1)[0][1]
@@ -70,25 +68,19 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
                 "dominant_count": dominant_count,
                 "unique_groups": len(counter)
             })
-    
-    # Calculate overall grouping rate
+
     grouping_rate = sum(e["score"] for e in entity_scores) / len(entity_scores) if entity_scores else 0.0
-    
-    # Build reverse mapping: group_id -> set of wikidata_ids
     group_to_entities = defaultdict(set)
     for name, wikidata_id, group_id in all_normalizations:
         group_to_entities[group_id].add(wikidata_id)
     
-    # Calculate collision rate
+
     total_groups = len(group_to_entities)
     colliding_groups = sum(1 for entities in group_to_entities.values() if len(entities) > 1)
     collision_rate = colliding_groups / total_groups if total_groups > 0 else 0.0
-    
-    # Find specific collisions for detailed output
     collisions = []
     for group_id, entity_ids in group_to_entities.items():
         if len(entity_ids) > 1:
-            # Find entity labels for these IDs
             labels = {}
             for wid, label, _ in ground_truth:
                 if wid in entity_ids:
@@ -114,7 +106,6 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
 
 
 def print_results(method_name: str, results: dict, verbose: bool = False):
-    """Print evaluation results."""
     print(f"\n{'='*50}")
     print(f"  {method_name}")
     print(f"{'='*50}")
@@ -141,10 +132,6 @@ def print_results(method_name: str, results: dict, verbose: bool = False):
 def prepare_json_results(all_results: dict) -> dict:
     """
     Prepare evaluation results for JSON export.
-
-    Rounds floats and converts sets to lists for JSON serialization.
-    The full dataset is included (all collisions, all problem entities)
-    so the frontend can paginate/filter as needed.
     """
     output = {}
     for method_name, results in all_results.items():
@@ -175,7 +162,7 @@ def prepare_json_results(all_results: dict) -> dict:
                     "unique_groups": e["unique_groups"],
                 }
                 for e in results["problem_entities"]
-                if e["score"] < 1.0  # only include imperfect entities
+                if e["score"] < 1.0
             ],
         }
     return output
@@ -183,13 +170,13 @@ def prepare_json_results(all_results: dict) -> dict:
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate street name normalization methods")
-    parser.add_argument("ground_truth", nargs="?", default=EVALUATE_GROUND_TRUTH_DEFAULT,
+    parser.add_argument("ground_truth", nargs="?", default=GROUND_TRUTH_GROUPED_CSV,
                         help="Path to ground truth CSV")
     parser.add_argument("-m", "--method", metavar="ID",
                         help=f"Evaluate only this method (choices: {', '.join(method_ids())})")
     parser.add_argument("-v", "--verbose", action="store_true",
                         help="Show detailed breakdown of problems")
-    parser.add_argument("--json", metavar="PATH", default="evaluation.json",
+    parser.add_argument("--json", metavar="PATH", default=EVALUATION_OUTPUT_DEFAULT,
                         help="Export results as JSON to this path")
     args = parser.parse_args()
 

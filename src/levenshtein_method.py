@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
-Levenshtein distance-based street name normalization using greedy clustering.
-
-See docs/levenshtein.md for detailed description, examples, and known limitations.
+Levenshtein distance-based street name normalization.
 """
 
 from rapidfuzz import fuzz
@@ -17,14 +15,13 @@ _mapping: dict[str, str] = {}   # original name → group_id
 
 def normalize_levenshtein(name: str) -> str:
     """
-    Normalize a street name using greedy Levenshtein clustering.
+    Normalize a street name using Levenshtein clustering.
 
-    Preprocesses the name, then compares it to all existing group
-    representatives using character similarity (rapidfuzz.fuzz.ratio).
+    Preprocesses the name, then compares it to all existing group representatives using character similarity.
     If the best match is >= THRESHOLD, the name joins that group.
     Otherwise, a new group is created.
     """
-    # Return cached result if already seen
+
     if name in _mapping:
         return _mapping[name]
 
@@ -32,7 +29,7 @@ def normalize_levenshtein(name: str) -> str:
     if not preprocessed:
         return ""
 
-    # Find best match among existing group representatives
+
     best_match = None
     best_score = 0
     for representative in _groups:

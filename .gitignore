@@ -9,5 +9,4 @@ dist/
 !.idea/modules.xml
 !.idea/*.iml
 
-/src/*.csv
 /src/.env
