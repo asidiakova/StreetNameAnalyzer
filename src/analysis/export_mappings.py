@@ -4,8 +4,8 @@ Export normalization mappings as JSON for the frontend application.
 
 Reads unique street names from output produced by compute.py,
 runs each normalization method, and outputs a JSON file containing:
-- mapping: street_name → canonical_name
-- groups: canonical_name → {representative, total_length, variants}
+- mapping: street_name -> canonical_name
+- groups: canonical_name -> {representative, total_length, variants}
 """
 
 import argparse
@@ -13,8 +13,8 @@ import csv
 import json
 from typing import Callable
 
-from config import COMPUTE_OUTPUT_DEFAULT, MAPPINGS_OUTPUT_DEFAULT
-from normalization_methods import NORMALIZATION_METHODS
+from src.config import COMPUTE_OUTPUT_DEFAULT, MAPPINGS_OUTPUT_DEFAULT
+from src.normalization_methods import NORMALIZATION_METHODS
 
 
 def load_street_names(input_csv: str) -> list[tuple[str, float, int]]:
@@ -37,9 +37,7 @@ def build_method_data(
     normalize_fn: Callable[[str], str],
     street_data: list[tuple[str, float, int]],
 ) -> dict:
-    """
-    Run a normalization method and produce mapping + group statistics.
-    """
+    """Run a normalization method and produce mapping + group statistics."""
     mapping = {}
     groups = {}
 
@@ -64,7 +62,6 @@ def build_method_data(
         g["segment_count"] += segments
         g["variants"].append(name)
 
-        # Representative = variant with highest total length
         if length > g["_max_length"]:
             g["_max_length"] = length
             g["representative"] = name
@@ -79,7 +76,7 @@ def build_method_data(
 def main():
     parser = argparse.ArgumentParser(description="Export normalization mappings as JSON")
     parser.add_argument("--input", "-i", default=COMPUTE_OUTPUT_DEFAULT,
-                        help=f"Input CSV from compute.py")
+                        help="Input CSV from compute.py")
     parser.add_argument("--out", "-o", default=MAPPINGS_OUTPUT_DEFAULT,
                         help="Output JSON path")
     args = parser.parse_args()
@@ -97,7 +94,7 @@ def main():
             normalize_fn.batch_warm(all_names)
         result[method_name] = build_method_data(normalize_fn, street_data)
         n_groups = len(result[method_name]["groups"])
-        print(f"  {len(result[method_name]['mapping'])} names → {n_groups} groups")
+        print(f"  {len(result[method_name]['mapping'])} names -> {n_groups} groups")
 
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)

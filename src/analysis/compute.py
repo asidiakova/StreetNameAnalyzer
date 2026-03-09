@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse
 import os
 import psycopg2
-from config import DB_TABLE, COMPUTE_OUTPUT_DEFAULT
+from src.config import DB_TABLE, COMPUTE_OUTPUT_DEFAULT
 
 
 def main():

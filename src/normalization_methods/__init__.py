@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
 from typing import Callable
-from suffix_stripping import normalize_key_suffix_stripping
-from levenshtein_method import normalize_levenshtein
-from ngram_method import normalize_ngram
-from llm_method import create_llm_normalizer
+
+from .suffix_stripping import normalize_key_suffix_stripping
+from .levenshtein import normalize_levenshtein
+from .ngram import normalize_ngram
+from .llm import create_llm_normalizer
 
 NORMALIZATION_METHODS: list[tuple[str, Callable[[str], str]]] = [
     ("suffix_stripping", normalize_key_suffix_stripping),

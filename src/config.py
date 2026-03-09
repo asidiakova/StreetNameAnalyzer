@@ -7,7 +7,6 @@ DB_TABLE = "planet_osm_line"
 GROUND_TRUTH_CSV = "ground_truth.csv"
 GROUND_TRUTH_GROUPED_CSV = "ground_truth_grouped.csv"
 EVALUATION_OUTPUT_DEFAULT = "evaluation.json"
-WIKIDATA_CACHE_FILE = "wikidata_cache.json"
 COMPUTE_OUTPUT_DEFAULT = "street_lengths.csv"
 MAPPINGS_OUTPUT_DEFAULT = "mappings.json"
 

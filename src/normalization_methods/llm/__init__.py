@@ -15,7 +15,9 @@ from google import genai
 from google.genai.types import GenerateContentConfig
 from openai import OpenAI
 
-from text_utils import ascii_norm
+from src.text_utils import ascii_norm
+
+_MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 SYSTEM_PROMPT = (
     "You analyze Slovak street names. Given a street name, identify what person, "
@@ -64,13 +66,12 @@ LLM_REQUEST_DELAY = 0.05
 BATCH_SIZE = 40
 
 
-def create_llm_normalizer(provider: str, model: str, cache_dir: str = "."):
+def create_llm_normalizer(provider: str, model: str, cache_dir: str = _MODULE_DIR):
     """
     Factory that returns a normalize function for a given LLM provider/model.
 
     The API client is created on the first call. Results are cached to a JSON file.
     """
-
     config = PROVIDERS[provider]
     filename = re.sub(r"[^a-zA-Z0-9_-]", "_", model)
     cache_file = os.path.join(cache_dir, f"llm_cache_{filename}.json")

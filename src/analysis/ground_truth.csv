@@ -1,5 +1,5 @@
 street_name,wikidata_id,entity_label,is_human,confidence
-1. mája,Q47499,Sviatok práce,False,0.9
+1. mája,Q47499,Sviatok práce,False,1.0
 9. mája,Q270706,Deň víťazstva,False,1.0
 A. Bernoláka,Q588302,Anton Bernolák,True,1.0
 Abovská,Q1785845,Košický región,False,1.0
@@ -21,13 +21,13 @@ A. Kubinu,Q765368,Andrej Kubina,True,0.9
 A. Lackovej-Zory,Q4767196,Anna Lacková-Zora,True,0.9
 Albína Grznára,Q12762068,Albín Grznár,True,1.0
 Alej Jána Pavla II.,Q989,Ján Pavol II.,True,1.0
-Alexandra Dubčeka,Q150543,Alexander Dubček,True,0.7
+Alexandra Dubčeka,Q150543,Alexander Dubček,True,1.0
 Alexandra Matušku,Q10770922,Alexander Matuška,True,0.7
 Alexeja Duchoňa,Q28949306,Alexej Duchoň,True,1.0
 Alexyho,Q1682808,Janko Alexy,True,1.0
 Alfréda Wetzlera,Q570957,Alfréd Wetzler,True,1.0
-Alžbety Gwerkovej Göllnerovej,Q12762214,Alžbeta Göllnerová-Gwerková,True,0.9
-A. Mamateja,Q12762055,Albert Mamatey,True,1.0
+Alžbety Gwerkovej Göllnerovej,Q12762214,Alžbeta Göllnerová-Gwerková,True,1.0
+A. Mamateja,Q12762055,Albert Mamatey,True,0.9
 A. Medňanského,Q652975,Ladislav Medňanský,True,0.9
 A. Moyzesa,Q1029499,Alexander Moyzes,True,1.0
 A. Moyzesa,Q392368,Štefan Moyzes,True,1.0
@@ -36,7 +36,7 @@ Andreja Bagara,Q3506294,Andrej Bagar,True,1.0
 Andreja Hlinku,Q467797,Andrej Hlinka,True,1.0
 Andreja Kmeťa,Q765336,Andrej Kmeť,True,1.0
 Andreja Kubinu,Q765368,Andrej Kubina,True,1.0
-Andreja Kvasa,Q1122581,Andrej Kvas,True,0.7
+Andreja Kvasa,Q1122581,Andrej Kvas,True,1.0
 Andreja Mráza,Q12762310,Andrej Mráz,True,1.0
 Andreja Sládkoviča,Q503068,Andrej Sládkovič,True,1.0
 Andreja Žarnova,Q1988365,Andrej Žarnov,True,1.0
@@ -47,7 +47,7 @@ Ant. Bernoláka,Q588302,Anton Bernolák,True,1.0
 Antona Bernoláka,Q588302,Anton Bernolák,True,1.0
 A. Radlinského,Q766882,Andrej Ľudovít Radlinský,True,0.9
 Armádneho generála Svobodu,Q310000,Ludvík Svoboda,True,0.9
-Arménska,Q399,Arménsko,False,0.9
+Arménska,Q399,Arménsko,False,0.7
 arm. gen. L. Svobodu,Q310000,Ludvík Svoboda,True,0.9
 Arm. gen. L. Svobodu,Q310000,Ludvík Svoboda,True,0.9
 Arpáda Felcána,Q13375709,Arpád Vojtech Felcán,True,1.0
@@ -56,14 +56,14 @@ A. Sládkoviča,Q503068,Andrej Sládkovič,True,1.0
 A. S. Puškina,Q7200,Alexandr Sergejevič Puškin,True,1.0
 A. Stodolu,Q666875,Aurel Stodola,True,0.9
 Aténska,Q1524,Atény,False,0.9
-Aurela Stodolu,Q666875,Aurel Stodola,True,0.9
+Aurela Stodolu,Q666875,Aurel Stodola,True,1.0
 A. V. Suvorova,Q154232,Alexandr Vasilievič Suvorov,True,1.0
 A. Žarnova,Q1988365,Andrej Žarnov,True,1.0
-Azovská,Q35000,Azovské more,False,1.0
+Azovská,Q35000,Azovské more,False,0.7
 Bachova,Q1339,Johann Sebastian Bach,True,1.0
 Bagarova,Q3506294,Andrej Bagar,True,1.0
 Bahýľova,Q680151,Ján Bahýľ,True,1.0
-Bajkalská,Q5513,Bajkalské jazero,False,0.9
+Bajkalská,Q5513,Bajkalské jazero,False,1.0
 Bajzova,Q265676,Jozef Ignác Bajza,True,0.9
 Bakossova,Q16516012,Ján Bakoss,True,1.0
 Bakulínyho,Q662143,Janko Jesenský,True,0.0
@@ -73,9 +73,9 @@ Baníkova,Q33057836,Ivan Baník,True,1.0
 Barčianska,Q377416,Barca,False,0.9
 Bardejovská,Q27007,Bardejov,False,1.0
 Bartókova,Q83326,Béla Bartók,True,1.0
-Baštová,Q81839,Bašta,False,0.9
+Baštová,Q81839,Bašta,False,0.7
 Bazová,Q131448,baza,False,0.9
-Bazovského,Q10545875,Ľudovít Bazovský,True,0.7
+Bazovského,Q10545875,Ľudovít Bazovský,True,0.9
 B. Bartóka,Q83326,Béla Bartók,True,1.0
 B. Bjőrnsona,Q46405,Bjørnstjerne Bjørnson,True,1.0
 Beblavého,Q12773479,Pavel Beblavý,True,0.9
@@ -88,16 +88,16 @@ Belehradská,Q3711,Belehrad,False,1.0
 Bellova,Q964103,Ján Levoslav Bella,True,0.9
 Bellušova,Q6739796,Emil Belluš,True,1.0
 Belopotockého,Q997918,Gašpar Fejérpataky-Belopotocký,True,0.9
-Bélu Bartóka,Q83326,Béla Bartók,True,0.9
+Bélu Bartóka,Q83326,Béla Bartók,True,1.0
 Bencúrova,Q632046,Július Bencúr,True,0.7
 Beniakova,Q9368136,Valentín Beniak,True,1.0
 Benkova,Q1903455,Martin Benka,True,0.9
 Beňovského,Q93419,Móric Beňovský,True,0.9
-Bercsényi utca,Q282149,Mikuláš Berčéni,True,1.0
+Bercsényi utca,Q282149,Mikuláš Berčéni,True,0.7
 Bernolákova,Q588302,Anton Bernolák,True,1.0
 Bernolákovo námestie,Q588302,Anton Bernolák,True,1.0
 Bernolákov rad,Q588302,Anton Bernolák,True,1.0
-Berzeviczyho,Q715058,Gregor Berzeviczy,True,0.9
+Berzeviczyho,Q715058,Gregor Berzeviczy,True,0.7
 Beskydská,Q3491363,Chránená krajinná oblasť Beskydy,False,0.9
 Betliarska,Q2630404,Kaštieľ v Betliari,False,1.0
 Bezručova,Q539798,Petr Bezruč,True,1.0
@@ -123,8 +123,8 @@ Braneckého,Q15939223,Jozef Branecký,False,0.9
 Břeclavská,Q581478,Břeclav,False,1.0
 Breznianska,Q465312,Brezno,False,0.9
 Brnenská,Q14960,Brno,False,0.9
-Bronzová,Q34095,bronz,False,1.0
-Broskyňová,Q13189,broskyňa obyčajná,False,0.9
+Bronzová,Q34095,bronz,False,0.9
+Broskyňová,Q13189,broskyňa obyčajná,False,0.7
 Brusnicová,Q5079636,brusnica,False,0.9
 B. Slančíkovej,Q440577,Božena Slančíková-Timrava,True,0.9
 B. S. Timravy,Q440577,Božena Slančíková-Timrava,True,0.9
@@ -142,7 +142,7 @@ Bystrická,Q144983,Banská Bystrica,False,0.9
 Centrum,Q697863,Karol Kuzmány,True,0.0
 Centrum I.,Q220550,Ján Kollár,True,0.0
 Čergovská,Q11838545,Čergov,False,1.0
-Červeného kríža,Q7178,Medzinárodné hnutie Červeného kríža a Červeného polmesiaca,False,1.0
+Červeného kríža,Q7178,Medzinárodné hnutie Červeného kríža a Červeného polmesiaca,False,0.9
 Červeňova,Q860542,Tomáš Červen,True,1.0
 Cesta J. Alexyho,Q1682808,Janko Alexy,True,1.0
 Cesta na Senec,Q754790,Senec,False,1.0
@@ -151,8 +151,8 @@ Chaloupky,Q262637,Samo Chalupka,True,0.7
 Chalupkova,Q262637,Samo Chalupka,True,0.9
 Chalúpkova,Q262637,Samo Chalupka,True,0.9
 Chalúpkova,Q347148,Rastislav,True,0.0
-Charkovská,Q42308,Charkov,False,1.0
-Chlumeckého,Q4764835,Václav Chlumecký,True,0.9
+Charkovská,Q42308,Charkov,False,0.7
+Chlumeckého,Q4764835,Václav Chlumecký,True,0.7
 Chodecká,Q315222,Ľudovít Štúr,True,0.0
 Chorvátska,Q224,Chorvátsko,False,0.9
 Chrómová,Q725,chróm,False,0.7
@@ -173,7 +173,7 @@ Cukrová,Q11002,cukor,False,1.0
 Čulenova,Q12035321,Marek Čulen,True,1.0
 Cypriana Majerníka,Q7940636,Cyprián Majerník,True,1.0
 Cyprusová,Q229,Cyprus,False,1.0
-Cyrila a Metoda,Q470621,svätý Metod,True,1.0
+Cyrila a Metoda,Q470621,svätý Metod,True,0.9
 Cyrila Talapku,Q239925,Cyril a Metod,False,1.0
 Cyrilometodejská,Q239925,Cyril a Metod,False,1.0
 Cyrilometodská,Q239925,Cyril a Metod,False,1.0
@@ -192,7 +192,7 @@ D. Jurkoviča,Q1268173,Dušan Jurkovič,True,1.0
 D. Krmana,Q543073,Daniel Krman,True,1.0
 D. Makovického,Q2055549,Dušan Makovický,True,0.9
 Do Baničného,Q515230,Karol Sidor,True,0.0
-Dobrovského,Q283121,Josef Dobrovský,True,0.9
+Dobrovského,Q283121,Josef Dobrovský,True,0.7
 Dobšinského,Q897973,Pavol Dobšinský,True,0.9
 Dohnányho,Q12771630,Mikuláš Dohnány,True,1.0
 Dolný Urban,Q951434,Milo Urban,True,1.0
@@ -210,15 +210,15 @@ Dr. I. Horvátha,Q12021933,Ivan Horváth,True,1.0
 Dr. I. Markoviča,Q12021963,Ivan Markovič,True,1.0
 Dr. J. Gašperíka,Q12768471,Ján Gašperík,True,1.0
 Dr. Karola Kmeťku,Q6373046,Karol Kmeťko,True,0.9
-Dr. Ľudovíta Bazovského,Q10545875,Ľudovít Bazovský,True,0.9
+Dr. Ľudovíta Bazovského,Q10545875,Ľudovít Bazovský,True,1.0
 Dr. Martina Sokola,Q823259,Martin Sokol,True,1.0
 Dr. Milana Hodžu,Q1392478,Michal Miloslav Hodža,True,0.9
 Druhá,Q200,dva,False,0.0
 Družstevná,Q12016596,Družstvo,False,0.7
 Družstevná,Q508663,Pavol Országh Hviezdoslav,True,0.0
 Dr. V. Clementisa,Q975331,Vladimír Clementis,True,1.0
-Dr. Vlada Clementisa,Q975331,Vladimír Clementis,True,0.9
-Dr. Vladimíra Clementisa,Q975331,Vladimír Clementis,True,0.9
+Dr. Vlada Clementisa,Q975331,Vladimír Clementis,True,1.0
+Dr. Vladimíra Clementisa,Q975331,Vladimír Clementis,True,1.0
 D. Skuteckého,Q4422775,Dominik Skutecký,True,0.9
 D. Štúra,Q905900,Dionýz Štúr,True,1.0
 D. Tatarku,Q617674,Dominik Tatarka,True,0.9
@@ -235,8 +235,8 @@ Eda Urxa,Q11874240,Eduard Urx,True,1.0
 Edisonova,Q8743,Thomas Alva Edison,True,1.0
 E. F. Scherera,Q12766006,František Ernest Scherer,True,1.0
 Egrešová,Q41503,ríbezľa egrešová,False,1.0
-Eleny Maróthy Šoltésovej,Q12765281,Elena Maróthy-Šoltésová,True,0.9
-Eleny Maróthy-Šoltésovej,Q12765281,Elena Maróthy-Šoltésová,True,0.9
+Eleny Maróthy Šoltésovej,Q12765281,Elena Maróthy-Šoltésová,True,1.0
+Eleny Maróthy-Šoltésovej,Q12765281,Elena Maróthy-Šoltésová,True,1.0
 Ema Bohúňa,Q12765357,Emo Bohúň,True,1.0
 Emila Boleslava Lukáča,Q11878597,Emil Boleslav Lukáč,True,1.0
 E. M. Šoltésovej,Q12765281,Elena Maróthy-Šoltésová,True,0.9
@@ -248,22 +248,22 @@ Fábryho,Q1004532,Zoltán Fábry,True,1.0
 Fándlyho,Q898705,Juraj Fándly,True,1.0
 Fedora Ruppeldta,Q8420214,Fedor Fridrich Ruppeldt,True,1.0
 Felcánova,Q13375709,Arpád Vojtech Felcán,True,1.0
-Ferenca Liszta,Q41309,Franz Liszt,True,0.7
+Ferenca Liszta,Q41309,Franz Liszt,True,1.0
 Ferka Urbánka,Q12004160,Ferko Urbánek,True,0.9
 F. Hečku,Q443963,František Hečko,True,0.9
 F. Kafendu,Q3505734,Frico Kafenda,True,0.9
 F. Kráľa,Q2354020,Fraňo Kráľ,True,1.0
 F. K. Veselého,Q12017221,František Krištof Veselý,True,0.9
-F. Lehára,Q191917,Lehár Ferenc,True,1.0
+F. Lehára,Q191917,Franz Lehár,True,1.0
 Flöglova,Q13375679,Arnold Flögl,True,1.0
 F. M. Dostojevského,Q991,Fiodor Michajlovič Dostojevskij,True,1.0
 F. Palackého,Q159642,František Palacký,True,0.9
 Fraňa Kráľa,Q2354020,Fraňo Kráľ,True,0.9
 Francisciho,Q6148919,Ján Francisci,True,1.0
-Francisciho,Q980533,Ján Francisci-Rimavský,True,1.0
-Františka Hečku,Q443963,František Hečko,True,0.9
-Františka Lipku,Q4180318,František Lipka,True,0.9
-Františkánske námestie,Q165005,Františkáni,False,0.7
+Francisciho,Q980533,Ján Francisci-Rimavský,True,0.7
+Františka Hečku,Q443963,František Hečko,True,0.7
+Františka Lipku,Q4180318,František Lipka,True,0.7
+Františkánske námestie,Q165005,Františkáni,False,1.0
 Fraštacká,Q754773,Hlohovec,False,0.7
 F. Štefunku,Q4176375,Fraňo Štefunko,True,0.9
 F. Švantnera,Q3503937,František Švantner,True,1.0
@@ -297,11 +297,11 @@ Gen. Svobodu,Q310000,Ludvík Svoboda,True,0.9
 Gen. Viesta,Q702651,Rudolf Viest,True,1.0
 Glejovka,Q1552509,Glej,False,1.0
 Goetheho,Q5879,Johann Wolfgang von Goethe,True,1.0
-Gogolova,Q43718,Nikolaj Vasilievič Gogoľ,True,1.0
-Gogoľova,Q43718,Nikolaj Vasilievič Gogoľ,True,1.0
+Gogolova,Q43718,Nikolaj Vasilievič Gogoľ,True,0.7
+Gogoľova,Q43718,Nikolaj Vasilievič Gogoľ,True,0.7
 Gojdičova,Q706570,Pavol Peter Gojdič,True,1.0
 Golianova,Q702648,Ján Golian,True,1.0
-Goralská,Q498700,Gorali,False,0.9
+Goralská,Q498700,Gorali,False,0.7
 Gorazdova,Q1537896,Svätý Gorazd,True,1.0
 Gorazdova,Q319962,Milan Rastislav Štefánik,True,0.0
 Gorazdovo nábrežie,Q1537896,Svätý Gorazd,True,1.0
@@ -354,7 +354,7 @@ Holubyho námestie,Q12768950,Karol Holuby,True,1.0
 Horákova,Q12026992,Jozef Horák,True,1.0
 Hornozelenická,Q999667,Horné Zelenice,False,0.9
 Horný Urban,Q951434,Milo Urban,True,1.0
-Horovova,Q1092622,Pavol Horov,True,0.7
+Horovova,Q1092622,Pavol Horov,True,1.0
 Hospodárska,Q159810,hospodárstvo,False,0.7
 Hostinského,Q12773727,Peter Kellner-Hostinský,True,0.9
 Hrebendova,Q12771192,Matej Hrebenda,True,0.9
@@ -388,7 +388,7 @@ Ivana Stodolu,Q3499681,Ivan Stodola,True,1.0
 Ivanská,Q302787,Ivanka pri Dunaji,False,0.7
 Ivanská cesta,Q302787,Ivanka pri Dunaji,False,0.7
 J. A. Gagarina,Q7327,Jurij Alexejevič Gagarin,True,1.0
-J. A. Komenského,Q12735,Jan Amos Komenský,True,0.9
+J. A. Komenského,Q12735,Jan Amos Komenský,True,1.0
 Jakuba Grajchmana,Q6125519,Jakub Grajchman,True,1.0
 J. Alexyho,Q1682808,Janko Alexy,True,1.0
 Jalovcová,Q26325,Borievka obyčajná,False,0.7
@@ -398,7 +398,7 @@ Jana A. Komenského,Q12735,Jan Amos Komenský,True,1.0
 Jána Amosa Komenského,Q12735,Jan Amos Komenský,True,1.0
 Jána Bellu,Q964103,Ján Levoslav Bella,True,1.0
 Jána Bohdana Hroboňa,Q13421218,Ján Bohdan Hroboň,True,1.0
-Jána Bottu,Q974206,Ján Botto,True,1.0
+Jána Bottu,Q974206,Ján Botto,True,0.9
 Jána Chalupku,Q925563,Ján Chalupka,True,1.0
 Janáčkova,Q184933,Leoš Janáček,True,0.7
 Jána Francisciho,Q6148919,Ján Francisci,True,1.0
@@ -419,10 +419,10 @@ Jána Smreka,Q1670526,Ján Smrek,True,1.0
 Jána Stanislava,Q12768642,Ján Stanislav,False,1.0
 Jána Švermu,Q532174,Jan Šverma,True,1.0
 Jána Zigmundíka,Q12768675,Ján Zigmundík,True,1.0
-Janka Alexyho,Q1682808,Janko Alexy,True,1.0
+Janka Alexyho,Q1682808,Janko Alexy,True,0.9
 Janka Borodáča,Q4767243,Janko Borodáč,True,0.9
 Janka Hollého,Q13421293,Ján Hollý,False,1.0
-Janka Jesenského,Q662143,Janko Jesenský,True,1.0
+Janka Jesenského,Q662143,Janko Jesenský,True,0.9
 Janka Kráľa,Q376416,Janko Kráľ,True,0.9
 Janka Matušku,Q975382,Janko Matúška,True,0.9
 Janka Matúšku,Q975382,Janko Matúška,True,0.9
@@ -430,11 +430,11 @@ Jánošíkova,Q706268,Juraj Jánošík,True,1.0
 Janovčíkova,Q109833600,Štefan Janovčík,True,1.0
 Janšákova,Q253963,Štefan Janšák,True,1.0
 Jarmočná,Q288514,výroční trh,False,0.0
-Jarná,Q1312,jar,False,1.0
+Jarná,Q1312,jar,False,0.9
 Jarošova,Q156070,Otakar Jaroš,True,1.0
 Jaseňová,Q128887,Jaseň,False,1.0
 Jašíkova,Q12775548,Rudolf Jašík,True,1.0
-Jasovská,Q719586,Jasov,False,1.0
+Jasovská,Q719586,Jasov,False,0.9
 Jazerná,Q23397,jazero,False,0.9
 J. Bánika,Q55281152,Juraj Bánik,True,1.0
 J. Barča-Ivana,Q3850969,Július Barč-Ivan,True,1.0
@@ -512,12 +512,12 @@ Júliusa Barča Ivana,Q3850969,Július Barč-Ivan,True,1.0
 Júliusa Bottu,Q974206,Ján Botto,True,0.9
 Juliusa Fučíka,Q142059,Julius Fučík,True,1.0
 Júliusa Fučíka,Q142059,Julius Fučík,True,1.0
-Júlová,Q121,júl,False,0.9
+Júlová,Q121,júl,False,1.0
 Júnová,Q120,jún,False,1.0
 Jura Hronca,Q6314717,Jur Hronec,True,1.0
 Juraja Dózsu,Q366978,Juraj Dóža,True,0.9
 Juraja Fándlyho,Q898705,Juraj Fándly,True,1.0
-Juraja Jánošíka,Q706268,Juraj Jánošík,True,0.9
+Juraja Jánošíka,Q706268,Juraj Jánošík,True,1.0
 Juraja Kmeťa,Q765336,Andrej Kmeť,True,1.0
 Juraja Palkoviča,Q823400,Juraj Palkovič,True,1.0
 Juraja Sklenára,Q12768363,Juraj Sklenár,True,1.0
@@ -544,8 +544,8 @@ Kapitána Nálepku,Q385147,Ján Nálepka,True,0.9
 Kapušanská,Q1095718,Kapušany,False,0.9
 Kapušianska,Q1095718,Kapušany,False,0.7
 Kapustná,Q35051,kapusta obyčajná hlávková,False,0.9
-Karlovarská,Q384544,Karlove Vary,False,0.7
-Karmelitánska,Q186277,Karmelitáni,False,0.7
+Karlovarská,Q384544,Karlove Vary,False,0.9
+Karmelitánska,Q186277,Karmelitáni,False,0.9
 Karola Kmeťku,Q6373046,Karol Kmeťko,True,0.9
 Karola Krčméryho,Q4181190,Štefan Krčméry,True,1.0
 Karola Kuzmányho,Q697863,Karol Kuzmány,True,1.0
@@ -560,7 +560,7 @@ Kladenská,Q155993,Kladno,False,1.0
 Kláry Jarunkovej,Q3504173,Klára Jarunková,True,0.9
 Kláštorné námestie,Q766882,Andrej Ľudovít Radlinský,True,0.0
 Klempova,Q13421320,Ján Klempa,True,0.9
-Klimkovičova,Q18511597,Vojtech Klimkovič,True,0.7
+Klimkovičova,Q18511597,Vojtech Klimkovič,True,1.0
 K. Medveckého,Q13538888,Samuel Medvecký,True,0.9
 Kmeťkova,Q6373046,Karol Kmeťko,True,1.0
 Kmeťova,Q765336,Andrej Kmeť,True,1.0
@@ -572,21 +572,21 @@ Kollárova,Q220550,Ján Kollár,True,1.0
 Kollárová,Q220550,Ján Kollár,True,1.0
 Kollárovo námestie,Q220550,Ján Kollár,True,1.0
 Kolomana Sokola,Q1359786,Koloman Sokol,True,1.0
-Komenského,Q12735,Jan Amos Komenský,True,0.9
+Komenského,Q12735,Jan Amos Komenský,True,1.0
 Komenského,Q1537896,Svätý Gorazd,True,0.0
-Komenského park,Q12735,Jan Amos Komenský,True,0.9
+Komenského park,Q12735,Jan Amos Komenský,True,1.0
 Konevova,Q185024,Ivan Stepanovič Konev,True,1.0
 Konštantína Čulena,Q164905,Konštantín Čulen,True,1.0
 Konštantínova,Q239925,Cyril a Metod,False,1.0
-Koperníkova,Q619,Mikuláš Kopernik,True,0.7
-Korzo Bélu Bartóka,Q83326,Béla Bartók,True,0.9
+Koperníkova,Q619,Mikuláš Kopernik,True,1.0
+Korzo Bélu Bartóka,Q83326,Béla Bartók,True,1.0
 Košická,Q25409,Košice,False,0.9
 Kostlivého,Q12776645,Stanislav Kostlivý,True,0.9
-Kostolná,Q16970,kostol,False,0.7
+Kostolná,Q16970,kostol,False,1.0
 Kostrova,Q12027394,Ján Kostra,True,0.9
 Kozáková,Q573152,Kozák,False,1.0
 Kozia,Q508663,Pavol Országh Hviezdoslav,True,0.0
-Kozičova,Q18396703,Eduard Nepomuk Kozic,True,0.7
+Kozičova,Q18396703,Eduard Nepomuk Kozic,True,1.0
 Kpt. Jána Nálepku,Q385147,Ján Nálepka,True,1.0
 Kpt. Jaroša,Q156070,Otakar Jaroš,True,1.0
 kpt. J. Nálepku,Q385147,Ján Nálepka,True,1.0
@@ -597,9 +597,9 @@ Kpt. Nálepku,Q158354,Pavel Jozef Šafárik,True,0.0
 Kpt. Nálepku,Q385147,Ján Nálepka,True,1.0
 Kpt.Nálepku,Q385147,Ján Nálepka,True,1.0
 Kpt. Uhra,Q12771735,Miloš Uher,True,0.0
-Krakovská,Q31487,Krakov,False,0.7
+Krakovská,Q31487,Krakov,False,0.9
 Kraskova,Q1675575,Ivan Krasko,True,1.0
-Krásnohorská,Q592319,Krásna Hôrka,False,0.9
+Krásnohorská,Q592319,Krásna Hôrka,False,0.7
 Krátka,Q13371631,Štefan Králik,True,0.0
 Krátka,Q36253,dĺžka,False,0.0
 Krčméryho,Q4181190,Štefan Krčméry,True,1.0
@@ -628,7 +628,7 @@ Laca Novomeského,Q823247,Laco Novomeský,True,0.9
 Ladislava Dérera,Q12032480,Ladislav Dérer (lekár),True,1.0
 Ladislava Exnára,Q12770108,Ladislav Exnár,True,1.0
 Ladislava Majerského,Q12770121,Ladislav Majerský,True,1.0
-Ladislava Medňanského,Q652975,Ladislav Medňanský,True,1.0
+Ladislava Medňanského,Q652975,Ladislav Medňanský,True,0.7
 Ladislava Novomeského,Q823247,Laco Novomeský,True,0.9
 Ladislava Sáru,Q12770129,Ladislav Sára,True,1.0
 Ladiverova,Q1329081,Eliáš Ladiver,True,1.0
@@ -638,11 +638,11 @@ Langsfeldova,Q18595457,Juraj Langsfeld,True,1.0
 Ľanová,Q45108,Ľan siaty,False,1.0
 Laskomerského,Q11736366,Gustáv Kazimír Zechenter-Laskomerský,True,0.9
 Laurínska,Q17590,Vavrinec Rímsky,True,0.7
-Lehárova,Q191917,Lehár Ferenc,True,1.0
-Leoša Janáčka,Q184933,Leoš Janáček,True,1.0
+Lehárova,Q191917,Franz Lehár,True,1.0
+Leoša Janáčka,Q184933,Leoš Janáček,True,0.7
 Lermontova,Q46599,Michail Jurievič Lermontov,True,1.0
 Lermontovova,Q46599,Michail Jurievič Lermontov,True,1.0
-Lesnícka,Q38112,lesné hospodárstvo,False,0.9
+Lesnícka,Q38112,lesné hospodárstvo,False,0.7
 Levanduľová,Q171892,levanduľa,False,0.9
 Levočská,Q242478,Levoča,False,0.9
 L. Exnára,Q12770108,Ladislav Exnár,True,1.0
@@ -650,7 +650,7 @@ L. Exnára,Q12770108,Ladislav Exnár,True,1.0
 Lichardova,Q3701605,Daniel Gabriel Lichard,True,1.0
 Likavská,Q1012967,Likava,False,0.9
 Lipová,Q127849,lipa,False,0.9
-Lisztova,Q41309,Franz Liszt,True,1.0
+Lisztova,Q41309,Franz Liszt,True,0.7
 Ľ. Medveckého,Q13538888,Samuel Medvecký,True,0.9
 L. Novomeského,Q823247,Laco Novomeský,True,0.9
 L. N. Tolstého,Q7243,Lev Nikolajevič Tolstoj,True,0.0
@@ -661,7 +661,7 @@ Lomonosova,Q58720,Michail Vasilievič Lomonosov,True,1.0
 Lomonosovova,Q58720,Michail Vasilievič Lomonosov,True,1.0
 Ľ. Ondrejova,Q3504212,Ľudo Ondrejov,True,1.0
 Lorinčícka,Q524993,Lorinčík,False,0.7
-Lotyšská,Q211,Lotyšsko,False,0.9
+Lotyšská,Q211,Lotyšsko,False,1.0
 Ľ. Pajdušákovej,Q434592,Ľudmila Pajdušáková,True,0.9
 Ľ. Podjavorinskej,Q10545696,Ľudmila Podjavorinská,True,0.9
 Ľ. Podjavorinskej,Q319962,Milan Rastislav Štefánik,True,0.0
@@ -720,13 +720,13 @@ Mateja Belu,Q697179,Matej Bel,True,1.0
 Mateja Hrebendu,Q12771192,Matej Hrebenda,True,1.0
 Mateja Murgaša,Q980550,Jozef Murgaš,True,1.0
 Matejovské námestie,Q48173,Bedřich Smetana,True,0.0
-Matky Terezy,Q30547,Matka Tereza,True,0.9
+Matky Terezy,Q30547,Matka Tereza,True,1.0
 Matúša Čáka Trenčianskeho,Q222534,Matúš Čák Trenčiansky,True,0.9
 Matuškova,Q975382,Janko Matúška,True,0.9
 Matúškova,Q975382,Janko Matúška,True,0.9
 Max Brose,Q1912303,Max Brose,True,1.0
 Max. Gorkého,Q12706,Maxim Gorkij,True,0.9
-Maxima Gorkého,Q12706,Maxim Gorkij,True,1.0
+Maxima Gorkého,Q12706,Maxim Gorkij,True,0.9
 Maximiliána Hella,Q11893,Maximilián Hell,True,1.0
 M. Bazovského,Q10545875,Ľudovít Bazovský,True,0.9
 M. Bela,Q697179,Matej Bel,True,1.0
@@ -735,24 +735,24 @@ M. Csáka,Q222534,Matúš Čák Trenčiansky,True,1.0
 M. Čulena,Q13441465,Martin Čulen,True,1.0
 M. Curie Sklodowskej,Q7186,Marie Curiová,True,0.9
 Medená,Q753,meď,False,1.0
-Medňanského,Q652975,Ladislav Medňanský,True,0.9
+Medňanského,Q652975,Ladislav Medňanský,True,0.7
 Medzevská,Q135727,Medzev,False,1.0
 Meteorová,Q131136,Meteor,False,0.9
-Metodova,Q470621,svätý Metod,True,1.0
+Metodova,Q470621,svätý Metod,True,0.9
 M. Galandu,Q3489752,Mikuláš Galanda,True,0.9
 M. Gorkého,Q12706,Maxim Gorkij,True,0.9
 M. Hodžu,Q1392478,Michal Miloslav Hodža,True,0.9
-Michala Miloslava Hodžu,Q1392478,Michal Miloslav Hodža,True,0.7
+Michala Miloslava Hodžu,Q1392478,Michal Miloslav Hodža,True,1.0
 Michala Petru,Q12771552,Michal Petro,True,1.0
 Michalovská,Q460925,Michalovce,False,0.7
-Michalska,Q45581,Michal archanjel,False,1.0
-Michalská,Q45581,Michal archanjel,False,1.0
+Michalska,Q45581,Michal archanjel,False,0.7
+Michalská,Q45581,Michal archanjel,False,0.7
 Michalská bašta,Q45581,Michal archanjel,False,1.0
 Michalská časť,Q45581,Michal archanjel,False,1.0
-Michalský chodník,Q45581,Michal archanjel,False,1.0
+Michalský chodník,Q45581,Michal archanjel,False,0.7
 Mierová,Q454,mier,False,1.0
 Mierové námestie,Q470621,svätý Metod,True,0.0
-Mikovíniho,Q530425,Samuel Mikovíni,True,0.9
+Mikovíniho,Q530425,Samuel Mikovíni,True,1.0
 Mikszátha,Q350552,Kálmán Mikszáth,True,1.0
 Mikszáth Kálmán út,Q210207,Arpád,True,0.0
 Mikszáthova,Q350552,Kálmán Mikszáth,True,1.0
@@ -805,7 +805,7 @@ M. V. Miškovského,Q1180315,Viktor Miškovský,True,0.9
 Nábělkova,Q12770577,Ludvík Nábělek (1896),True,0.7
 Nábrežie A. Hlinku,Q467797,Andrej Hlinka,True,0.9
 Nábrežie A. Kmeťa,Q765336,Andrej Kmeť,True,1.0
-Nábrežie Dr. Aurela Stodolu,Q666875,Aurel Stodola,True,0.9
+Nábrežie Dr. Aurela Stodolu,Q666875,Aurel Stodola,True,1.0
 Nábrežie generála Milana Rastislava Štefánika,Q319962,Milan Rastislav Štefánik,True,1.0
 Nábrežie Jána Pavla II,Q989,Ján Pavol II.,True,1.0
 Nábrežie Jána Pavla II.,Q989,Ján Pavol II.,True,1.0
@@ -829,8 +829,8 @@ Námestie Antona Bernoláka,Q588302,Anton Bernolák,True,1.0
 Námestie arm. gen. L. Svobodu,Q310000,Ludvík Svoboda,True,0.9
 Námestie baníkov,Q33057836,Ivan Baník,True,1.0
 Námestie B. Bartóka,Q83326,Béla Bartók,True,1.0
-Námestie Bélu Bartóka,Q83326,Béla Bartók,True,0.9
-Námestie Cyrila a Metoda,Q470621,svätý Metod,True,1.0
+Námestie Bélu Bartóka,Q83326,Béla Bartók,True,1.0
+Námestie Cyrila a Metoda,Q470621,svätý Metod,True,0.9
 Námestie Dr. V. Clementisa,Q975331,Vladimír Clementis,True,1.0
 Námestie E. M. Šoltésovej,Q12765281,Elena Maróthy-Šoltésová,True,0.9
 Námestie gen. M. R. Štefánika,Q319962,Milan Rastislav Štefánik,True,1.0
@@ -853,7 +853,7 @@ Námestie Ludvíka Svobodu,Q310000,Ludvík Svoboda,True,1.0
 Námestie L. van Beethovena,Q255,Ludwig van Beethoven,True,1.0
 Námestie Majstra Pavla,Q593148,Majster Pavol z Levoče,True,1.0
 Námestie Martina Benku,Q1903455,Martin Benka,True,0.9
-Námestie Mateja Korvína,Q188634,Matej I.,True,0.9
+Námestie Mateja Korvína,Q188634,Matej I.,True,1.0
 Námestie mieru,Q454,mier,False,1.0
 Námestie Milana Rastislava Štefánika,Q319962,Milan Rastislav Štefánik,True,1.0
 Námestie Mórica Beňovského,Q93419,Móric Beňovský,True,1.0
@@ -863,21 +863,21 @@ Námestie slobody,Q2979,sloboda,False,0.9
 Námestie Slovenskej republiky,Q214,Slovensko,False,0.9
 Námestie Š. M. Daxnera,Q255678,Štefan Marko Daxner,True,1.0
 Námestie svätého Egídia,Q149727,Egídius,True,1.0
-Námestie sv. Cyrila a Metoda,Q470621,svätý Metod,True,1.0
+Námestie sv. Cyrila a Metoda,Q470621,svätý Metod,True,0.9
 Námestie sv. Ignáca,Q44281,Ignác z Loyoly,True,1.0
 Námestie sv. Michala,Q45581,Michal archanjel,False,1.0
 Námestie sv. Urbana,Q951434,Milo Urban,True,1.0
 Námestie sv. Vavrinca,Q17590,Vavrinec Rímsky,True,1.0
-Námestie Vladimíra Clementisa,Q975331,Vladimír Clementis,True,0.9
+Námestie Vladimíra Clementisa,Q975331,Vladimír Clementis,True,1.0
 Na vŕšku,Q2535015,Vrch,False,0.0
 Nechtíková,Q145930,nechtík lekársky,False,1.0
 Nejedlého,Q169038,Zdeněk Nejedlý,True,0.9
 Němcovej,Q157970,Božena Němcová,True,0.9
 Nešporova,Q12771770,Mirko Nešpor,True,1.0
-Nezvalova,Q471184,Vítězslav Nezval,True,1.0
+Nezvalova,Q471184,Vítězslav Nezval,True,0.7
 Niklová,Q744,nikel,False,1.0
 Niťová,Q1391831,niť,False,1.0
-Nitrianska,Q26397,Nitra,False,1.0
+Nitrianska,Q26397,Nitra,False,0.9
 Nitrianska,Q508663,Pavol Országh Hviezdoslav,True,0.0
 Nížinná,Q193071,Nížina,False,0.9
 Nobelova,Q23810,Alfred Nobel,True,1.0
@@ -899,8 +899,8 @@ Ondreja Plachého,Q1224644,Ondrej Plachý,True,1.0
 O. Plachého,Q1224644,Ondrej Plachý,True,0.9
 Orgovánová,Q6565319,orgován obyčajný,False,0.7
 Osiková,Q146110,Topoľ osikový,False,0.9
-Ostrovského,Q171976,Alexandr Nikolajevič Ostrovskij,True,0.9
-Ovocná,Q3314483,ovocie,False,0.7
+Ostrovského,Q171976,Alexandr Nikolajevič Ostrovskij,True,0.7
+Ovocná,Q3314483,ovocie,False,0.9
 Ožvoldíkova,Q12768983,Karol Ožvoldík,True,1.0
 Palackého,Q159642,František Palacký,True,0.9
 Palárikova,Q1102385,Ján Palárik,True,1.0
@@ -908,7 +908,7 @@ Palárikov rad,Q1102385,Ján Palárik,True,1.0
 Palkovičova,Q503068,Andrej Sládkovič,True,0.0
 Palkovičova,Q823400,Juraj Palkovič,True,0.7
 Palmová,Q1096533,Arekotvaré,False,0.7
-Paňovská,Q545165,Paňovce,False,0.7
+Paňovská,Q545165,Paňovce,False,0.9
 Papraďová,Q56823139,Výtrusné cievnaté rastliny,False,0.0
 Páričkova,Q106832177,Ján Párička,True,0.9
 Pavla Blaha,Q769613,Marián Blaha,True,1.0
@@ -929,21 +929,21 @@ P. Dobšinského,Q897973,Pavol Dobšinský,True,0.9
 Pečnianska,Q20860915,Pečňa,False,0.9
 Pekelná,Q12768675,Ján Zigmundík,True,0.0
 Petra Bohúňa,Q12765357,Emo Bohúň,True,1.0
-Petra Jilemnického,Q1357126,Peter Jilemnický,True,0.9
+Petra Jilemnického,Q1357126,Peter Jilemnický,True,1.0
 Petra Karvaša,Q332949,Peter Karvaš,True,1.0
 Petzvalova,Q520053,Jozef Maximilián Petzval,True,1.0
 P. Horova,Q1092622,Pavol Horov,True,1.0
 P. Hostinského,Q12773727,Peter Kellner-Hostinský,True,0.9
 Piata,Q203,pět,False,0.0
 P. I. Čajkovského,Q7315,Piotr Iľjič Čajkovskij,True,0.9
-Pieninská,Q677415,Pieniny,False,0.7
+Pieninská,Q677415,Pieniny,False,0.9
 Piešťanská,Q321074,Piešťany,False,0.9
 P. Jilemnického,Q1357126,Peter Jilemnický,True,0.9
 P. J. Šafárika,Q158354,Pavel Jozef Šafárik,True,1.0
 P. K. Hostinského,Q12773727,Peter Kellner-Hostinský,True,0.9
 Plachého,Q1224644,Ondrej Plachý,True,0.9
 Planckova,Q9021,Max Planck,True,0.7
-Platinová,Q880,platina,False,0.9
+Platinová,Q880,platina,False,1.0
 Plávková,Q246696,holubinka namodralá,False,0.0
 Plickova,Q3108987,Karol Plicka,True,0.9
 Pod agátmi,Q157417,agát biely,False,1.0
@@ -973,11 +973,11 @@ Požiarnická,Q107711,hasič,False,0.7
 Prašná,Q13538521,Prach,False,0.0
 Prašná,Q165632,prach,False,0.0
 Prepoštská,Q756215,Prepošt,False,1.0
-Prešovská,Q26119,Prešov,False,1.0
+Prešovská,Q26119,Prešov,False,0.7
 Pribinova,Q355900,Pribina,True,0.9
 Pribinovo námestie,Q355900,Pribina,True,0.9
 Prievidzská,Q208750,Prievidza,False,0.9
-Pri Miklušovej väznici,Q3403979,Miklušova väznica,False,0.9
+Pri Miklušovej väznici,Q3403979,Miklušova väznica,False,1.0
 Pri pasienku,Q30121,pasienok,False,0.9
 Pri Pastierni,Q12059906,pastier,False,1.0
 Prokopa Veľkého,Q366500,Prokop Holý,True,1.0
@@ -985,8 +985,8 @@ Prvá,Q199,jeden,False,0.0
 Púchovská,Q258481,Púchov,False,1.0
 Puškinova,Q7200,Alexandr Sergejevič Puškin,True,1.0
 Puškinová,Q7200,Alexandr Sergejevič Puškin,True,1.0
-Pyrenejská,Q12431,Pyreneje,False,0.9
-Radarová,Q47528,radar,False,0.7
+Pyrenejská,Q12431,Pyreneje,False,0.7
+Radarová,Q47528,radar,False,1.0
 Radlinského,Q766882,Andrej Ľudovít Radlinský,True,0.9
 Radlinského námestie,Q319962,Milan Rastislav Štefánik,True,0.0
 Radlinského námestie,Q766882,Andrej Ľudovít Radlinský,True,0.9
@@ -1023,11 +1023,11 @@ R. Viesta,Q702651,Rudolf Viest,True,1.0
 Sabinovská,Q837478,Sabinov,False,1.0
 Sad A. Kmeťa,Q765336,Andrej Kmeť,True,1.0
 Sad kpt. Nálepku,Q385147,Ján Nálepka,True,1.0
-Sady Cyrila a Metoda,Q470621,svätý Metod,True,1.0
+Sady Cyrila a Metoda,Q470621,svätý Metod,True,0.9
 Sady M. R. Štefánika,Q319962,Milan Rastislav Štefánik,True,1.0
 Šafárikova,Q158354,Pavel Jozef Šafárik,True,1.0
 Šafárikovo námestie,Q158354,Pavel Jozef Šafárik,True,1.0
-Salvova,Q1104940,Karol Salva,True,0.9
+Salvova,Q1104940,Karol Salva,True,0.7
 Sama Bohdana Hroboňa,Q27479589,Ján Miloslav Hroboň,True,1.0
 Sama Chalupku,Q262637,Samo Chalupka,True,0.9
 Sama Chalúpku,Q262637,Samo Chalupka,True,0.9
@@ -1064,15 +1064,15 @@ Skorocelová,Q157408,skorocel kopijovitý,False,1.0
 Š. Králika,Q13371631,Štefan Králik,True,1.0
 Škultétyho,Q3563704,Jozef Škultéty,True,1.0
 Š. Kunu,Q12781728,Štefan Kuna,True,0.9
-Skuteckého,Q4422775,Dominik Skutecký,True,0.7
+Skuteckého,Q4422775,Dominik Skutecký,True,0.9
 Sládkovičova,Q503068,Andrej Sládkovič,True,1.0
-Slančíkovej,Q440577,Božena Slančíková-Timrava,True,0.9
+Slančíkovej,Q440577,Božena Slančíková-Timrava,True,0.7
 Slanecká,Q1188058,Slanec,False,1.0
 Slatinská,Q1813485,Slatina,False,0.9
 Sliačska,Q258439,Sliač,False,0.7
 Slnečnicová,Q171497,slnečnica ročná,False,0.9
 Slovinská,Q267888,Rožňava,False,0.0
-Slov. nár. povstania,Q163780,Slovenské národné povstanie,False,0.7
+Slov. nár. povstania,Q163780,Slovenské národné povstanie,False,0.9
 Smaragdová,Q43513,Smaragd,False,1.0
 Smetanova,Q48173,Bedřich Smetana,True,0.9
 Smetanov háj,Q48173,Bedřich Smetana,True,0.9
@@ -1135,18 +1135,18 @@ Suchoňova,Q46100,Eugen Suchoň,True,1.0
 Šumperská,Q392692,Šumperk,False,0.7
 Šuňavcova,Q18346925,Matej Šuňavec,True,0.7
 Šúrska,Q12781910,Šúr,False,1.0
-Suvorovova,Q154232,Alexandr Vasilievič Suvorov,True,0.7
+Suvorovova,Q154232,Alexandr Vasilievič Suvorov,True,1.0
 Švantnerova,Q3503937,František Švantner,True,1.0
 Svätého Juraja,Q48438,svätý Juraj,True,0.9
 Svätého Urbana,Q951434,Milo Urban,True,1.0
 Svätého Urbána,Q951434,Milo Urban,True,1.0
-Svätovavrinecká,Q17590,Vavrinec Rímsky,True,1.0
-Svätozára Hurbana Vajanského,Q1357554,Svetozár Hurban-Vajanský,True,0.9
-Sv. Cyrila a Metoda,Q470621,svätý Metod,True,1.0
-Sv. Cyrila a sv. Metoda,Q470621,svätý Metod,True,1.0
+Svätovavrinecká,Q17590,Vavrinec Rímsky,True,0.9
+Svätozára Hurbana Vajanského,Q1357554,Svetozár Hurban-Vajanský,True,1.0
+Sv. Cyrila a Metoda,Q470621,svätý Metod,True,0.9
+Sv. Cyrila a sv. Metoda,Q470621,svätý Metod,True,0.9
 Švermova,Q532174,Jan Šverma,True,0.9
 Švermov rad,Q532174,Jan Šverma,True,0.9
-Svetozára Hurbana Vajanského,Q1357554,Svetozár Hurban-Vajanský,True,0.9
+Svetozára Hurbana Vajanského,Q1357554,Svetozár Hurban-Vajanský,True,1.0
 Sv. Gorazda,Q1537896,Svätý Gorazd,True,1.0
 Svidnícka,Q833845,Svidník,False,0.7
 Sv. Michala,Q45581,Michal archanjel,False,1.0
@@ -1158,7 +1158,7 @@ Tajovského,Q1603028,Jozef Gregor Tajovský,True,0.9
 Tatarkova,Q617674,Dominik Tatarka,True,0.9
 Tehelná,Q198632,Tehelňa,False,1.0
 Terchovská,Q932854,Terchová,False,0.9
-Terézie Vansovej,Q3984941,Terézia Vansová,True,0.9
+Terézie Vansovej,Q3984941,Terézia Vansová,True,1.0
 Teslova,Q9036,Nikola Tesla,True,0.9
 T. G. Masaryka,Q78492,Tomáš Garrigue Masaryk,True,1.0
 Tich. Milkina,Q12777541,Tichomír Milkin,True,0.7
@@ -1171,11 +1171,11 @@ Tolstého,Q7243,Lev Nikolajevič Tolstoj,True,0.7
 Tomanóczyho,Q123570079,Q123570079,,0.0
 Tomáša Martinčeka,Q12773741,Peter Martinček,True,1.0
 Tomášikova,Q1363993,Samo Tomášik,True,1.0
-Toplianska,Q1066352,Topľa,False,0.9
+Toplianska,Q1066352,Topľa,False,1.0
 Topoľčianska,Q750423,Topoľčany,False,0.7
 Topoľová,Q25356,Topoľ,False,1.0
 Topoľová,Q925563,Ján Chalupka,True,0.0
-Tranovského,Q1080664,Juraj Tranovský,True,0.7
+Tranovského,Q1080664,Juraj Tranovský,True,0.9
 Trebišovská,Q256301,Trebišov,False,1.0
 Tretia,Q201,tři,False,0.0
 Trieda Andreja Hlinku,Q467797,Andrej Hlinka,True,1.0
@@ -1194,7 +1194,7 @@ Uherova,Q12771735,Miloš Uher,True,1.0
 Uhorková,Q23425,uhorka siata,False,0.9
 Uhrova,Q12771735,Miloš Uher,True,0.0
 Ukrajinská,Q212,Ukrajina,False,0.9
-Uralská,Q35600,Ural,False,0.7
+Uralská,Q35600,Ural,False,1.0
 Urbánkova,Q12004160,Ferko Urbánek,True,0.7
 Urbanova,Q951434,Milo Urban,True,1.0
 Urpínska,Q4177997,Urpín,False,1.0
@@ -1218,16 +1218,16 @@ Veselá,Q12771733,Miloš Vesel,True,1.0
 Viedenská,Q1741,Viedeň,False,1.0
 Viedenská cesta,Q1741,Viedeň,False,1.0
 Viestova,Q702651,Rudolf Viest,True,1.0
-Vígľašská,Q15975002,Vígľašský zámok,False,1.0
+Vígľašská,Q15975002,Vígľašský zámok,False,0.9
 Viktorínova,Q13420906,Jozef Karol Viktorin,True,1.0
 Viliama Chmela,Q16519802,Viliam Chmel,True,1.0
 Viliama Paulínyho Tótha,Q7192701,Viliam Pauliny-Tóth,True,1.0
 Vincenta Hložníka,Q1332290,Vincent Hložník,True,1.0
-Viničná,Q30046,vinič hroznorodý,False,0.7
+Viničná,Q30046,vinič hroznorodý,False,0.9
 Vínna,Q17590,Vavrinec Rímsky,True,0.0
 Vinohradská,Q22715,vinohrad,False,1.0
-Vlada Clementisa,Q975331,Vladimír Clementis,True,0.9
-Vladimíra Clementisa,Q975331,Vladimír Clementis,True,0.9
+Vlada Clementisa,Q975331,Vladimír Clementis,True,0.7
+Vladimíra Clementisa,Q975331,Vladimír Clementis,True,1.0
 Vladimíra Roya,Q12767691,Ivan Vladimír Roy,True,1.0
 Vlastenecké námestie,Q6241,patriotizmus,False,0.7
 Vl. Roya,Q12767691,Ivan Vladimír Roy,True,1.0
@@ -1248,13 +1248,13 @@ Wilsonova,Q34296,Woodrow Wilson,True,1.0
 Winterova,Q290180,Ľudovít Winter,True,1.0
 Wolkerova,Q158379,Jiří Wolker,True,1.0
 Záborského,Q2624895,Jonáš Záborský,True,0.9
-Záhradná,Q1107656,záhrada,False,0.9
+Záhradná,Q1107656,záhrada,False,0.7
 Za kaštieľom,Q315222,Ľudovít Štúr,True,0.0
 Za mlynom,Q44494,mlyn,False,1.0
 Zápotockého,Q371854,Antonín Zápotocký,True,0.9
 Žarnovická,Q393421,Žarnovica,False,0.9
 Žarnovova,Q1988365,Andrej Žarnov,True,1.0
-Záturčianska,Q1466836,Záturčie,False,0.7
+Záturčianska,Q1466836,Záturčie,False,0.9
 Zátureckého,Q10709718,Adolf Peter Záturecký,True,0.9
 Závodníkova,Q4025726,Štefan Závodník,True,1.0
 Ž. Bosniakovej,Q741342,Žofia Bosniaková,True,0.9

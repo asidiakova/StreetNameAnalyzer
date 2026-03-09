@@ -8,9 +8,10 @@ and uses the stem of the last significant token as the group key.
 """
 
 import re
-from text_utils import ascii_norm, INITIAL, STREET_TYPES
+from src.text_utils import ascii_norm, INITIAL, STREET_TYPES
 
 ORDINAL = re.compile(r"^\d+[\.\-]?$")
+
 SUFFIXES = ["ovska", "ovske", "ovskeho", "ovskej", "ov", "ova", "ovo", "sky", "ska", "ske", "ski", "eho", "ej", "a",
             "o", "u", "y", "i"]
 SUFFIXES = sorted(set(SUFFIXES), key=lambda x: -len(x))
@@ -50,5 +51,3 @@ def normalize_key_suffix_stripping(name: str) -> str:
     last = tokens[-1]
     stem = strip_suffix(last)
     return stem
-
-

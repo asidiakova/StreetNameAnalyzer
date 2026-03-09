@@ -13,15 +13,13 @@ import json
 from collections import Counter, defaultdict
 from typing import Callable
 
-from config import PROBLEM_ENTITIES_TOP_N, COLLISIONS_DISPLAY_N, \
+from src.config import PROBLEM_ENTITIES_TOP_N, COLLISIONS_DISPLAY_N, \
     GROUND_TRUTH_GROUPED_CSV, EVALUATION_OUTPUT_DEFAULT
-from normalization_methods import NORMALIZATION_METHODS, get_method, method_ids
+from src.normalization_methods import NORMALIZATION_METHODS, get_method, method_ids
 
 
 def load_ground_truth(path: str) -> list[tuple[str, str, list[str]]]:
-    """
-    Load ground truth from CSV.
-    """
+    """Load ground truth from CSV."""
     entries = []
     with open(path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -36,25 +34,23 @@ def load_ground_truth(path: str) -> list[tuple[str, str, list[str]]]:
 def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, str, list[str]]]) -> dict:
     """
     Evaluate a normalization function against ground truth.
-    
+
     Args:
         normalize_fn: Function that takes a street name and returns a normalized group ID
         ground_truth: List of (wikidata_id, entity_label, [variants])
-    
+
     Returns:
         Dict with grouping_rate, collision_rate, and details
     """
-
     all_normalizations = []
     entity_scores = []
-    
+
     for wikidata_id, entity_label, variants in ground_truth:
         group_ids = []
         for name in variants:
             group_id = normalize_fn(name)
             group_ids.append(group_id)
             all_normalizations.append((name, wikidata_id, group_id))
-        
 
         if group_ids:
             counter = Counter(group_ids)
@@ -73,7 +69,6 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
     group_to_entities = defaultdict(set)
     for name, wikidata_id, group_id in all_normalizations:
         group_to_entities[group_id].add(wikidata_id)
-    
 
     total_groups = len(group_to_entities)
     colliding_groups = sum(1 for entities in group_to_entities.values() if len(entities) > 1)
@@ -89,10 +84,9 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
                 "group_id": group_id,
                 "entities": labels
             })
-    
-    # All entities sorted by grouping score (worst first)
+
     problem_entities = sorted(entity_scores, key=lambda x: x["score"])
-    
+
     return {
         "grouping_rate": grouping_rate,
         "collision_rate": collision_rate,
@@ -114,7 +108,7 @@ def print_results(method_name: str, results: dict, verbose: bool = False):
     print(f"\nEntities: {results['total_entities']} | "
           f"Variants: {results['total_variants']} | "
           f"Groups: {results['total_groups']}")
-    
+
     if verbose:
         print(f"\n--- Problem Entities (lowest grouping) ---")
         for e in results["problem_entities"][:PROBLEM_ENTITIES_TOP_N]:
@@ -122,7 +116,7 @@ def print_results(method_name: str, results: dict, verbose: bool = False):
                 print(f"  {e['entity_label']}: {e['score']:.0%} "
                       f"({e['dominant_count']}/{e['total_variants']} variants, "
                       f"{e['unique_groups']} groups)")
-        
+
         print(f"\n--- Collisions ({results['colliding_groups']} groups) ---")
         for c in results["collisions"][:COLLISIONS_DISPLAY_N]:
             entities_str = ", ".join(f"{label} ({wid})" for wid, label in c["entities"].items())
@@ -130,9 +124,7 @@ def print_results(method_name: str, results: dict, verbose: bool = False):
 
 
 def prepare_json_results(all_results: dict) -> dict:
-    """
-    Prepare evaluation results for JSON export.
-    """
+    """Prepare evaluation results for JSON export."""
     output = {}
     for method_name, results in all_results.items():
         output[method_name] = {
