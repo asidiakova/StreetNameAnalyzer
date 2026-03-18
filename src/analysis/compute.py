@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse
 import os
 import psycopg2
-from src.config import DB_TABLE, COMPUTE_OUTPUT_DEFAULT
+from src.config import DB_TABLE, COMPUTE_OUTPUT_DEFAULT, UNTAGGED_OUTPUT_DEFAULT
 
 
 def main():
@@ -62,6 +62,19 @@ def main():
             for name, total_m, seg_cnt, st_cnt in rows[:args.limit] if args.limit else rows:
                 display_name = name if name is not None else "<NULL>"
                 print(f"{total_m:.3f} m | {seg_cnt} segments | {st_cnt} streets | {display_name}")
+
+        untagged_sql = f"""
+            SELECT DISTINCT name
+            FROM public.{DB_TABLE}
+            WHERE name IS NOT NULL
+              AND highway IS NOT NULL
+              AND (tags->'name:etymology:wikidata') IS NULL
+            ORDER BY name
+        """
+        copy_untagged = f"COPY ({untagged_sql}) TO STDOUT WITH CSV HEADER"
+        with open(UNTAGGED_OUTPUT_DEFAULT, "w", newline='', encoding="utf-8") as fh:
+            cur.copy_expert(copy_untagged, fh)
+        print(f"Wrote untagged streets to {UNTAGGED_OUTPUT_DEFAULT}")
     finally:
         conn.close()
 

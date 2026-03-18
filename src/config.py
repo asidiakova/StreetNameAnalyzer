@@ -8,6 +8,7 @@ GROUND_TRUTH_CSV = "ground_truth.csv"
 GROUND_TRUTH_GROUPED_CSV = "ground_truth_grouped.csv"
 EVALUATION_OUTPUT_DEFAULT = "evaluation.json"
 COMPUTE_OUTPUT_DEFAULT = "street_lengths.csv"
+UNTAGGED_OUTPUT_DEFAULT = "untagged_streets.csv"
 MAPPINGS_OUTPUT_DEFAULT = "mappings.json"
 
 REQUEST_DELAY = 0.1
