@@ -1,3 +1,8 @@
+-- Simple key-value table for dataset metadata.
+CREATE TABLE IF NOT EXISTS osm_metadata (key TEXT PRIMARY KEY, value TEXT);
+INSERT INTO osm_metadata (key, value) VALUES ('data_date', CURRENT_DATE::TEXT)
+ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value;
+
 -- Vector-tile function used by Martin to serve street geometries.
 -- Requires the planet_osm_line table created by osm2pgsql.
 CREATE OR REPLACE FUNCTION streets(z integer, x integer, y integer)

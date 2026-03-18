@@ -1,4 +1,10 @@
 {
+  "_metadata": {
+    "osm_data_date": "2026-03-18",
+    "total_street_names": 11735,
+    "etymology_tagged": 1317,
+    "generated_at": "2026-03-18T11:14:22.888130+00:00"
+  },
   "suffix_stripping": {
     "grouping_rate": 0.9473,
     "collision_rate": 0.0542,

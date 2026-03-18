@@ -11,11 +11,13 @@ import argparse
 import csv
 import json
 from collections import Counter, defaultdict
+from datetime import datetime, timezone
 from typing import Callable
 
 from src.config import PROBLEM_ENTITIES_TOP_N, COLLISIONS_DISPLAY_N, \
     GROUND_TRUTH_GROUPED_CSV, EVALUATION_OUTPUT_DEFAULT
 from src.normalization_methods import NORMALIZATION_METHODS, get_method, method_ids
+from src.analysis import get_osm_metadata
 
 
 def load_ground_truth(path: str) -> list[tuple[str, str, list[str]]]:
@@ -55,6 +57,9 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
         if group_ids:
             counter = Counter(group_ids)
             dominant_count = counter.most_common(1)[0][1]
+            # Score = fraction of variants placed in the largest group.
+            # 1.0 means all variants were unified; lower means the method
+            # failed to recognize some variants as belonging together.
             entity_score = dominant_count / len(group_ids)
             entity_scores.append({
                 "wikidata_id": wikidata_id,
@@ -191,7 +196,14 @@ def main():
         print_results(method_name, results, verbose=args.verbose)
 
     if args.json:
-        json_data = prepare_json_results(all_results)
+        osm_meta = get_osm_metadata()
+        json_data = {
+            "_metadata": {
+                **osm_meta,
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+            },
+            **prepare_json_results(all_results),
+        }
         with open(args.json, "w", encoding="utf-8") as f:
             json.dump(json_data, f, ensure_ascii=False, indent=2)
         print(f"\nEvaluation JSON written to {args.json}")

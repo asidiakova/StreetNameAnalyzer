@@ -11,10 +11,12 @@ runs each normalization method, and outputs a JSON file containing:
 import argparse
 import csv
 import json
+from datetime import datetime, timezone
 from typing import Callable
 
 from src.config import COMPUTE_OUTPUT_DEFAULT, MAPPINGS_OUTPUT_DEFAULT
 from src.normalization_methods import NORMALIZATION_METHODS
+from src.analysis import get_osm_metadata
 
 
 def load_street_names(input_csv: str) -> list[tuple[str, float, int, int]]:
@@ -90,7 +92,13 @@ def main():
 
     all_names = [name for name, _, _, _ in street_data]
 
-    result = {}
+    osm_meta = get_osm_metadata()
+    result = {
+        "_metadata": {
+            **osm_meta,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+        }
+    }
     for method_name, normalize_fn in NORMALIZATION_METHODS:
         print(f"Running method: {method_name}...")
         if hasattr(normalize_fn, "batch_warm"):
