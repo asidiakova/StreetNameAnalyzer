@@ -1,5 +1,6 @@
 __pycache__/
 venv/
+.venv/
 .env/
 build/
 dist/
@@ -10,3 +11,11 @@ dist/
 !.idea/*.iml
 
 /src/.env
+/src/*.csv
+/src/*.json
+/src/normalization_methods/llm/*.json
+/src/analysis/wikidata_cache.json
+/src/analysis/*.csv
+/src/analysis/*.json
+
+/data/
