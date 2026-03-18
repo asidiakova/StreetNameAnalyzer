@@ -17,31 +17,32 @@ from src.config import COMPUTE_OUTPUT_DEFAULT, MAPPINGS_OUTPUT_DEFAULT
 from src.normalization_methods import NORMALIZATION_METHODS
 
 
-def load_street_names(input_csv: str) -> list[tuple[str, float, int]]:
+def load_street_names(input_csv: str) -> list[tuple[str, float, int, int]]:
     """Load unique street names with lengths from compute.py output."""
     rows = []
     with open(input_csv, newline="", encoding="utf-8") as f:
         reader = csv.reader(f)
         next(reader, None)
         for line in reader:
-            if len(line) < 3:
+            if len(line) < 4:
                 continue
             name = line[0].strip()
             length = float(line[1])
             segments = int(line[2])
-            rows.append((name, length, segments))
+            streets = int(line[3])
+            rows.append((name, length, segments, streets))
     return rows
 
 
 def build_method_data(
     normalize_fn: Callable[[str], str],
-    street_data: list[tuple[str, float, int]],
+    street_data: list[tuple[str, float, int, int]],
 ) -> dict:
     """Run a normalization method and produce mapping + group statistics."""
     mapping = {}
     groups = {}
 
-    for name, length, segments in street_data:
+    for name, length, segments, streets in street_data:
         canonical = normalize_fn(name)
         if not canonical:
             continue
@@ -53,6 +54,7 @@ def build_method_data(
                 "representative": None,
                 "total_length": 0.0,
                 "segment_count": 0,
+                "street_count": 0,
                 "variants": [],
                 "_max_length": 0.0,
             }
@@ -60,6 +62,7 @@ def build_method_data(
         g = groups[canonical]
         g["total_length"] += length
         g["segment_count"] += segments
+        g["street_count"] += streets
         g["variants"].append(name)
 
         if length > g["_max_length"]:
@@ -85,7 +88,7 @@ def main():
     street_data = load_street_names(args.input)
     print(f"Loaded {len(street_data)} unique street names")
 
-    all_names = [name for name, _, _ in street_data]
+    all_names = [name for name, _, _, _ in street_data]
 
     result = {}
     for method_name, normalize_fn in NORMALIZATION_METHODS:

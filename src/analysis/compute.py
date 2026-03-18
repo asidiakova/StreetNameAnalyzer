@@ -21,10 +21,30 @@ def main():
     conn = psycopg2.connect(db_conn_str)
     try:
         cur = conn.cursor()
+        # Each row in planet_osm_line is one geometric segment (a piece of road
+        # between intersections).  A single street name typically spans many
+        # segments across multiple cities.  ST_ClusterDBSCAN groups nearby
+        # segments so that same-named streets in different cities are counted
+        # as separate physical streets.
+        #
+        # SRID 5514 (Krovak) is used for clustering because ST_ClusterDBSCAN
+        # operates in the geometry's native units — SRID 4326 uses degrees,
+        # which would make the eps threshold meaningless.  5514 uses meters.
+        # eps=100 m bridges small OSM mapping gaps (typically <50 m) without
+        # merging streets from different settlements (500+ m apart).
         sql = f"""
-            SELECT name, SUM(ST_Length(ST_Transform(way, 4326)::geography)) AS total_m, COUNT(*) AS segments_count
-            FROM public.{DB_TABLE}
-            WHERE name IS NOT NULL AND highway IS NOT NULL
+            SELECT name,
+                   SUM(length_m)                AS total_m,
+                   COUNT(*)                     AS segments_count,
+                   COUNT(DISTINCT cluster_id)   AS street_count
+            FROM (
+                SELECT name,
+                       ST_ClusterDBSCAN(ST_Transform(way, 5514), eps := 100, minpoints := 1)
+                         OVER (PARTITION BY name) AS cluster_id,
+                       ST_Length(ST_Transform(way, 4326)::geography) AS length_m
+                FROM public.{DB_TABLE}
+                WHERE name IS NOT NULL AND highway IS NOT NULL
+            ) clustered
             GROUP BY name
             ORDER BY total_m DESC
         """
@@ -39,9 +59,9 @@ def main():
         else:
             cur.execute(sql)
             rows = cur.fetchall()
-            for name, total_m, cnt in rows[:args.limit] if args.limit else rows:
+            for name, total_m, seg_cnt, st_cnt in rows[:args.limit] if args.limit else rows:
                 display_name = name if name is not None else "<NULL>"
-                print(f"{total_m:.3f} m | {cnt} segments | {display_name}")
+                print(f"{total_m:.3f} m | {seg_cnt} segments | {st_cnt} streets | {display_name}")
     finally:
         conn.close()
 
