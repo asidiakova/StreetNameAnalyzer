@@ -1,3 +1,6 @@
+CREATE EXTENSION IF NOT EXISTS postgis;
+CREATE EXTENSION IF NOT EXISTS hstore;
+
 -- Simple key-value table for dataset metadata.
 CREATE TABLE IF NOT EXISTS osm_metadata (key TEXT PRIMARY KEY, value TEXT);
 INSERT INTO osm_metadata (key, value) VALUES ('data_date', CURRENT_DATE::TEXT)

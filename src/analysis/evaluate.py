@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""
-Evaluate street name normalization methods against Wikidata ground truth.
-
-Metrics:
-- Grouping Rate: % of variants per entity that share the dominant normalized group
-- Collision Rate: % of normalized groups that contain multiple Wikidata entities
-"""
 
 import argparse
 import csv
@@ -21,7 +14,6 @@ from src.analysis import get_osm_metadata
 
 
 def load_ground_truth(path: str) -> list[tuple[str, str, list[str]]]:
-    """Load ground truth from CSV."""
     entries = []
     with open(path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
@@ -34,16 +26,6 @@ def load_ground_truth(path: str) -> list[tuple[str, str, list[str]]]:
 
 
 def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, str, list[str]]]) -> dict:
-    """
-    Evaluate a normalization function against ground truth.
-
-    Args:
-        normalize_fn: Function that takes a street name and returns a normalized group ID
-        ground_truth: List of (wikidata_id, entity_label, [variants])
-
-    Returns:
-        Dict with grouping_rate, collision_rate, and details
-    """
     all_normalizations = []
     entity_scores = []
 
@@ -57,9 +39,6 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
         if group_ids:
             counter = Counter(group_ids)
             dominant_count = counter.most_common(1)[0][1]
-            # Score = fraction of variants placed in the largest group.
-            # 1.0 means all variants were unified; lower means the method
-            # failed to recognize some variants as belonging together.
             entity_score = dominant_count / len(group_ids)
             entity_scores.append({
                 "wikidata_id": wikidata_id,
@@ -129,7 +108,6 @@ def print_results(method_name: str, results: dict, verbose: bool = False):
 
 
 def prepare_json_results(all_results: dict) -> dict:
-    """Prepare evaluation results for JSON export."""
     output = {}
     for method_name, results in all_results.items():
         output[method_name] = {

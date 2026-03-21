@@ -11762,5 +11762,1389 @@
     ],
     "is_human": false,
     "primary_label": "Žilina"
+  },
+  "Q684": {
+    "qid": "Q684",
+    "labels": [
+      "Ost",
+      "východ",
+      "V",
+      "Osten",
+      "gegen Morgen",
+      "O",
+      "east",
+      "E",
+      "K",
+      "kelet"
+    ],
+    "instance_of": [
+      "Q23718",
+      "Q11114344"
+    ],
+    "is_human": false,
+    "primary_label": "východ"
+  },
+  "Q437589": {
+    "qid": "Q437589",
+    "labels": [
+      "Zuendibolch",
+      "Svatopluk Moravský",
+      "Sventopluk",
+      "Svatopluk Velkomoravský",
+      "Svatopluk I.",
+      "Swentopluk",
+      "Svatopluk",
+      "Świętopełk",
+      "Swietopelk",
+      "Svätopluk",
+      "Suatopluk",
+      "Svätopluk I.",
+      "Zventapu",
+      "I. Szvatopluk morva fejedelem",
+      "Sventopluk I.",
+      "Svatopluk I"
+    ],
+    "instance_of": [
+      "Q5"
+    ],
+    "is_human": true,
+    "primary_label": "Svätopluk I."
+  },
+  "Q1067902": {
+    "qid": "Q1067902",
+    "labels": [
+      "Markušovce",
+      "Márkusfalva"
+    ],
+    "instance_of": [
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Markušovce"
+  },
+  "Q31552079": {
+    "qid": "Q31552079",
+    "labels": [
+      "Turecká"
+    ],
+    "instance_of": [
+      "Q8502"
+    ],
+    "is_human": false,
+    "primary_label": "Turecká"
+  },
+  "Q1046826": {
+    "qid": "Q1046826",
+    "labels": [
+      "Odorin",
+      "Odorín",
+      "Szepesedelény"
+    ],
+    "instance_of": [
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Odorín"
+  },
+  "Q1251565": {
+    "qid": "Q1251565",
+    "labels": [
+      "Rudnay Gyula",
+      "Július Rudnay",
+      "Julius Rudnay",
+      "Gyula Rudnay"
+    ],
+    "instance_of": [
+      "Q5"
+    ],
+    "is_human": true,
+    "primary_label": "Július Rudnay"
+  },
+  "Q26782": {
+    "qid": "Q26782",
+    "labels": [
+      "smrk",
+      "luc",
+      "spruce",
+      "lucfenyő",
+      "Picea",
+      "Fichten",
+      "Spruce",
+      "smrek"
+    ],
+    "instance_of": [
+      "Q16521"
+    ],
+    "is_human": false,
+    "primary_label": "smrek"
+  },
+  "Q213": {
+    "qid": "Q213",
+    "labels": [
+      "Tschechische Republik",
+      "Česká republika",
+      "Tschechien",
+      "ČR",
+      "Česko",
+      "Cseh Köztársaság",
+      "Czechia",
+      "Czech Republic",
+      "Csehország"
+    ],
+    "instance_of": [
+      "Q6256",
+      "Q3624078",
+      "Q123480",
+      "Q7270",
+      "Q127693126"
+    ],
+    "is_human": false,
+    "primary_label": "Česko"
+  },
+  "Q212948": {
+    "qid": "Q212948",
+    "labels": [
+      "Guerrillero",
+      "partisan",
+      "člen guerilly",
+      "partyzánky",
+      "Guerillera",
+      "gerillaharcos",
+      "guerrilla fighter",
+      "Guerillero",
+      "partizáni",
+      "Freischärler",
+      "Freischärlerin",
+      "Partisanin",
+      "Guerillakämpfer",
+      "guerrilla",
+      "partyzán",
+      "partyzánka",
+      "szabadharcos",
+      "Partisan",
+      "partyzáni",
+      "gerilla",
+      "partizán",
+      "Guerrillera"
+    ],
+    "instance_of": [
+      "Q12737077",
+      "Q690109"
+    ],
+    "is_human": false,
+    "primary_label": "partizán"
+  },
+  "Q1161547": {
+    "qid": "Q1161547",
+    "labels": [
+      "Madács Péter",
+      "Peter Madáč"
+    ],
+    "instance_of": [
+      "Q5"
+    ],
+    "is_human": true,
+    "primary_label": "Peter Madáč"
+  },
+  "Q16917": {
+    "qid": "Q16917",
+    "labels": [
+      "nemocnica",
+      "hospital facility",
+      "Klinik",
+      "ispotály",
+      "medical centre",
+      "Krankenhaus",
+      "hospital",
+      "kórház",
+      "špitál",
+      "medical facility",
+      "nemocnice",
+      "Spital",
+      "Klinikum"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "nemocnica"
+  },
+  "Q525": {
+    "qid": "Q525",
+    "labels": [
+      "Sun",
+      "Slunce",
+      "🌞",
+      "Sonne",
+      "Nap",
+      "the Sun",
+      "Helios",
+      "Slnko",
+      "☉"
+    ],
+    "instance_of": [
+      "Q5864",
+      "Q3592493"
+    ],
+    "is_human": false,
+    "primary_label": "Slnko"
+  },
+  "Q279005": {
+    "qid": "Q279005",
+    "labels": [
+      "Dobsina",
+      "Dobšiná"
+    ],
+    "instance_of": [
+      "Q3957",
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Dobšiná"
+  },
+  "Q943745": {
+    "qid": "Q943745",
+    "labels": [
+      "Rozsnyórudna",
+      "Rudná"
+    ],
+    "instance_of": [
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Rudná"
+  },
+  "Q135489137": {
+    "qid": "Q135489137",
+    "labels": [
+      "29. augusta"
+    ],
+    "instance_of": [
+      "Q953806"
+    ],
+    "is_human": false,
+    "primary_label": "29. augusta"
+  },
+  "Q659": {
+    "qid": "Q659",
+    "labels": [
+      "northerly",
+      "S",
+      "Norden",
+      "sever",
+      "É",
+      "north",
+      "N",
+      "septentrion",
+      "gegen Mitternacht",
+      "Nord",
+      "észak",
+      "northbound"
+    ],
+    "instance_of": [
+      "Q23718",
+      "Q11114344"
+    ],
+    "is_human": false,
+    "primary_label": "sever"
+  },
+  "Q637776": {
+    "qid": "Q637776",
+    "labels": [
+      "mlékárna",
+      "Meierei",
+      "Molkerei",
+      "dairy",
+      "Käserei",
+      "tejüzem"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "mlékárna"
+  },
+  "Q392534": {
+    "qid": "Q392534",
+    "labels": [
+      "Štítnik",
+      "Csetnek",
+      "Stitnik"
+    ],
+    "instance_of": [
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Štítnik"
+  },
+  "Q820037": {
+    "qid": "Q820037",
+    "labels": [
+      "horníci",
+      "Minenarbeiterin",
+      "miner",
+      "Bergknappe",
+      "Wasserknecht",
+      "Kumpel",
+      "bányász",
+      "Bergleute",
+      "Knappe",
+      "Bergmann",
+      "Bergarbeiter",
+      "havířství",
+      "miners",
+      "horník",
+      "Bergarbeiterin",
+      "havíř",
+      "Minenarbeiter",
+      "baník"
+    ],
+    "instance_of": [
+      "Q28640"
+    ],
+    "is_human": false,
+    "primary_label": "baník"
+  },
+  "Q207326": {
+    "qid": "Q207326",
+    "labels": [
+      "peak",
+      "csúcs",
+      "mountain peak",
+      "Vrchol vrchu",
+      "Gipfelformation",
+      "Spitze",
+      "summit",
+      "Gipfelpunkt",
+      "Gupf",
+      "Berggipfel",
+      "hegycsúcs",
+      "Gipfel",
+      "vrchol"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "Vrchol vrchu"
+  },
+  "Q12634815": {
+    "qid": "Q12634815",
+    "labels": [
+      "Kosmonaut",
+      "Russian astronaut",
+      "russischer Astronaut",
+      "cosmonaut",
+      "Kosmonautin"
+    ],
+    "instance_of": [
+      "Q28640"
+    ],
+    "is_human": false,
+    "primary_label": "cosmonaut"
+  },
+  "Q846744": {
+    "qid": "Q846744",
+    "labels": [
+      "Hornád",
+      "Hernad",
+      "Hornad",
+      "Hernád"
+    ],
+    "instance_of": [
+      "Q4022"
+    ],
+    "is_human": false,
+    "primary_label": "Hornád"
+  },
+  "Q42292": {
+    "qid": "Q42292",
+    "labels": [
+      "Ahorne",
+      "Acer",
+      "maples",
+      "juhar",
+      "juharfa",
+      "Ahornbaum",
+      "maple trees",
+      "jávorfa",
+      "javor",
+      "Maple",
+      "maple tree",
+      "Ahorn"
+    ],
+    "instance_of": [
+      "Q16521"
+    ],
+    "is_human": false,
+    "primary_label": "javor"
+  },
+  "Q17404851": {
+    "qid": "Q17404851",
+    "labels": [
+      "József Mikulik",
+      "Josef Mikulik",
+      "Jozef Mikulík",
+      "Mikulik József"
+    ],
+    "instance_of": [
+      "Q5"
+    ],
+    "is_human": true,
+    "primary_label": "József Mikulik"
+  },
+  "Q1073900": {
+    "qid": "Q1073900",
+    "labels": [
+      "Nyilas",
+      "Hnilec"
+    ],
+    "instance_of": [
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Hnilec"
+  },
+  "Q44497": {
+    "qid": "Q44497",
+    "labels": [
+      "banský priemysel",
+      "baníctvo",
+      "mining",
+      "minerals extraction",
+      "těžba",
+      "Bergbau",
+      "Bergbauwesen",
+      "Grubenwesen",
+      "bányaművelés",
+      "hornictví",
+      "bányászat"
+    ],
+    "instance_of": [
+      "Q8187769",
+      "Q11862829"
+    ],
+    "is_human": false,
+    "primary_label": "baníctvo"
+  },
+  "Q475639": {
+    "qid": "Q475639",
+    "labels": [
+      "Gemer",
+      "Gömör"
+    ],
+    "instance_of": [
+      "Q105370186"
+    ],
+    "is_human": false,
+    "primary_label": "Gemer"
+  },
+  "Q474306": {
+    "qid": "Q474306",
+    "labels": [
+      "bell caster",
+      "zvonař",
+      "bell-founder",
+      "bellmaker",
+      "výrobce zvonů",
+      "Glockengießerin",
+      "bellsmith",
+      "Rotgießer",
+      "Apengießer",
+      "bell founder",
+      "bell maker",
+      "bellfounder",
+      "Metall- und Glockengießer",
+      "zvonařka",
+      "Glockengießer",
+      "zvonařky",
+      "harangöntő"
+    ],
+    "instance_of": [
+      "Q28640",
+      "Q16335296",
+      "Q12737077",
+      "Q778000"
+    ],
+    "is_human": false,
+    "primary_label": "zvonař"
+  },
+  "Q19724861": {
+    "qid": "Q19724861",
+    "labels": [
+      "hutníctvo",
+      "Hüttenwesen"
+    ],
+    "instance_of": [
+      "Q268592"
+    ],
+    "is_human": false,
+    "primary_label": "hutníctvo"
+  },
+  "Q47521": {
+    "qid": "Q47521",
+    "labels": [
+      "folyóvíz",
+      "potok",
+      "waterway",
+      "természetes vízfolyás",
+      "stream",
+      "natürliches Fließgewässer",
+      "vízfolyás"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "potok"
+  },
+  "Q3856345": {
+    "qid": "Q3856345",
+    "labels": [
+      "Michal Miloslav Bakulíny",
+      "Michal Miloslav Bakuliny",
+      "Michael Miloslav Bakulíny"
+    ],
+    "instance_of": [
+      "Q5"
+    ],
+    "is_human": true,
+    "primary_label": "Michal Miloslav Bakulíny"
+  },
+  "Q12544101": {
+    "qid": "Q12544101",
+    "labels": [
+      "Neuheit",
+      "újszerűség",
+      "újdonság",
+      "neu",
+      "novinka",
+      "novina",
+      "novelty",
+      "newness",
+      "new",
+      "novota",
+      "novel"
+    ],
+    "instance_of": [
+      "Q937228",
+      "Q937228"
+    ],
+    "is_human": false,
+    "primary_label": "novinka"
+  },
+  "Q35054": {
+    "qid": "Q35054",
+    "labels": [
+      "poštovní budova",
+      "Postgebäude",
+      "Postfiliale",
+      "poštovní úřad",
+      "pošta",
+      "poštovna",
+      "post office",
+      "Postamt",
+      "budova pošty",
+      "mail collection office",
+      "postahivatal"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "pošta"
+  },
+  "Q30198": {
+    "qid": "Q30198",
+    "labels": [
+      "fen",
+      "mokřadní louka",
+      "Sumpf",
+      "brook",
+      "Schwemmland",
+      "mire",
+      "marsh",
+      "peatland",
+      "peatbog",
+      "bažinatá louka",
+      "mocsárvidék",
+      "mocsár",
+      "močiar"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "močiar"
+  },
+  "Q365461": {
+    "qid": "Q365461",
+    "labels": [
+      "cserző",
+      "garbiar",
+      "Gerberin",
+      "tanner",
+      "Ledergerber",
+      "Ledergerberin",
+      "tímár",
+      "bőrkikészítő",
+      "Gerber",
+      "Lederer",
+      "cserzővarga",
+      "cserzőmunkás",
+      "bőrmunkás",
+      "černokožešník",
+      "koželuh"
+    ],
+    "instance_of": [
+      "Q16335296",
+      "Q28640",
+      "Q778000"
+    ],
+    "is_human": false,
+    "primary_label": "garbiar"
+  },
+  "Q897": {
+    "qid": "Q897",
+    "labels": [
+      "zlato",
+      "arany",
+      "Gold",
+      "element 79",
+      "gold"
+    ],
+    "instance_of": [
+      "Q11344",
+      "Q1924900",
+      "Q271449"
+    ],
+    "is_human": false,
+    "primary_label": "zlato"
+  },
+  "Q9352848": {
+    "qid": "Q9352848",
+    "labels": [
+      "Súľová"
+    ],
+    "instance_of": [
+      "Q10862618"
+    ],
+    "is_human": false,
+    "primary_label": "Súľová"
+  },
+  "Q1052": {
+    "qid": "Q1052",
+    "labels": [
+      "szivárvány",
+      "rainbow",
+      "Regenbogen",
+      "duha",
+      "dúha"
+    ],
+    "instance_of": [
+      "Q483247"
+    ],
+    "is_human": false,
+    "primary_label": "dúha"
+  },
+  "Q1311": {
+    "qid": "Q1311",
+    "labels": [
+      "Wintersaison",
+      "Winterzeit",
+      "wintertime",
+      "tél",
+      "winter",
+      "wintertime season",
+      "winter season",
+      "Winter",
+      "zima"
+    ],
+    "instance_of": [
+      "Q15275719"
+    ],
+    "is_human": false,
+    "primary_label": "zima"
+  },
+  "Q523066": {
+    "qid": "Q523066",
+    "labels": [
+      "Jednotné zemědělské družstvo",
+      "JRD",
+      "Jednotné roľnícke družstvo",
+      "unified agricultural cooperative",
+      "JZD",
+      "Jednotné roľnícke družstvo (JRD)",
+      "unified agricultural collective"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "Jednotné roľnícke družstvo"
+  },
+  "Q218": {
+    "qid": "Q218",
+    "labels": [
+      "Romania",
+      "Rumänien",
+      "România",
+      "Rumunsko",
+      "ro",
+      "Roumania",
+      "Románia",
+      "Rumania"
+    ],
+    "instance_of": [
+      "Q3624078",
+      "Q6256"
+    ],
+    "is_human": false,
+    "primary_label": "Rumunsko"
+  },
+  "Q331432": {
+    "qid": "Q331432",
+    "labels": [
+      "Fischer",
+      "Fischerin",
+      "fisherwoman",
+      "halász",
+      "rybář",
+      "fisher",
+      "fisherman",
+      "rybářka"
+    ],
+    "instance_of": [
+      "Q28640",
+      "Q12737077"
+    ],
+    "is_human": false,
+    "primary_label": "rybář"
+  },
+  "Q279922": {
+    "qid": "Q279922",
+    "labels": [
+      "Betliar",
+      "Betlér"
+    ],
+    "instance_of": [
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Betliar"
+  },
+  "Q538338": {
+    "qid": "Q538338",
+    "labels": [
+      "Gemerská Poloma",
+      "Gemerska Poloma",
+      "Veszverés"
+    ],
+    "instance_of": [
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Gemerská Poloma"
+  },
+  "Q1244442": {
+    "qid": "Q1244442",
+    "labels": [
+      "škola",
+      "school building",
+      "Schulbau",
+      "Schulhaus",
+      "school-house",
+      "iskolaépület",
+      "školní budova",
+      "school",
+      "Schulgebäude",
+      "educational building",
+      "Schule",
+      "Schul",
+      "school house",
+      "schoolhouse",
+      "budova školy"
+    ],
+    "instance_of": [
+      "Q811102"
+    ],
+    "is_human": false,
+    "primary_label": "školní budova"
+  },
+  "Q131263": {
+    "qid": "Q131263",
+    "labels": [
+      "barracks",
+      "kaszárnya",
+      "Kaserne",
+      "laktanya",
+      "kasárna",
+      "barakk",
+      "Kasárne",
+      "barrack",
+      "Kışla",
+      "Mannschaftsgebäude",
+      "kasárny"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "Kasárne"
+  },
+  "Q39614": {
+    "qid": "Q39614",
+    "labels": [
+      "Begräbnisplatz",
+      "cintorín",
+      "cemeteries",
+      "Bestattungsplatz",
+      "sírkert",
+      "hřbitůveček",
+      "burial ground",
+      "hřbitůvek",
+      "cemetery",
+      "Gottesacker",
+      "Kirchhof",
+      "krchov",
+      "graveyard",
+      "Leichenhof",
+      "Totenacker",
+      "pohřebiště",
+      "temető",
+      "temetőkert",
+      "hřbitov",
+      "mugwort village",
+      "Friedhof",
+      "burying ground"
+    ],
+    "instance_of": [
+      "Q618123",
+      "Q811102"
+    ],
+    "is_human": false,
+    "primary_label": "cintorín"
+  },
+  "Q55488": {
+    "qid": "Q55488",
+    "labels": [
+      "pu.",
+      "rail stop",
+      "rail station",
+      "Bahnstation",
+      "vá.",
+      "železniční stanice",
+      "railroad station",
+      "Bahnhof",
+      "nádraží",
+      "železničná stanica",
+      "railway station",
+      "pályaudvar",
+      "train station",
+      "vasútállomás",
+      "railway stop",
+      "train stop",
+      "Bf",
+      "Bhf."
+    ],
+    "instance_of": [
+      "Q11668217",
+      "Q17197366"
+    ],
+    "is_human": false,
+    "primary_label": "železničná stanica"
+  },
+  "Q3505574": {
+    "qid": "Q3505574",
+    "labels": [
+      "Československá armáda",
+      "armed forces of Czechoslovakia",
+      "Czechoslovakian armed forces",
+      "Česko-slovenská armáda",
+      "military of Czechoslovakia",
+      "Tschechoslowakische Armee",
+      "Czechoslovak Army"
+    ],
+    "instance_of": [
+      "Q772547",
+      "Q15893266"
+    ],
+    "is_human": false,
+    "primary_label": "Česko-slovenská armáda"
+  },
+  "Q93201": {
+    "qid": "Q93201",
+    "labels": [
+      "Tulpen",
+      "Amana",
+      "Tulpe",
+      "tulipán",
+      "tulips",
+      "Tulipa",
+      "tulip"
+    ],
+    "instance_of": [
+      "Q16521"
+    ],
+    "is_human": false,
+    "primary_label": "tulipán"
+  },
+  "Q506": {
+    "qid": "Q506",
+    "labels": [
+      "flowers",
+      "bloom",
+      "blossom",
+      "flower",
+      "květ",
+      "flos",
+      "Blüte",
+      "kvet",
+      "virág"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "kvet"
+  },
+  "Q2556": {
+    "qid": "Q2556",
+    "labels": [
+      "May 9",
+      "május 9.",
+      "9th of May",
+      "09.05.",
+      "9.5.",
+      "9. máj",
+      "9. Mai",
+      "9 May",
+      "9. květen",
+      "May 9th"
+    ],
+    "instance_of": [
+      "Q14795564"
+    ],
+    "is_human": false,
+    "primary_label": "9. máj"
+  },
+  "Q429220": {
+    "qid": "Q429220",
+    "labels": [
+      "ružová",
+      "pink colour",
+      "Farbe Pink",
+      "Rosa",
+      "Farbe Rosa",
+      "růžová barva",
+      "Pink",
+      "colour pink",
+      "pinkrózsaszín",
+      "pink color",
+      "color pink",
+      "růžová",
+      "pink szín",
+      "rózsaszín",
+      "pink"
+    ],
+    "instance_of": [
+      "Q376346"
+    ],
+    "is_human": false,
+    "primary_label": "ružová"
+  },
+  "Q576032": {
+    "qid": "Q576032",
+    "labels": [
+      "Slaná",
+      "Sajó"
+    ],
+    "instance_of": [
+      "Q4022"
+    ],
+    "is_human": false,
+    "primary_label": "Slaná"
+  },
+  "Q3395383": {
+    "qid": "Q3395383",
+    "labels": [
+      "farmland",
+      "Agrarland",
+      "mezőgazdasági földterület",
+      "mezőgazdasági terület",
+      "cultivated land",
+      "termőföld",
+      "zemědělská půda",
+      "landwirtschaftlich genutzte Fläche",
+      "landwirtschaftliche Fläche",
+      "agricultural land",
+      "farm land",
+      "agricultural area",
+      "cultivated area",
+      "poľnohospodárska pôda",
+      "szántóföld",
+      "cropland"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "poľnohospodárska pôda"
+  },
+  "Q1313": {
+    "qid": "Q1313",
+    "labels": [
+      "nyár",
+      "Sommersaison",
+      "summer season",
+      "léto",
+      "leto",
+      "summertime season",
+      "Sommer",
+      "Sommerzeit",
+      "Summer",
+      "summer"
+    ],
+    "instance_of": [
+      "Q15275719"
+    ],
+    "is_human": false,
+    "primary_label": "leto"
+  },
+  "Q25243": {
+    "qid": "Q25243",
+    "labels": [
+      "Birken",
+      "nyír",
+      "bříza",
+      "Betula",
+      "birch tree",
+      "Priesmeier",
+      "Birke",
+      "nyírfák",
+      "breza",
+      "birch",
+      "the birch genus"
+    ],
+    "instance_of": [
+      "Q16521"
+    ],
+    "is_human": false,
+    "primary_label": "breza"
+  },
+  "Q2544": {
+    "qid": "Q2544",
+    "labels": [
+      "1st of May",
+      "1. květen",
+      "May 1st",
+      "May 1",
+      "1. máj",
+      "1 May",
+      "1. Mai",
+      "május 1.",
+      "1.5.",
+      "01.05."
+    ],
+    "instance_of": [
+      "Q14795564"
+    ],
+    "is_human": false,
+    "primary_label": "1. máj"
+  },
+  "Q146066": {
+    "qid": "Q146066",
+    "labels": [
+      "růže šípková",
+      "dog rose",
+      "gyepűrózsa",
+      "Hundsrose",
+      "vadrózsa",
+      "Hunds-Rose",
+      "csipkebogyó",
+      "csipkerózsa",
+      "šípek",
+      "Hagrose",
+      "ruža šípová",
+      "rosier des chiens",
+      "Hagerose",
+      "dog-rose",
+      "šípková růže",
+      "Rosa canina"
+    ],
+    "instance_of": [
+      "Q16521"
+    ],
+    "is_human": false,
+    "primary_label": "ruža šípová"
+  },
+  "Q23413": {
+    "qid": "Q23413",
+    "labels": [
+      "castle",
+      "Middle Ages castle",
+      "hrad",
+      "medieval castle",
+      "Burg",
+      "mittelalterliche Burg",
+      "vár",
+      "Mittelalterburg"
+    ],
+    "instance_of": [
+      "Q811102"
+    ],
+    "is_human": false,
+    "primary_label": "hrad"
+  },
+  "Q667": {
+    "qid": "Q667",
+    "labels": [
+      "S",
+      "south",
+      "jih",
+      "Süd",
+      "southbound",
+      "juh",
+      "gegen Mittag",
+      "dél",
+      "southerly",
+      "D",
+      "the south",
+      "Süden",
+      "J"
+    ],
+    "instance_of": [
+      "Q23718",
+      "Q11114344"
+    ],
+    "is_human": false,
+    "primary_label": "juh"
+  },
+  "Q129324": {
+    "qid": "Q129324",
+    "labels": [
+      "kaštanovník",
+      "Castanea",
+      "gaštan",
+      "gesztenye",
+      "Kastanien",
+      "chestnut genus",
+      "chestnut",
+      "chestnuts"
+    ],
+    "instance_of": [
+      "Q16521"
+    ],
+    "is_human": false,
+    "primary_label": "gaštan"
+  },
+  "Q20479447": {
+    "qid": "Q20479447",
+    "labels": [
+      "Kálmán Tichy",
+      "Kalman Tichy",
+      "Tichy Kálmán",
+      "Koloman Tichy"
+    ],
+    "instance_of": [
+      "Q5"
+    ],
+    "is_human": true,
+    "primary_label": "Koloman Tichy"
+  },
+  "Q879050": {
+    "qid": "Q879050",
+    "labels": [
+      "Gutshaus",
+      "kaštieľ",
+      "nemesi kúria",
+      "kúria",
+      "úri lak",
+      "manor house",
+      "manor main building",
+      "Herrenhaus",
+      "udvarház",
+      "Herrschaftssitz",
+      "panské sídlo",
+      "Herrensitz",
+      "kaštiel",
+      "kaštěl"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "kaštieľ"
+  },
+  "Q4946461": {
+    "qid": "Q4946461",
+    "labels": [
+      "lázně",
+      "Kurort",
+      "liečebné kúpele",
+      "spa town",
+      "lázeňské město",
+      "Kurstadt",
+      "spa city",
+      "fürdőváros"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "liečebné kúpele"
+  },
+  "Q908287": {
+    "qid": "Q908287",
+    "labels": [
+      "Domica",
+      "Domica-barlang"
+    ],
+    "instance_of": [
+      "Q35509",
+      "Q23929671",
+      "Q2232001",
+      "Q473972"
+    ],
+    "is_human": false,
+    "primary_label": "Domica"
+  },
+  "Q12004": {
+    "qid": "Q12004",
+    "labels": [
+      "oak tree",
+      "the oak genus",
+      "Eiche",
+      "oak",
+      "tölgy",
+      "tölgyfa",
+      "Eichen",
+      "dub",
+      "oaks",
+      "Quercus"
+    ],
+    "instance_of": [
+      "Q16521"
+    ],
+    "is_human": false,
+    "primary_label": "dub"
+  },
+  "Q112426406": {
+    "qid": "Q112426406",
+    "labels": [
+      "Juraj Marikovský",
+      "Juraj Marikovszky"
+    ],
+    "instance_of": [
+      "Q5"
+    ],
+    "is_human": true,
+    "primary_label": "Juraj Marikovský"
+  },
+  "Q221522": {
+    "qid": "Q221522",
+    "labels": [
+      "Ján Nepomucký",
+      "Saint Jan Nepomuckyý",
+      "Nepomucenus, Saint Joannes",
+      "John Nepomucene",
+      "St. Nepomuk",
+      "John of, Saint Pomuk",
+      "von Nepomuk Johannes",
+      "Saint John Nepomucene",
+      "Heiliger Nepomuk",
+      "Jan Nepomucký",
+      "John of Nepomuk",
+      "Johann von Nepomuk",
+      "Johánek z Pomuku",
+      "Pomuka, Saint Jan",
+      "svatý Jan Nepomucký",
+      "Nepomuki Szent János",
+      "Johánek z Pomuka",
+      "Jan z Pomuka",
+      "Hl. Johannes Nepomuk",
+      "Saint John of Nepomuk",
+      "Johannes Nepomuk",
+      "Hl. Johannes von Nepomuk",
+      "Heiliger Johannes von Nepomuk",
+      "Johannes von Pomuk",
+      "Johann Nepomuk",
+      "svätý Ján Nepomucký",
+      "Jan z Pomuku",
+      "Hl. Nepomuk",
+      "Heiliger Johannes Nepomuk",
+      "sv. Jan Nepomucký",
+      "sv. Ján Nepomucký",
+      "Johannes von Nepomuk"
+    ],
+    "instance_of": [
+      "Q5"
+    ],
+    "is_human": true,
+    "primary_label": "Ján Nepomucký"
+  },
+  "Q131517": {
+    "qid": "Q131517",
+    "labels": [
+      "meggy",
+      "Weichsel",
+      "Weichselkirsche",
+      "Prunus cerasus",
+      "Sauerkirsche",
+      "dwarf cherry",
+      "tart cherry",
+      "Sauer-Kirsche",
+      "višeň",
+      "Čerešňa višňová",
+      "sour cherry",
+      "Kirsche",
+      "višeň obecná",
+      "Weichsel-Kirsche",
+      "Grintche",
+      "Echte Sauerkirsche"
+    ],
+    "instance_of": [
+      "Q16521",
+      "Q188840"
+    ],
+    "is_human": false,
+    "primary_label": "Čerešňa višňová"
+  },
+  "Q786635": {
+    "qid": "Q786635",
+    "labels": [
+      "Jólész",
+      "Jovice"
+    ],
+    "instance_of": [
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Jovice"
+  },
+  "Q17": {
+    "qid": "Q17",
+    "labels": [
+      "Nihon",
+      "State of Japan",
+      "Nippon",
+      "Nihon-koku",
+      "Land of Rising Sun",
+      "Land der aufgehenden Sonne",
+      "Japonsko",
+      "Iapon",
+      "Země vycházejícího slunce",
+      "Land of the Rising Sun",
+      "Japan",
+      "Nippon-koku",
+      "Iapan",
+      "Japán"
+    ],
+    "instance_of": [
+      "Q3624078",
+      "Q112099",
+      "Q6256"
+    ],
+    "is_human": false,
+    "primary_label": "Japonsko"
+  },
+  "Q170213": {
+    "qid": "Q170213",
+    "labels": [
+      "Kárpátontúli terület",
+      "Transcarpathia oblast",
+      "UA-21",
+      "Zakarpatí",
+      "Zakarpatsko",
+      "Zakarpatska oblast",
+      "Zakarpatská oblasť",
+      "Oblast Transkarpatien",
+      "Sakarpatska Oblast",
+      "Zakarpattia Oblast",
+      "Zakarpatská oblast",
+      "Zakarpatska Oblast",
+      "Kárpátalja"
+    ],
+    "instance_of": [
+      "Q3348196"
+    ],
+    "is_human": false,
+    "primary_label": "Zakarpatská oblasť"
   }
 }

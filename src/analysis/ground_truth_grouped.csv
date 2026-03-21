@@ -3,6 +3,7 @@ Q1004532,Zoltán Fábry,True,Fábryho; S. Fábryho; Z. Fábryho; Zoltána Fábry
 Q1029499,Alexander Moyzes,True,A. Moyzesa; Moyzesova
 Q1040777,Martin Hattala,True,Hattalova; Martina Hattalu
 Q10416721,Štefan Furdek,True,Furdekova; Š. Furdeka; Štefana Furdeka
+Q1046826,Odorín,False,Odorínska; Odorínska cesta
 Q10545696,Ľudmila Podjavorinská,True,Podjavorinskej; Ľ. Podjavorinskej; Ľudmily Podjavorinskej
 Q10545875,Ľudovít Bazovský,True,Bazovského; Dr. Ľudovíta Bazovského; M. A. Bazovského; M. Bazovského
 Q1080664,Juraj Tranovský,True,J. Tranovského; Tranovského
@@ -10,7 +11,7 @@ Q1092622,Pavol Horov,True,Horovova; P. Horova; Pavla Horova
 Q1095718,Kapušany,False,Kapušanská; Kapušianska
 Q1102385,Ján Palárik,True,J. Palárika; Palárikov rad; Palárikova
 Q1104940,Karol Salva,True,Karola Salvu; Námestie Karola Salvu; Salvova
-Q1107656,záhrada,False,V záhradách; Záhradná
+Q1107656,záhrada,False,V záhradách; Záhradná; Záhradnícka
 Q1121255,Pavol Križko,True,Križkova; Pavla Križku
 Q11736366,Gustáv Kazimír Zechenter-Laskomerský,True,G. Z. Laskomerského; Laskomerského
 Q11787765,Mária Medvecká,True,M. Medveckej; Márie Medveckej
@@ -46,7 +47,7 @@ Q12771630,Mikuláš Dohnány,True,Dohnányho; Mikuláša Dohnányho
 Q12771733,Miloš Vesel,True,Gen. Miloša Vesela; Veselá
 Q12771735,Miloš Uher,True,Miloša Uhra; Uherova; kpt. Miloša Uhra
 Q12771770,Mirko Nešpor,True,M. Nešpora; M. Nešporu; Mirka Nešpora; Nešporova
-Q12773727,Peter Kellner-Hostinský,True,Hostinského; P. Hostinského; P. K. Hostinského
+Q12773727,Peter Kellner-Hostinský,True,P. Hostinského; P. K. Hostinského
 Q12773741,Peter Martinček,True,J. Martinčeka; Jozefa Martinčeka; Martina Martinčeka; Tomáša Martinčeka
 Q12775548,Rudolf Jašík,True,Jašíkova; R. Jašíka; Rudolfa Jašíka
 Q12777541,Tichomír Milkin,True,Donovalova; T. Milkina; Tich. Milkina
@@ -80,39 +81,48 @@ Q15939223,Jozef Branecký,False,Braneckého; J. Braneckého
 Q159642,František Palacký,True,F. Palackého; Palackého
 Q1603028,Jozef Gregor Tajovský,True,J. G. Tajovského; Jozefa Gregora Tajovského; Tajovského
 Q161368,Alois Jirásek,True,A. Jiráska; Jiráskova
-Q163780,Slovenské národné povstanie,False,Slov. nár. povstania; Trieda SNP
+Q163780,Slovenské národné povstanie,False,Námestie SNP; SNP; Slov. nár. povstania; Trieda SNP
 Q164902,Martin Rázus,True,M. Rázusa; Martina Rázusa; Rázusova
 Q1670526,Ján Smrek,True,J. Smreka; Jána Smreka
 Q1675575,Ivan Krasko,True,I. Krasku; Ivana Krasku; Kraskova; Nábr. I. Krasku
 Q1682808,Janko Alexy,True,Alexyho; Cesta J. Alexyho; J. Alexyho; Janka Alexyho
 Q169038,Zdeněk Nejedlý,True,Nejedlého; Z. Nejedlého
+Q16917,nemocnica,False,Nemocničná; Špitálska
 Q1741,Viedeň,False,Viedenská; Viedenská cesta
 Q17590,Vavrinec Rímsky,True,Laurínska; Námestie sv. Vavrinca; Svätovavrinecká
 Q184933,Leoš Janáček,True,Janáčkova; Leoša Janáčka
 Q185024,Ivan Stepanovič Konev,True,Konevova; Maršala Koneva
 Q18595457,Juraj Langsfeld,True,Jurka Langsfelda; Langsfeldova; Ďurka Langsfelda
+Q1899,Kyjev,False,Kyjevská; Kyjevské námestie
 Q1903455,Martin Benka,True,Benkova; M. Benku; Martina Benku; Námestie Martina Benku
 Q191917,Franz Lehár,True,F. Lehára; Lehárova
+Q198632,Tehelňa,False,Tehelná; Za Tehelňou
 Q1988365,Andrej Žarnov,True,A. Žarnova; Andreja Žarnova; Žarnovova
 Q204338,Rodion Jakovlevič Malinovskij,True,Malinovského; Maršála Malinovského
 Q2055549,Dušan Makovický,True,D. Makovického; Dušana Makovického; Makovického
-Q220550,Ján Kollár,True,J. Kollára; Jána Kollára; Kollárova; Kollárovo námestie; Kollárová
+Q214,Slovensko,False,Námestie Slovenskej republiky; Slovenská
+Q220550,Ján Kollár,True,J. Kollára; Jána Kollára; Kollárova; Kollárovo námestie
 Q222534,Matúš Čák Trenčiansky,True,M. Csáka; Matúša Čáka Trenčianskeho
+Q22715,vinohrad,False,Vinohradná; Vinohradská
+Q22731,kameň,False,Kamenná; Skalná
+Q23413,hrad,False,Hradná; Podhradová
 Q2354020,Fraňo Kráľ,True,F. Kráľa; Fraňa Kráľa
 Q239925,Cyril a Metod,False,Cyrila Talapku; Cyrilometodejská; Cyrilometodská; Cyrilometodské námestie; Cyrilova; Konštantínova
 Q2467280,Ján Kalinčiak,True,J. Kalinčiaka; Jána Kalinčiaka; Kalinčiaka; Kalinčiakova; Kalinčiaková; Nábrežie J. Kalinčiaka
 Q252142,Štefan Anián Jedlík,True,A. Jedlika; Jedlíkova; Á. Jedlika
+Q2544,1. máj,False,1. mája; Námestie 1. mája
 Q255,Ludwig van Beethoven,True,Beethovenova; Ludvika van Beethovena; Námestie L. van Beethovena
 Q255678,Štefan Marko Daxner,True,Daxnerova; Námestie Š. M. Daxnera; Štefana Marka Daxnera
 Q26175,Trnava,False,Trnavská cesta; Trnavské mýto
 Q2624895,Jonáš Záborský,True,J. Záborského; Jonáša Záborského; Záborského
 Q262637,Samo Chalupka,True,Chaloupky; Chalupkova; Chalúpkova; S. Chalupku; S. Chalúpku; Sama Chalupku; Sama Chalúpku
 Q265676,Jozef Ignác Bajza,True,Bajzova; J. I. Bajzu; Jozefa Ignáca Bajzu
+Q267888,Rožňava,False,Rožňavská; Rožňavská cesta
 Q28437,rumanček kamilkový,False,Kamilková; Rumančeková
 Q302787,Ivanka pri Dunaji,False,Ivanská; Ivanská cesta
 Q310000,Ludvík Svoboda,True,Arm. gen. L. Svobodu; Armádneho generála Svobodu; Gen. L. Svobodu; Gen. Svobodu; Generála Ludvika Svobodu; Generála Ludvíka Svobodu; Generála Svobodu; L. Svobodu; Ludvíka Svobodu; Námestie Ludvíka Svobodu; Námestie arm. gen. L. Svobodu; Trieda arm. gen. Svobodu; arm. gen. L. Svobodu
 Q315222,Ľudovít Štúr,True,Nábr. Ľ. Štúra; Nábrežie Ľ. Štúra; Námestie Ľ. Štúra; Ľ. Štúra; Ľud. Štúra; Ľudovíta Štúra; Štúrova; Štúrovo nábrežie; Štúrovo námestie; Štúrová
-Q319962,Milan Rastislav Štefánik,True,Gen. M. R. Štefánika; Gen. Milana Rastislava Štefánika; Gen. Štefánika; M. R. Štefánika; Milana Rastislava Štefánika; Nábrežie M.R. Štefánika; Nábrežie generála Milana Rastislava Štefánika; Námestie Milana Rastislava Štefánika; Námestie gen. M. R. Štefánika; Námestie gen. Štefánika; Sady M. R. Štefánika; gen. M. R. Štefánika; Štefánikova; Štefánikova trieda; Štefánikova štvrť; Štefánikovo Námestie; Štefánikovo námestie; Štvrť M. R. Štefánika
+Q319962,Milan Rastislav Štefánik,True,Gen. M. R. Štefánika; Gen. Milana Rastislava Štefánika; Gen. Štefánika; M. R. Štefánika; Milana Rastislava Štefánika; Nábrežie M.R. Štefánika; Nábrežie generála Milana Rastislava Štefánika; Námestie M. R. Štefánika; Námestie Milana Rastislava Štefánika; Námestie gen. M. R. Štefánika; Námestie gen. Štefánika; Sady M. R. Štefánika; gen. M. R. Štefánika; Štefánikova; Štefánikova trieda; Štefánikova štvrť; Štefánikovo Námestie; Štefánikovo námestie; Štvrť M. R. Štefánika
 Q329265,Vavro Šrobár,True,V. Šrobára; Vavra Šrobára; Šrobárova
 Q33057836,Ivan Baník,True,Baníkov; Baníkova; Bánik; Námestie baníkov
 Q345078,Ľudovít Fulla,True,Fullova; Fullova ul.; Námestie Ľudovíta Fullu; Ľ. Fullu; Ľudovíta Fullu
@@ -123,6 +133,7 @@ Q3503937,František Švantner,True,F. Švantnera; Švantnerova
 Q3504173,Klára Jarunková,True,K. Jarunkovej; Kláry Jarunkovej
 Q3504212,Ľudo Ondrejov,True,Ľ. Ondrejova; Ľuda Ondrejova
 Q350552,Kálmán Mikszáth,True,K. Mikszátha; Kálmána Mikszátha; Mikszátha; Mikszáthova
+Q3505574,Česko-slovenská armáda,False,Československej armády; Čsl. armády
 Q3505734,Frico Kafenda,True,F. Kafendu; Kafendova
 Q3506285,Hana Zelinová,True,Hany Zelinovej; Zelinovej
 Q3506294,Andrej Bagar,True,Andreja Bagara; Bagarova
@@ -148,8 +159,11 @@ Q432927,Jozef Gabčík,True,Gabčíkova; Gabčíkovská cesta; Jozefa Gabčíka
 Q43718,Nikolaj Vasilievič Gogoľ,True,Gogolova; Gogoľova; N. V. Gogoľa
 Q43977,Ján Hus,True,Husova; J. Husa; Jána Husa
 Q440577,Božena Slančíková-Timrava,True,B. S. Timravy; B. Slančíkovej; Boženy Slančíkovej-Timravy; Slančíkovej; Timravina; Timravy
+Q4421,les,False,Lesná; Podlesná
 Q4422775,Dominik Skutecký,True,D. Skuteckého; Skuteckého
 Q443963,František Hečko,True,F. Hečku; Františka Hečku; Hečkova
+Q44494,mlyn,False,Mlynská; Za mlynom
+Q44497,baníctvo,False,Banská; Banícka
 Q454,mier,False,Mierová; Námestie mieru
 Q45581,Michal archanjel,False,Michalska; Michalská; Michalská bašta; Michalská časť; Michalský chodník; Námestie sv. Michala; Sv. Michala
 Q46100,Eugen Suchoň,True,Eugena Suchoňa; Suchoňova
@@ -168,6 +182,7 @@ Q532174,Jan Šverma,True,J. Švermu; Jána Švermu; Švermov rad; Švermova
 Q543073,Daniel Krman,True,D. Krmana; Daniela Krmana; Krmanova
 Q552703,Martin Hamuljak,True,Hamuliakova; Hamuljakova; Martina Hamuljaka
 Q560390,Ivan Olbracht,True,I. Olbrachta; Ivana Olbrachta; Olbrachtova
+Q576032,Slaná,False,Pri Slanej; Slanská
 Q58720,Michail Vasilievič Lomonosov,True,Lomonosova; Lomonosovova
 Q588302,Anton Bernolák,True,A. Bernoláka; Ant. Bernoláka; Antona Bernoláka; Bernolákov rad; Bernolákova; Bernolákovo námestie; Námestie Antona Bernoláka
 Q5934650,Hugolín Gavlovič,True,A. H. Gavloviča; Gavlovičova; H. Gavloviča
@@ -196,9 +211,11 @@ Q766882,Andrej Ľudovít Radlinský,True,A. Radlinského; Radlinského; Radlinsk
 Q769613,Marián Blaha,True,Blahova; Bláhova; Mariána Blahu; P. Blahu; Pavla Blaha; Pavla Blahu
 Q78492,Tomáš Garrigue Masaryk,True,Masarykova; T. G. Masaryka
 Q7940636,Cyprián Majerník,True,C. Majerníka; Cypriana Majerníka; Majerníkova
+Q820037,baník,False,Banícka; Námestie baníkov
 Q823247,Laco Novomeský,True,L. Novomeského; Laca Novomeského; Ladislava Novomeského; Novomeského; Námestie L. Novomeského; Štvrť Ladislava Novomeského
 Q823400,Juraj Palkovič,True,J. Palkoviča; Juraja Palkoviča; Palkovičova
 Q83326,Béla Bartók,True,B. Bartóka; Bartókova; Bélu Bartóka; Korzo Bélu Bartóka; Námestie B. Bartóka; Námestie Bélu Bartóka
+Q846744,Hornád,False,Hornádska; Za Hornádom
 Q897973,Pavol Dobšinský,True,Dobšinského; P. Dobšinského; Pavla Dobšinského
 Q898705,Juraj Fándly,True,Fándlyho; J. Fándlyho; Juraja Fándlyho
 Q905900,Dionýz Štúr,True,D. Štúra; Dionýza Štúra
@@ -206,6 +223,7 @@ Q925563,Ján Chalupka,True,J. Chalupku; Jána Chalupku
 Q933685,Jozef Miloslav Hurban,True,Hurbanova; Hurbanovo námestie; J. M. Hurbana; Jozefa Miloslava Hurbana; Nábr. J. M. Hurbana
 Q93419,Móric Beňovský,True,Beňovského; M. A. Beňovského; Námestie Mórica Beňovského
 Q9368136,Valentín Beniak,True,Beniakova; V. Beniaka; Valentína Beniaka
+Q943745,Rudná,False,Rudnianska; Rudná
 Q951434,Milo Urban,True,Dolný Urban; Horný Urban; M. Urbana; Mila Urbana; Námestie sv. Urbana; Svätého Urbana; Svätého Urbána; Urbanova
 Q964103,Ján Levoslav Bella,True,Bellova; J. L. Bellu; Jána Bellu; Nová Bellova
 Q974206,Ján Botto,True,Bottova; J. Bottu; Jána Bottu; Júliusa Bottu

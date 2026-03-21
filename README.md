@@ -20,7 +20,7 @@ Compares deterministic and AI-based methods for normalizing Slovak street names 
 .\setup.ps1
 ```
 
-This downloads the Slovakia OSM extract, loads it into PostGIS with `osm2pgsql`, creates the vector-tile function, and starts Martin.
+This downloads the .pbf file for Slovakia from geofabrik, loads it into PostGIS with `osm2pgsql`, creates the vector-tile function, and starts Martin.
 
 If you already have a `.osm.pbf` file, place it at `data/slovakia-latest.osm.pbf` before running the script.
 
@@ -39,41 +39,36 @@ pip install -r requirements.txt
 
 ## Usage
 
-All Python commands are run from the `src/` directory:
+All Python commands are run from the **project root**:
+
+| Step                   | Command                                  | Output                                                                   |
+|------------------------|------------------------------------------|--------------------------------------------------------------------------|
+| Extract street lengths | `python -m src.analysis.compute`         | `src/analysis/street_lengths.csv`                                        |
+| Build ground truth     | `python -m src.analysis.ground_truth`    | `src/analysis/ground_truth.csv`, `src/analysis/ground_truth_grouped.csv` |
+| Evaluate methods       | `python -m src.analysis.evaluate`        | `src/analysis/evaluation.json`                                           |
+| Export mappings (FE)   | `python -m src.analysis.export_mappings` | `src/analysis/mappings.json`                                             |
+
+Run a single method with `--method`:
 
 ```bash
-cd src
-```
-
-| Step                   | Command                              | Output                                                           |
-|------------------------|--------------------------------------|------------------------------------------------------------------|
-| Extract street lengths | `python -m analysis.compute`         | `analysis/street_lengths.csv`                                    |
-| Build ground truth     | `python -m analysis.ground_truth`    | `analysis/ground_truth.csv`, `analysis/ground_truth_grouped.csv` |
-| Evaluate methods       | `python -m analysis.evaluate`        | `analysis/evaluation.json`                                       |
-| Export mappings (FE)   | `python -m analysis.export_mappings` | `analysis/mappings.json`                                         |
-
-Run a single method with `--methods`:
-
-```bash
-python -m analysis.evaluate --methods suffix_stripping levenshtein
+python -m src.analysis.evaluate --method suffix_stripping
 ```
 
 Available methods: `suffix_stripping`, `levenshtein`, `ngram`, `llm_gpt4o_mini`, `llm_claude_haiku`, `llm_gemini_flash`.
 
 ## Configuration
 
-`src/config.py` contains tunable constants. Defaults work out of the box, but can be adjusted:
+`src/config.py` contains tunable constants and parameters for analysis
 
-| Constant                                 | Default                      | Editable | Description                                                                  |
-|------------------------------------------|------------------------------|----------|------------------------------------------------------------------------------|
-| `DB_TABLE`                               | `planet_osm_line`            | No       | PostGIS table created by osm2pgsql, must match the import                    |
-| `REQUEST_DELAY`                          | `0.1`                        | Yes      | Delay (seconds) between Wikidata API requests                                |
-| `WIKIDATA_TIMEOUT`                       | `10`                         | Yes      | Timeout (seconds) for each Wikidata request                                  |
-| `CONFIDENCE_THRESHOLD`                   | `0.7`                        | Yes      | Minimum score to include a street in ground truth                            |
-| `CONFIDENCE_EXACT` / `_STEM` / `_PREFIX` | `1.0` / `0.9` / `0.7`        | Yes      | Scores assigned by match type when comparing street names to Wikidata labels |
-| `WIKIDATA_LABEL_LANGUAGES`               | `["sk","cs","en","de","hu"]` | Yes      | Languages fetched from Wikidata for label matching; adjust for other regions |
-| `PROBLEM_ENTITIES_TOP_N`                 | `10`                         | Yes      | Number of worst-performing entities shown in evaluation output               |
-| `COLLISIONS_DISPLAY_N`                   | `10`                         | Yes      | Number of collision examples shown in evaluation output                      |
+| Constant                                 | Default                      | Description                                                                  |
+|------------------------------------------|------------------------------|------------------------------------------------------------------------------|
+| `REQUEST_DELAY`                          | `0.1`                        | Delay (seconds) between Wikidata API requests                                |
+| `WIKIDATA_TIMEOUT`                       | `10`                         | Timeout (seconds) for each Wikidata request                                  |
+| `CONFIDENCE_THRESHOLD`                   | `0.7`                        | Minimum score to include a street in ground truth                            |
+| `CONFIDENCE_EXACT` / `_STEM` / `_PREFIX` | `1.0` / `0.9` / `0.7`        | Scores assigned by match type when comparing street names to Wikidata labels |
+| `WIKIDATA_LABEL_LANGUAGES`               | `["sk","cs","en","de","hu"]` | Languages fetched from Wikidata for label matching;                          |
+| `PROBLEM_ENTITIES_TOP_N`                 | `10`                         | Number of worst-performing entities shown in evaluation output               |
+| `COLLISIONS_DISPLAY_N`                   | `10`                         | Number of collision examples shown in evaluation output                      |
 
 ## Project Structure
 

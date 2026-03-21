@@ -14,7 +14,7 @@ services:
       - pgdata:/var/lib/postgresql/data
       - ./data:/data
       - ./docker/init.sql:/init.sql
-      - ./docker/init-extensions.sql:/docker-entrypoint-initdb.d/01-extensions.sql
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/01-init.sql
     shm_size: 256mb
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U osmuser -d osm"]

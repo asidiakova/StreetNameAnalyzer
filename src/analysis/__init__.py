@@ -1,17 +1,7 @@
 import os
 import psycopg2
 
-from src.config import DB_TABLE
-
-
 def get_osm_metadata() -> dict:
-    """Collect OSM dataset metadata from the database.
-
-    Returns a dict with:
-        osm_data_date       - date the OSM data was loaded (from osm_metadata table)
-        total_street_names  - unique street names in the dataset
-        etymology_tagged    - unique street names that have a Wikidata etymology tag
-    """
     result = {
         "osm_data_date": None,
         "total_street_names": None,
@@ -37,7 +27,7 @@ def get_osm_metadata() -> dict:
                 COUNT(DISTINCT CASE
                     WHEN tags->'name:etymology:wikidata' IS NOT NULL
                     THEN name END) AS tagged
-            FROM {DB_TABLE}
+            FROM planet_osm_line
             WHERE name IS NOT NULL AND highway IS NOT NULL
         """)
         row = cur.fetchone()

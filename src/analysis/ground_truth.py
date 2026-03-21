@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""
-Extract etymology-tagged streets from OSM and validate against Wikidata.
-Produces a ground truth dataset for evaluating street name normalization methods.
-"""
 
-from __future__ import annotations
 import argparse
 import csv
 import json
@@ -17,7 +12,6 @@ from collections import defaultdict
 
 
 from src.config import (
-    DB_TABLE,
     REQUEST_DELAY,
     WIKIDATA_TIMEOUT,
     WIKIDATA_LABEL_LANGUAGES,
@@ -35,13 +29,11 @@ _DEFAULT_WIKIDATA_CACHE = os.path.join(_MODULE_DIR, "wikidata_cache.json")
 
 
 def extract_name_parts(full_name: str) -> list[str]:
-    """Extract all significant name parts"""
     parts = full_name.strip().split()
     return [p for p in parts if len(p) >= 3]
 
 
 def extract_place_core(place_name: str) -> str:
-    """Extract core place name from complex names"""
     parts = place_name.strip().split()
     if not parts:
         return ""
@@ -49,7 +41,6 @@ def extract_place_core(place_name: str) -> str:
 
 
 def stem_slovak(word: str) -> str:
-    """Simple Slovak suffix stripping for matching."""
     word = ascii_norm(word)
     suffixes = ["oveho", "ovej", "ova", "ovo", "ov", "eho", "ej", "a", "o", "u", "y", "i", "e"]
     for suf in suffixes:
@@ -59,10 +50,6 @@ def stem_slovak(word: str) -> str:
 
 
 def compute_match_confidence(street_name: str, entity_labels: list[str], entity_type: str) -> float:
-    """
-    Compute confidence that street_name is actually named after the entity.
-    Returns 1.0 for high confidence, 0.5 for partial, 0.0 for no match.
-    """
     street_norm = ascii_norm(street_name)
     street_stem = stem_slovak(street_name)
 
@@ -97,7 +84,6 @@ def compute_match_confidence(street_name: str, entity_labels: list[str], entity_
 
 
 def fetch_wikidata_entity(qid: str) -> dict | None:
-    """Fetch entity metadata from Wikidata API."""
     url = f"https://www.wikidata.org/wiki/Special:EntityData/{qid}.json"
     headers = {
         "User-Agent": "StreetNameAnalyzer"
@@ -150,14 +136,13 @@ def save_wikidata_cache(cache: dict, path: str):
 
 
 def extract_etymology_data(conn) -> list[dict]:
-    """Extract all streets with etymology tags from the database."""
     cur = conn.cursor()
 
     sql = f"""
         SELECT DISTINCT
             name,
             tags->'name:etymology:wikidata' AS wikidata_id
-        FROM {DB_TABLE}
+        FROM planet_osm_line
         WHERE name IS NOT NULL
           AND highway IS NOT NULL
           AND tags->'name:etymology:wikidata' IS NOT NULL

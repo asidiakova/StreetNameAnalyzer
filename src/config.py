@@ -2,14 +2,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DB_TABLE = "planet_osm_line"
-
-GROUND_TRUTH_CSV = "ground_truth.csv"
-GROUND_TRUTH_GROUPED_CSV = "ground_truth_grouped.csv"
-EVALUATION_OUTPUT_DEFAULT = "evaluation.json"
-COMPUTE_OUTPUT_DEFAULT = "street_lengths.csv"
-UNTAGGED_OUTPUT_DEFAULT = "untagged_streets.csv"
-MAPPINGS_OUTPUT_DEFAULT = "mappings.json"
+GROUND_TRUTH_CSV = "src/analysis/ground_truth.csv"
+GROUND_TRUTH_GROUPED_CSV = "src/analysis/ground_truth_grouped.csv"
+EVALUATION_OUTPUT_DEFAULT = "src/analysis/evaluation.json"
+COMPUTE_OUTPUT_DEFAULT = "src/analysis/street_lengths.csv"
+UNTAGGED_OUTPUT_DEFAULT = "src/analysis/untagged_streets.csv"
+MAPPINGS_OUTPUT_DEFAULT = "src/analysis/mappings.json"
 
 REQUEST_DELAY = 0.1
 WIKIDATA_TIMEOUT = 10

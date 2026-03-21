@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
-from __future__ import annotations
 import argparse
 import os
 import psycopg2
-from src.config import DB_TABLE, COMPUTE_OUTPUT_DEFAULT, UNTAGGED_OUTPUT_DEFAULT
+from src.config import COMPUTE_OUTPUT_DEFAULT, UNTAGGED_OUTPUT_DEFAULT
 
 
 def main():
@@ -21,17 +20,10 @@ def main():
     conn = psycopg2.connect(db_conn_str)
     try:
         cur = conn.cursor()
-        # Each row in planet_osm_line is one geometric segment (a piece of road
-        # between intersections).  A single street name typically spans many
-        # segments across multiple cities.  ST_ClusterDBSCAN groups nearby
-        # segments so that same-named streets in different cities are counted
-        # as separate physical streets.
-        #
-        # SRID 5514 (Krovak) is used for clustering because ST_ClusterDBSCAN
-        # operates in the geometry's native units — SRID 4326 uses degrees,
-        # which would make the eps threshold meaningless.  5514 uses meters.
-        # eps=100 m bridges small OSM mapping gaps (typically <50 m) without
-        # merging streets from different settlements (500+ m apart).
+        # Streets in OSM are split into many small segments. ST_ClusterDBSCAN
+        # groups segments within 100 m of each other (SRID 5514 = meters) so
+        # that "Štúrova" in Bratislava and "Štúrova" in Košice count as two
+        # separate streets, not one.
         sql = f"""
             SELECT name,
                    SUM(length_m)                AS total_m,
@@ -42,7 +34,7 @@ def main():
                        ST_ClusterDBSCAN(ST_Transform(way, 5514), eps := 100, minpoints := 1)
                          OVER (PARTITION BY name) AS cluster_id,
                        ST_Length(ST_Transform(way, 4326)::geography) AS length_m
-                FROM public.{DB_TABLE}
+                FROM planet_osm_line
                 WHERE name IS NOT NULL AND highway IS NOT NULL
             ) clustered
             GROUP BY name
@@ -65,7 +57,7 @@ def main():
 
         untagged_sql = f"""
             SELECT DISTINCT name
-            FROM public.{DB_TABLE}
+            FROM planet_osm_line
             WHERE name IS NOT NULL
               AND highway IS NOT NULL
               AND (tags->'name:etymology:wikidata') IS NULL

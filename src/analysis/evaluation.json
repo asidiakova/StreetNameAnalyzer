@@ -1,17 +1,17 @@
 {
   "_metadata": {
-    "osm_data_date": "2026-03-18",
+    "osm_data_date": "2026-03-21",
     "total_street_names": 11735,
     "etymology_tagged": 1317,
-    "generated_at": "2026-03-18T11:14:22.888130+00:00"
+    "generated_at": "2026-03-21T08:03:27.341472+00:00"
   },
   "suffix_stripping": {
-    "grouping_rate": 0.9473,
-    "collision_rate": 0.0542,
-    "total_entities": 216,
-    "total_variants": 729,
-    "total_groups": 240,
-    "colliding_groups": 13,
+    "grouping_rate": 0.9261,
+    "collision_rate": 0.0558,
+    "total_entities": 234,
+    "total_variants": 767,
+    "total_groups": 269,
+    "colliding_groups": 15,
     "collisions": [
       {
         "group_id": "moyzes",
@@ -165,6 +165,19 @@
         ]
       },
       {
+        "group_id": "banik",
+        "entities": [
+          {
+            "wikidata_id": "Q33057836",
+            "label": "Ivan Baník"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
+          }
+        ]
+      },
+      {
         "group_id": "stodol",
         "entities": [
           {
@@ -189,9 +202,30 @@
             "label": "August Horislav Škultéty"
           }
         ]
+      },
+      {
+        "group_id": "banick",
+        "entities": [
+          {
+            "wikidata_id": "Q44497",
+            "label": "baníctvo"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
+          }
+        ]
       }
     ],
     "problem_entities": [
+      {
+        "wikidata_id": "Q1107656",
+        "entity_label": "záhrada",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
       {
         "wikidata_id": "Q17590",
         "entity_label": "Vavrinec Rímsky",
@@ -217,14 +251,6 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q1107656",
-        "entity_label": "záhrada",
-        "score": 0.5,
-        "total_variants": 2,
-        "dominant_count": 1,
-        "unique_groups": 2
-      },
-      {
         "wikidata_id": "Q154232",
         "entity_label": "Alexandr Vasilievič Suvorov",
         "score": 0.5,
@@ -241,8 +267,24 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q163780",
-        "entity_label": "Slovenské národné povstanie",
+        "wikidata_id": "Q16917",
+        "entity_label": "nemocnica",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q198632",
+        "entity_label": "Tehelňa",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q214",
+        "entity_label": "Slovensko",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -251,6 +293,30 @@
       {
         "wikidata_id": "Q222534",
         "entity_label": "Matúš Čák Trenčiansky",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q22715",
+        "entity_label": "vinohrad",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q22731",
+        "entity_label": "kameň",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q23413",
+        "entity_label": "hrad",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -289,8 +355,56 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q4421",
+        "entity_label": "les",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44494",
+        "entity_label": "mlyn",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44497",
+        "entity_label": "baníctvo",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q58720",
         "entity_label": "Michail Vasilievič Lomonosov",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q820037",
+        "entity_label": "baník",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q846744",
+        "entity_label": "Hornád",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q943745",
+        "entity_label": "Rudná",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -359,6 +473,14 @@
         "total_variants": 7,
         "dominant_count": 5,
         "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q163780",
+        "entity_label": "Slovenské národné povstanie",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
       },
       {
         "wikidata_id": "Q48173",
@@ -451,20 +573,20 @@
       {
         "wikidata_id": "Q319962",
         "entity_label": "Milan Rastislav Štefánik",
-        "score": 0.9444,
-        "total_variants": 18,
-        "dominant_count": 17,
+        "score": 0.9474,
+        "total_variants": 19,
+        "dominant_count": 18,
         "unique_groups": 2
       }
     ]
   },
   "levenshtein": {
-    "grouping_rate": 0.6359,
-    "collision_rate": 0.0718,
-    "total_entities": 216,
-    "total_variants": 729,
-    "total_groups": 418,
-    "colliding_groups": 30,
+    "grouping_rate": 0.6363,
+    "collision_rate": 0.0738,
+    "total_entities": 234,
+    "total_variants": 767,
+    "total_groups": 447,
+    "colliding_groups": 33,
     "collisions": [
       {
         "group_id": "moyzesa",
@@ -747,6 +869,19 @@
         ]
       },
       {
+        "group_id": "trnavska",
+        "entities": [
+          {
+            "wikidata_id": "Q26175",
+            "label": "Trnava"
+          },
+          {
+            "wikidata_id": "Q267888",
+            "label": "Rožňava"
+          }
+        ]
+      },
+      {
         "group_id": "chaloupky",
         "entities": [
           {
@@ -799,6 +934,19 @@
         ]
       },
       {
+        "group_id": "banikov",
+        "entities": [
+          {
+            "wikidata_id": "Q33057836",
+            "label": "Ivan Baník"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
+          }
+        ]
+      },
+      {
         "group_id": "stodolu",
         "entities": [
           {
@@ -821,6 +969,19 @@
           {
             "wikidata_id": "Q3629542",
             "label": "August Horislav Škultéty"
+          }
+        ]
+      },
+      {
+        "group_id": "banicka",
+        "entities": [
+          {
+            "wikidata_id": "Q44497",
+            "label": "baníctvo"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
           }
         ]
       },
@@ -1023,14 +1184,6 @@
         "unique_groups": 4
       },
       {
-        "wikidata_id": "Q220550",
-        "entity_label": "Ján Kollár",
-        "score": 0.4,
-        "total_variants": 5,
-        "dominant_count": 2,
-        "unique_groups": 3
-      },
-      {
         "wikidata_id": "Q345078",
         "entity_label": "Ľudovít Fulla",
         "score": 0.4,
@@ -1079,14 +1232,6 @@
         "unique_groups": 3
       },
       {
-        "wikidata_id": "Q319962",
-        "entity_label": "Milan Rastislav Štefánik",
-        "score": 0.4444,
-        "total_variants": 18,
-        "dominant_count": 8,
-        "unique_groups": 5
-      },
-      {
         "wikidata_id": "Q467797",
         "entity_label": "Andrej Hlinka",
         "score": 0.4545,
@@ -1100,6 +1245,14 @@
         "score": 0.4615,
         "total_variants": 13,
         "dominant_count": 6,
+        "unique_groups": 5
+      },
+      {
+        "wikidata_id": "Q319962",
+        "entity_label": "Milan Rastislav Štefánik",
+        "score": 0.4737,
+        "total_variants": 19,
+        "dominant_count": 9,
         "unique_groups": 5
       },
       {
@@ -1383,14 +1536,6 @@
         "unique_groups": 3
       },
       {
-        "wikidata_id": "Q163780",
-        "entity_label": "Slovenské národné povstanie",
-        "score": 0.5,
-        "total_variants": 2,
-        "dominant_count": 1,
-        "unique_groups": 2
-      },
-      {
         "wikidata_id": "Q1670526",
         "entity_label": "Ján Smrek",
         "score": 0.5,
@@ -1405,6 +1550,14 @@
         "total_variants": 4,
         "dominant_count": 2,
         "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q16917",
+        "entity_label": "nemocnica",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
       },
       {
         "wikidata_id": "Q184933",
@@ -1431,6 +1584,14 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q198632",
+        "entity_label": "Tehelňa",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q204338",
         "entity_label": "Rodion Jakovlevič Malinovskij",
         "score": 0.5,
@@ -1439,8 +1600,40 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q214",
+        "entity_label": "Slovensko",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q220550",
+        "entity_label": "Ján Kollár",
+        "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 3
+      },
+      {
         "wikidata_id": "Q222534",
         "entity_label": "Matúš Čák Trenčiansky",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q22731",
+        "entity_label": "kameň",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q23413",
+        "entity_label": "hrad",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -1513,6 +1706,14 @@
       {
         "wikidata_id": "Q3504212",
         "entity_label": "Ľudo Ondrejov",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q3505574",
+        "entity_label": "Česko-slovenská armáda",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -1615,6 +1816,30 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q4421",
+        "entity_label": "les",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44494",
+        "entity_label": "mlyn",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44497",
+        "entity_label": "baníctvo",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q454",
         "entity_label": "mier",
         "score": 0.5,
@@ -1679,6 +1904,14 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q576032",
+        "entity_label": "Slaná",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q666875",
         "entity_label": "Aurel Stodola",
         "score": 0.5,
@@ -1735,11 +1968,27 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q820037",
+        "entity_label": "baník",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q83326",
         "entity_label": "Béla Bartók",
         "score": 0.5,
         "total_variants": 6,
         "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q846744",
+        "entity_label": "Hornád",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
         "unique_groups": 2
       },
       {
@@ -1753,6 +2002,14 @@
       {
         "wikidata_id": "Q925563",
         "entity_label": "Ján Chalupka",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q943745",
+        "entity_label": "Rudná",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -1841,6 +2098,14 @@
       {
         "wikidata_id": "Q1104940",
         "entity_label": "Karol Salva",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1107656",
+        "entity_label": "záhrada",
         "score": 0.6667,
         "total_variants": 3,
         "dominant_count": 2,
@@ -2183,6 +2448,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q163780",
+        "entity_label": "Slovenské národné povstanie",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q1682808",
         "entity_label": "Janko Alexy",
         "score": 0.75,
@@ -2249,12 +2522,12 @@
     ]
   },
   "ngram": {
-    "grouping_rate": 0.7994,
-    "collision_rate": 0.0965,
-    "total_entities": 216,
-    "total_variants": 729,
-    "total_groups": 311,
-    "colliding_groups": 30,
+    "grouping_rate": 0.7911,
+    "collision_rate": 0.1015,
+    "total_entities": 234,
+    "total_variants": 767,
+    "total_groups": 335,
+    "colliding_groups": 34,
     "collisions": [
       {
         "group_id": "moyzesa",
@@ -2524,6 +2797,19 @@
         ]
       },
       {
+        "group_id": "vinohradna",
+        "entities": [
+          {
+            "wikidata_id": "Q22715",
+            "label": "vinohrad"
+          },
+          {
+            "wikidata_id": "Q23413",
+            "label": "hrad"
+          }
+        ]
+      },
+      {
         "group_id": "krala",
         "entities": [
           {
@@ -2544,6 +2830,10 @@
             "label": "Trnava"
           },
           {
+            "wikidata_id": "Q267888",
+            "label": "Rožňava"
+          },
+          {
             "wikidata_id": "Q3506661",
             "label": "Mikuláš Schneider-Trnavský"
           }
@@ -2559,6 +2849,23 @@
           {
             "wikidata_id": "Q925563",
             "label": "Ján Chalupka"
+          }
+        ]
+      },
+      {
+        "group_id": "ivanska",
+        "entities": [
+          {
+            "wikidata_id": "Q302787",
+            "label": "Ivanka pri Dunaji"
+          },
+          {
+            "wikidata_id": "Q44497",
+            "label": "baníctvo"
+          },
+          {
+            "wikidata_id": "Q576032",
+            "label": "Slaná"
           }
         ]
       },
@@ -2585,6 +2892,19 @@
           {
             "wikidata_id": "Q345078",
             "label": "Ľudovít Fulla"
+          }
+        ]
+      },
+      {
+        "group_id": "banikov",
+        "entities": [
+          {
+            "wikidata_id": "Q33057836",
+            "label": "Ivan Baník"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
           }
         ]
       },
@@ -2624,6 +2944,19 @@
           {
             "wikidata_id": "Q3629542",
             "label": "August Horislav Škultéty"
+          }
+        ]
+      },
+      {
+        "group_id": "banicka",
+        "entities": [
+          {
+            "wikidata_id": "Q44497",
+            "label": "baníctvo"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
           }
         ]
       },
@@ -2917,8 +3250,8 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q163780",
-        "entity_label": "Slovenské národné povstanie",
+        "wikidata_id": "Q16917",
+        "entity_label": "nemocnica",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -2957,8 +3290,32 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q214",
+        "entity_label": "Slovensko",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q222534",
         "entity_label": "Matúš Čák Trenčiansky",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q22731",
+        "entity_label": "kameň",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q23413",
+        "entity_label": "hrad",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -2991,6 +3348,14 @@
       {
         "wikidata_id": "Q347148",
         "entity_label": "Rastislav",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q3505574",
+        "entity_label": "Česko-slovenská armáda",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -3037,6 +3402,22 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q44494",
+        "entity_label": "mlyn",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44497",
+        "entity_label": "baníctvo",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q454",
         "entity_label": "mier",
         "score": 0.5,
@@ -3069,6 +3450,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q576032",
+        "entity_label": "Slaná",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q706268",
         "entity_label": "Juraj Jánošík",
         "score": 0.5,
@@ -3093,8 +3482,32 @@
         "unique_groups": 4
       },
       {
+        "wikidata_id": "Q820037",
+        "entity_label": "baník",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q846744",
+        "entity_label": "Hornád",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q905900",
         "entity_label": "Dionýz Štúr",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q943745",
+        "entity_label": "Rudná",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -3117,19 +3530,19 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q319962",
-        "entity_label": "Milan Rastislav Štefánik",
-        "score": 0.5556,
-        "total_variants": 18,
-        "dominant_count": 10,
-        "unique_groups": 3
-      },
-      {
         "wikidata_id": "Q262637",
         "entity_label": "Samo Chalupka",
         "score": 0.5714,
         "total_variants": 7,
         "dominant_count": 4,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q319962",
+        "entity_label": "Milan Rastislav Štefánik",
+        "score": 0.5789,
+        "total_variants": 19,
+        "dominant_count": 11,
         "unique_groups": 3
       },
       {
@@ -3167,6 +3580,14 @@
       {
         "wikidata_id": "Q1104940",
         "entity_label": "Karol Salva",
+        "score": 0.6667,
+        "total_variants": 3,
+        "dominant_count": 2,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1107656",
+        "entity_label": "záhrada",
         "score": 0.6667,
         "total_variants": 3,
         "dominant_count": 2,
@@ -3373,6 +3794,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q163780",
+        "entity_label": "Slovenské národné povstanie",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q48173",
         "entity_label": "Bedřich Smetana",
         "score": 0.75,
@@ -3463,12 +3892,12 @@
     ]
   },
   "llm_gpt4o_mini": {
-    "grouping_rate": 0.585,
-    "collision_rate": 0.0184,
-    "total_entities": 216,
-    "total_variants": 729,
-    "total_groups": 488,
-    "colliding_groups": 9,
+    "grouping_rate": 0.5828,
+    "collision_rate": 0.0211,
+    "total_entities": 234,
+    "total_variants": 767,
+    "total_groups": 521,
+    "colliding_groups": 11,
     "collisions": [
       {
         "group_id": "andrej moyzes",
@@ -3586,6 +4015,32 @@
             "label": "Dionýz Štúr"
           }
         ]
+      },
+      {
+        "group_id": "namestie banikov",
+        "entities": [
+          {
+            "wikidata_id": "Q33057836",
+            "label": "Ivan Baník"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
+          }
+        ]
+      },
+      {
+        "group_id": "banicka",
+        "entities": [
+          {
+            "wikidata_id": "Q44497",
+            "label": "baníctvo"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
+          }
+        ]
       }
     ],
     "problem_entities": [
@@ -3678,6 +4133,14 @@
         "unique_groups": 5
       },
       {
+        "wikidata_id": "Q1107656",
+        "entity_label": "záhrada",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
         "wikidata_id": "Q11874240",
         "entity_label": "Eduard Urx",
         "score": 0.3333,
@@ -3728,14 +4191,6 @@
       {
         "wikidata_id": "Q12771735",
         "entity_label": "Miloš Uher",
-        "score": 0.3333,
-        "total_variants": 3,
-        "dominant_count": 1,
-        "unique_groups": 3
-      },
-      {
-        "wikidata_id": "Q12773727",
-        "entity_label": "Peter Kellner-Hostinský",
         "score": 0.3333,
         "total_variants": 3,
         "dominant_count": 1,
@@ -4046,16 +4501,16 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q1095718",
-        "entity_label": "Kapušany",
+        "wikidata_id": "Q1046826",
+        "entity_label": "Odorín",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q1107656",
-        "entity_label": "záhrada",
+        "wikidata_id": "Q1095718",
+        "entity_label": "Kapušany",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -4182,6 +4637,14 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q12773727",
+        "entity_label": "Peter Kellner-Hostinský",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q12773741",
         "entity_label": "Peter Martinček",
         "score": 0.5,
@@ -4281,13 +4744,21 @@
         "wikidata_id": "Q163780",
         "entity_label": "Slovenské národné povstanie",
         "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q169038",
+        "entity_label": "Zdeněk Nejedlý",
+        "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q169038",
-        "entity_label": "Zdeněk Nejedlý",
+        "wikidata_id": "Q16917",
+        "entity_label": "nemocnica",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -4304,6 +4775,14 @@
       {
         "wikidata_id": "Q185024",
         "entity_label": "Ivan Stepanovič Konev",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q1899",
+        "entity_label": "Kyjev",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -4334,8 +4813,40 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q214",
+        "entity_label": "Slovensko",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q222534",
         "entity_label": "Matúš Čák Trenčiansky",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q22715",
+        "entity_label": "vinohrad",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q22731",
+        "entity_label": "kameň",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q23413",
+        "entity_label": "hrad",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -4360,6 +4871,14 @@
       {
         "wikidata_id": "Q26175",
         "entity_label": "Trnava",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q267888",
+        "entity_label": "Rožňava",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -4408,6 +4927,14 @@
       {
         "wikidata_id": "Q3504212",
         "entity_label": "Ľudo Ondrejov",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q3505574",
+        "entity_label": "Česko-slovenská armáda",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -4510,8 +5037,32 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q4421",
+        "entity_label": "les",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q4422775",
         "entity_label": "Dominik Skutecký",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44494",
+        "entity_label": "mlyn",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44497",
+        "entity_label": "baníctvo",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -4568,6 +5119,14 @@
       {
         "wikidata_id": "Q530425",
         "entity_label": "Samuel Mikovíni",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q576032",
+        "entity_label": "Slaná",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -4646,8 +5205,32 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q820037",
+        "entity_label": "baník",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q846744",
+        "entity_label": "Hornád",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q905900",
         "entity_label": "Dionýz Štúr",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q943745",
+        "entity_label": "Rudná",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -5000,12 +5583,12 @@
     ]
   },
   "llm_claude_haiku": {
-    "grouping_rate": 0.6175,
-    "collision_rate": 0.0447,
-    "total_entities": 216,
-    "total_variants": 729,
-    "total_groups": 447,
-    "colliding_groups": 20,
+    "grouping_rate": 0.6063,
+    "collision_rate": 0.0455,
+    "total_entities": 234,
+    "total_variants": 767,
+    "total_groups": 483,
+    "colliding_groups": 22,
     "collisions": [
       {
         "group_id": "alexander moyzesz",
@@ -5228,6 +5811,19 @@
         ]
       },
       {
+        "group_id": "namestie banikov",
+        "entities": [
+          {
+            "wikidata_id": "Q33057836",
+            "label": "Ivan Baník"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
+          }
+        ]
+      },
+      {
         "group_id": "matej bel",
         "entities": [
           {
@@ -5267,6 +5863,19 @@
           {
             "wikidata_id": "Q974206",
             "label": "Ján Botto"
+          }
+        ]
+      },
+      {
+        "group_id": "banicka",
+        "entities": [
+          {
+            "wikidata_id": "Q44497",
+            "label": "baníctvo"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
           }
         ]
       },
@@ -5398,6 +6007,14 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q1107656",
+        "entity_label": "záhrada",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
         "wikidata_id": "Q11874240",
         "entity_label": "Eduard Urx",
         "score": 0.3333,
@@ -5440,14 +6057,6 @@
       {
         "wikidata_id": "Q12771735",
         "entity_label": "Miloš Uher",
-        "score": 0.3333,
-        "total_variants": 3,
-        "dominant_count": 1,
-        "unique_groups": 3
-      },
-      {
-        "wikidata_id": "Q12773727",
-        "entity_label": "Peter Kellner-Hostinský",
         "score": 0.3333,
         "total_variants": 3,
         "dominant_count": 1,
@@ -5702,6 +6311,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q1046826",
+        "entity_label": "Odorín",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q1080664",
         "entity_label": "Juraj Tranovský",
         "score": 0.5,
@@ -5712,14 +6329,6 @@
       {
         "wikidata_id": "Q1095718",
         "entity_label": "Kapušany",
-        "score": 0.5,
-        "total_variants": 2,
-        "dominant_count": 1,
-        "unique_groups": 2
-      },
-      {
-        "wikidata_id": "Q1107656",
-        "entity_label": "záhrada",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -5862,6 +6471,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q12773727",
+        "entity_label": "Peter Kellner-Hostinský",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q12781505",
         "entity_label": "Ľudovít Kukorelli",
         "score": 0.5,
@@ -5942,8 +6559,24 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q163780",
+        "entity_label": "Slovenské národné povstanie",
+        "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 3
+      },
+      {
         "wikidata_id": "Q169038",
         "entity_label": "Zdeněk Nejedlý",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q16917",
+        "entity_label": "nemocnica",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -5966,6 +6599,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q1899",
+        "entity_label": "Kyjev",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q1903455",
         "entity_label": "Martin Benka",
         "score": 0.5,
@@ -5982,6 +6623,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q198632",
+        "entity_label": "Tehelňa",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q204338",
         "entity_label": "Rodion Jakovlevič Malinovskij",
         "score": 0.5,
@@ -5990,8 +6639,40 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q214",
+        "entity_label": "Slovensko",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q222534",
         "entity_label": "Matúš Čák Trenčiansky",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q22715",
+        "entity_label": "vinohrad",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q22731",
+        "entity_label": "kameň",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q23413",
+        "entity_label": "hrad",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -6012,6 +6693,22 @@
         "total_variants": 6,
         "dominant_count": 3,
         "unique_groups": 4
+      },
+      {
+        "wikidata_id": "Q2544",
+        "entity_label": "1. máj",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q267888",
+        "entity_label": "Rožňava",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
       },
       {
         "wikidata_id": "Q28437",
@@ -6056,6 +6753,14 @@
       {
         "wikidata_id": "Q3504173",
         "entity_label": "Klára Jarunková",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q3505574",
+        "entity_label": "Česko-slovenská armáda",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -6158,8 +6863,32 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q4421",
+        "entity_label": "les",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q4422775",
         "entity_label": "Dominik Skutecký",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44494",
+        "entity_label": "mlyn",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44497",
+        "entity_label": "baníctvo",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -6204,6 +6933,14 @@
         "total_variants": 4,
         "dominant_count": 2,
         "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q576032",
+        "entity_label": "Slaná",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
       },
       {
         "wikidata_id": "Q6148919",
@@ -6254,6 +6991,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q820037",
+        "entity_label": "baník",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q823247",
         "entity_label": "Laco Novomeský",
         "score": 0.5,
@@ -6262,8 +7007,24 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q846744",
+        "entity_label": "Hornád",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q905900",
         "entity_label": "Dionýz Štúr",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q943745",
+        "entity_label": "Rudná",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -6600,12 +7361,12 @@
     ]
   },
   "llm_gemini_flash": {
-    "grouping_rate": 0.5109,
-    "collision_rate": 0.1318,
-    "total_entities": 216,
-    "total_variants": 729,
-    "total_groups": 425,
-    "colliding_groups": 56,
+    "grouping_rate": 0.516,
+    "collision_rate": 0.1245,
+    "total_entities": 234,
+    "total_variants": 767,
+    "total_groups": 458,
+    "colliding_groups": 57,
     "collisions": [
       {
         "group_id": "rud",
@@ -7181,19 +7942,6 @@
         ]
       },
       {
-        "group_id": "julius",
-        "entities": [
-          {
-            "wikidata_id": "Q12773727",
-            "label": "Peter Kellner-Hostinský"
-          },
-          {
-            "wikidata_id": "Q142059",
-            "label": "Julius Fučík"
-          }
-        ]
-      },
-      {
         "group_id": "l",
         "entities": [
           {
@@ -7480,6 +8228,19 @@
         ]
       },
       {
+        "group_id": "namestie",
+        "entities": [
+          {
+            "wikidata_id": "Q33057836",
+            "label": "Ivan Baník"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
+          }
+        ]
+      },
+      {
         "group_id": "mik",
         "entities": [
           {
@@ -7588,6 +8349,19 @@
           {
             "wikidata_id": "Q975382",
             "label": "Janko Matúška"
+          }
+        ]
+      },
+      {
+        "group_id": "banicka",
+        "entities": [
+          {
+            "wikidata_id": "Q44497",
+            "label": "baníctvo"
+          },
+          {
+            "wikidata_id": "Q820037",
+            "label": "baník"
           }
         ]
       },
@@ -7826,6 +8600,14 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q1107656",
+        "entity_label": "záhrada",
+        "score": 0.3333,
+        "total_variants": 3,
+        "dominant_count": 1,
+        "unique_groups": 3
+      },
+      {
         "wikidata_id": "Q12035321",
         "entity_label": "Marek Čulen",
         "score": 0.3333,
@@ -7860,14 +8642,6 @@
       {
         "wikidata_id": "Q12771735",
         "entity_label": "Miloš Uher",
-        "score": 0.3333,
-        "total_variants": 3,
-        "dominant_count": 1,
-        "unique_groups": 3
-      },
-      {
-        "wikidata_id": "Q12773727",
-        "entity_label": "Peter Kellner-Hostinský",
         "score": 0.3333,
         "total_variants": 3,
         "dominant_count": 1,
@@ -8154,6 +8928,14 @@
         "unique_groups": 3
       },
       {
+        "wikidata_id": "Q319962",
+        "entity_label": "Milan Rastislav Štefánik",
+        "score": 0.3684,
+        "total_variants": 19,
+        "dominant_count": 7,
+        "unique_groups": 6
+      },
+      {
         "wikidata_id": "Q310000",
         "entity_label": "Ludvík Svoboda",
         "score": 0.3846,
@@ -8167,14 +8949,6 @@
         "score": 0.3846,
         "total_variants": 13,
         "dominant_count": 5,
-        "unique_groups": 6
-      },
-      {
-        "wikidata_id": "Q319962",
-        "entity_label": "Milan Rastislav Štefánik",
-        "score": 0.3889,
-        "total_variants": 18,
-        "dominant_count": 7,
         "unique_groups": 6
       },
       {
@@ -8244,14 +9018,6 @@
       {
         "wikidata_id": "Q1095718",
         "entity_label": "Kapušany",
-        "score": 0.5,
-        "total_variants": 2,
-        "dominant_count": 1,
-        "unique_groups": 2
-      },
-      {
-        "wikidata_id": "Q1107656",
-        "entity_label": "záhrada",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -8442,6 +9208,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q12773727",
+        "entity_label": "Peter Kellner-Hostinský",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q12781505",
         "entity_label": "Ľudovít Kukorelli",
         "score": 0.5,
@@ -8565,9 +9339,9 @@
         "wikidata_id": "Q163780",
         "entity_label": "Slovenské národné povstanie",
         "score": 0.5,
-        "total_variants": 2,
-        "dominant_count": 1,
-        "unique_groups": 2
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 3
       },
       {
         "wikidata_id": "Q1670526",
@@ -8602,6 +9376,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q16917",
+        "entity_label": "nemocnica",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q1741",
         "entity_label": "Viedeň",
         "score": 0.5,
@@ -8626,12 +9408,28 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q1899",
+        "entity_label": "Kyjev",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q1903455",
         "entity_label": "Martin Benka",
         "score": 0.5,
         "total_variants": 4,
         "dominant_count": 2,
         "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q198632",
+        "entity_label": "Tehelňa",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
       },
       {
         "wikidata_id": "Q204338",
@@ -8642,8 +9440,56 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q214",
+        "entity_label": "Slovensko",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q220550",
+        "entity_label": "Ján Kollár",
+        "score": 0.5,
+        "total_variants": 4,
+        "dominant_count": 2,
+        "unique_groups": 3
+      },
+      {
+        "wikidata_id": "Q22715",
+        "entity_label": "vinohrad",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q22731",
+        "entity_label": "kameň",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q23413",
+        "entity_label": "hrad",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q2354020",
         "entity_label": "Fraňo Kráľ",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q267888",
+        "entity_label": "Rožňava",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -8810,6 +9656,30 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q4421",
+        "entity_label": "les",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44494",
+        "entity_label": "mlyn",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q44497",
+        "entity_label": "baníctvo",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q454",
         "entity_label": "mier",
         "score": 0.5,
@@ -8844,6 +9714,14 @@
       {
         "wikidata_id": "Q530425",
         "entity_label": "Samuel Mikovíni",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q576032",
+        "entity_label": "Slaná",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -8930,6 +9808,22 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q820037",
+        "entity_label": "baník",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q846744",
+        "entity_label": "Hornád",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q905900",
         "entity_label": "Dionýz Štúr",
         "score": 0.5,
@@ -8940,6 +9834,14 @@
       {
         "wikidata_id": "Q925563",
         "entity_label": "Ján Chalupka",
+        "score": 0.5,
+        "total_variants": 2,
+        "dominant_count": 1,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q943745",
+        "entity_label": "Rudná",
         "score": 0.5,
         "total_variants": 2,
         "dominant_count": 1,
@@ -8996,14 +9898,6 @@
       {
         "wikidata_id": "Q1384769",
         "entity_label": "Martin Kukučín",
-        "score": 0.6,
-        "total_variants": 5,
-        "dominant_count": 3,
-        "unique_groups": 3
-      },
-      {
-        "wikidata_id": "Q220550",
-        "entity_label": "Ján Kollár",
         "score": 0.6,
         "total_variants": 5,
         "dominant_count": 3,

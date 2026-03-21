@@ -1,12 +1,4 @@
 #!/usr/bin/env python3
-"""
-Export normalization mappings as JSON for the frontend application.
-
-Reads unique street names from output produced by compute.py,
-runs each normalization method, and outputs a JSON file containing:
-- mapping: street_name -> canonical_name
-- groups: canonical_name -> {representative, total_length, variants}
-"""
 
 import argparse
 import csv
@@ -20,7 +12,6 @@ from src.analysis import get_osm_metadata
 
 
 def load_street_names(input_csv: str) -> list[tuple[str, float, int, int]]:
-    """Load unique street names with lengths from compute.py output."""
     rows = []
     with open(input_csv, newline="", encoding="utf-8") as f:
         reader = csv.reader(f)
@@ -40,7 +31,6 @@ def build_method_data(
     normalize_fn: Callable[[str], str],
     street_data: list[tuple[str, float, int, int]],
 ) -> dict:
-    """Run a normalization method and produce mapping + group statistics."""
     mapping = {}
     groups = {}
 
