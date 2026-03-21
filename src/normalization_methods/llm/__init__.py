@@ -9,6 +9,7 @@ import json
 import os
 import re
 import time
+from datetime import date
 
 from anthropic import Anthropic
 from google import genai
@@ -89,6 +90,7 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = _MODULE_DI
         return {}
 
     def _save_cache():
+        _state["cache"]["_last_updated"] = str(date.today())
         with open(cache_file, "w", encoding="utf-8") as f:
             json.dump(_state["cache"], f, ensure_ascii=False, indent=2)
 
@@ -245,5 +247,11 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = _MODULE_DI
 
         return group_id
 
+    def cache_date() -> str | None:
+        if _state["cache"] is None:
+            _state["cache"] = _load_cache()
+        return _state["cache"].get("_last_updated")
+
     normalize.batch_warm = batch_warm
+    normalize.cache_date = cache_date
     return normalize

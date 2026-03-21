@@ -83,6 +83,7 @@ def main():
     all_names = [name for name, _, _, _ in street_data]
 
     osm_meta = get_osm_metadata()
+    cache_dates = {}
     result = {
         "_metadata": {
             **osm_meta,
@@ -96,6 +97,10 @@ def main():
         result[method_name] = build_method_data(normalize_fn, street_data)
         n_groups = len(result[method_name]["groups"])
         print(f"  {len(result[method_name]['mapping'])} names -> {n_groups} groups")
+        if hasattr(normalize_fn, "cache_date"):
+            cache_dates[method_name] = normalize_fn.cache_date()
+    if cache_dates:
+        result["_metadata"]["cache_dates"] = cache_dates
 
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)

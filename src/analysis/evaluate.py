@@ -168,18 +168,24 @@ def main():
     print(f"Loaded {len(ground_truth)} entities with multiple variants")
 
     all_results = {}
+    cache_dates = {}
     for method_name, normalize_fn in methods_to_run:
         results = evaluate(normalize_fn, ground_truth)
         all_results[method_name] = results
         print_results(method_name, results, verbose=args.verbose)
+        if hasattr(normalize_fn, "cache_date"):
+            cache_dates[method_name] = normalize_fn.cache_date()
 
     if args.json:
         osm_meta = get_osm_metadata()
+        metadata = {
+            **osm_meta,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+        }
+        if cache_dates:
+            metadata["cache_dates"] = cache_dates
         json_data = {
-            "_metadata": {
-                **osm_meta,
-                "generated_at": datetime.now(timezone.utc).isoformat(),
-            },
+            "_metadata": metadata,
             **prepare_json_results(all_results),
         }
         with open(args.json, "w", encoding="utf-8") as f:
