@@ -6,8 +6,10 @@ if (-not (Test-Path "data")) { New-Item -ItemType Directory -Path "data" | Out-N
 if (-not (Test-Path $PBF_FILE)) {
     Write-Host "Downloading Slovakia OSM extract (~300 MB)..."
     Invoke-WebRequest -Uri $PBF_URL -OutFile $PBF_FILE
+    $PbfDate = Get-Date -Format "yyyy-MM-dd"
 } else {
     Write-Host "PBF file already exists, skipping download."
+    $PbfDate = (Get-Item $PBF_FILE).LastWriteTime.ToString("yyyy-MM-dd")
 }
 
 Write-Host "Stopping any existing containers..."
@@ -36,6 +38,11 @@ if ($LASTEXITCODE -ne 0) { Write-Error "osm2pgsql failed"; exit 1 }
 Write-Host "Creating streets vector-tile function..."
 docker compose exec -T postgis psql -U osmuser -d osm -f /init.sql
 if ($LASTEXITCODE -ne 0) { Write-Error "Failed to create streets function"; exit 1 }
+
+Write-Host "Recording PBF extract date in database ($PbfDate)..."
+$insertDateSql = "INSERT INTO osm_metadata (key, value) VALUES ('data_date', '$PbfDate') ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value;"
+docker compose exec -T postgis psql -U osmuser -d osm -c $insertDateSql
+if ($LASTEXITCODE -ne 0) { Write-Error "Failed to set data_date metadata"; exit 1 }
 
 Write-Host "Starting Martin tile server..."
 docker compose up -d martin

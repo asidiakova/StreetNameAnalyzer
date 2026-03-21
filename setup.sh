@@ -9,9 +9,12 @@ mkdir -p data
 if [ ! -f "$PBF_FILE" ]; then
     echo "Downloading Slovakia OSM extract (~300 MB)..."
     curl -L -o "$PBF_FILE" "$PBF_URL"
+    PBF_DATE=$(date +%Y-%m-%d)
 else
     echo "PBF file already exists, skipping download."
+    PBF_DATE=$(python3 -c "import os, datetime; p='$PBF_FILE'; print(datetime.date.fromtimestamp(os.path.getmtime(p)).isoformat())")
 fi
+export PBF_DATE
 
 echo "Stopping any existing containers..."
 docker compose down 2>/dev/null || true
@@ -36,6 +39,10 @@ docker compose exec postgis osm2pgsql \
 
 echo "Creating streets vector-tile function..."
 docker compose exec -T postgis psql -U osmuser -d osm -f /init.sql
+
+echo "Recording PBF extract date in database ($PBF_DATE)..."
+docker compose exec -T postgis psql -U osmuser -d osm -c \
+  "INSERT INTO osm_metadata (key, value) VALUES ('data_date', '${PBF_DATE}') ON CONFLICT (key) DO UPDATE SET value = EXCLUDED.value;"
 
 echo "Starting Martin tile server..."
 docker compose up -d martin

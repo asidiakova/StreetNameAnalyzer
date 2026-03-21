@@ -1,6 +1,7 @@
 import os
 import psycopg2
 
+
 def get_osm_metadata() -> dict:
     result = {
         "osm_data_date": None,
@@ -15,13 +16,15 @@ def get_osm_metadata() -> dict:
         cur = conn.cursor()
 
         try:
-            cur.execute("SELECT value FROM osm_metadata WHERE key = 'data_date'")
+            cur.execute(
+                "SELECT value FROM osm_metadata WHERE key = 'data_date'"
+            )
             row = cur.fetchone()
             result["osm_data_date"] = row[0] if row else None
         except Exception:
             conn.rollback()
 
-        cur.execute(f"""
+        cur.execute("""
             SELECT
                 COUNT(DISTINCT name) AS total,
                 COUNT(DISTINCT CASE
