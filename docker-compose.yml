@@ -1,0 +1,40 @@
+services:
+  postgis:
+    build:
+      context: .
+      dockerfile: docker/postgis.Dockerfile
+    container_name: postgis_osm
+    environment:
+      POSTGRES_DB: osm
+      POSTGRES_USER: osmuser
+      POSTGRES_PASSWORD: osmpass
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./data:/data
+      - ./docker/init.sql:/init.sql
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+    shm_size: 256mb
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U osmuser -d osm"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  martin:
+    image: ghcr.io/maplibre/martin
+    container_name: martin
+    ports:
+      - "3001:3000"
+    environment:
+      DATABASE_URL: postgres://osmuser:osmpass@postgis:5432/osm
+    volumes:
+      - ./martin.yaml:/config.yaml
+    command: --config /config.yaml --webui enable-for-all
+    depends_on:
+      postgis:
+        condition: service_healthy
+
+volumes:
+  pgdata:

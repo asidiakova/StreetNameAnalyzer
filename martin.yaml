@@ -1,0 +1,7 @@
+postgres:
+  connection_string: ${DATABASE_URL}
+  listen_addresses: '0.0.0.0:3000'
+  functions:
+    streets:
+      schema: public
+      function: streets
