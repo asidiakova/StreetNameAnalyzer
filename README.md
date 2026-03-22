@@ -45,8 +45,9 @@ All Python commands are run from the **project root**:
 |------------------------|------------------------------------------|--------------------------------------------------------------------------|
 | Extract street lengths | `python -m src.analysis.compute`         | `src/analysis/street_lengths.csv`                                        |
 | Build ground truth     | `python -m src.analysis.ground_truth`    | `src/analysis/ground_truth.csv`, `src/analysis/ground_truth_grouped.csv` |
+| Export mappings        | `python -m src.analysis.export_mappings` | `src/analysis/mappings.json`                                             |
 | Evaluate methods       | `python -m src.analysis.evaluate`        | `src/analysis/evaluation.json`                                           |
-| Export mappings (FE)   | `python -m src.analysis.export_mappings` | `src/analysis/mappings.json`                                             |
+
 
 Run a single method with `--method`:
 
