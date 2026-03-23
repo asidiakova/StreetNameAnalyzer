@@ -2,11 +2,10 @@
 """
 Levenshtein distance-based street name normalization.
 """
-
-from rapidfuzz import fuzz
+import Levenshtein
 from src.text_utils import preprocess_name
 
-THRESHOLD = 80
+THRESHOLD = 0.8
 
 _groups: dict[str, str] = {}
 _mapping: dict[str, str] = {}
@@ -30,7 +29,7 @@ def normalize_levenshtein(name: str) -> str:
     best_match = None
     best_score = 0
     for representative in _groups:
-        score = fuzz.ratio(preprocessed, representative)
+        score = Levenshtein.ratio(name, representative, processor=preprocess_name)
         if score > best_score:
             best_score = score
             best_match = representative

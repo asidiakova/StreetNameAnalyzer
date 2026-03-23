@@ -3,7 +3,7 @@
     "osm_data_date": "2026-03-22",
     "total_street_names": 11733,
     "etymology_tagged": 1317,
-    "generated_at": "2026-03-22T12:52:47.861093+00:00",
+    "generated_at": "2026-03-23T07:17:59.312170+00:00",
     "cache_dates": {
       "llm_gpt4o_mini": "2026-03-22",
       "llm_claude_haiku": "2026-03-22",
