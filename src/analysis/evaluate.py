@@ -33,6 +33,8 @@ def evaluate(normalize_fn: Callable[[str], str], ground_truth: list[tuple[str, s
         group_ids = []
         for name in variants:
             group_id = normalize_fn(name)
+            if not group_id:
+                continue
             group_ids.append(group_id)
             all_normalizations.append((name, wikidata_id, group_id))
 

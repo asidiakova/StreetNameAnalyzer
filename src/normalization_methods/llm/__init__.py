@@ -16,6 +16,7 @@ from google import genai
 from google.genai.types import GenerateContentConfig
 from openai import OpenAI
 
+from src.config import LLM_FALLBACK_ON_ERROR
 from src.text_utils import ascii_norm
 
 _MODULE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -72,7 +73,11 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = _MODULE_DI
     Factory that returns a normalize function for a given LLM provider/model.
 
     The API client is created on the first call. Results are cached to a JSON file.
+
+    Uses LLM_FALLBACK_ON_ERROR from config: when False, failures are cached as ""
+    and normalize returns "" (no ascii_norm(name) substitute).
     """
+    use_fallback = LLM_FALLBACK_ON_ERROR
     config = PROVIDERS[provider]
     filename = re.sub(r"[^a-zA-Z0-9_-]", "_", model)
     cache_file = os.path.join(cache_dir, f"llm_cache_{filename}.json")
@@ -204,13 +209,26 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = _MODULE_DI
             try:
                 results = _call_batch_api(batch)
                 for name in batch:
-                    canonical = results.get(name, name)
+                    raw = results.get(name)
+                    if raw is None:
+                        if use_fallback:
+                            _state["cache"][name] = ascii_norm(name)
+                        else:
+                            _state["cache"][name] = ""
+                        continue
+                    canonical = str(raw).strip().strip('"\'').split("\n")[0].strip()
+                    if not canonical:
+                        if use_fallback:
+                            _state["cache"][name] = ascii_norm(name)
+                        else:
+                            _state["cache"][name] = ""
+                        continue
                     _state["cache"][name] = ascii_norm(canonical)
             except Exception as e:
                 print(f"    Batch {batch_num}/{total_batches} failed: {e}")
                 for name in batch:
                     if name not in _state["cache"]:
-                        _state["cache"][name] = ascii_norm(name)
+                        _state["cache"][name] = ascii_norm(name) if use_fallback else ""
 
             _state["call_count"] += 1
             _save_cache()
@@ -223,7 +241,7 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = _MODULE_DI
             _state["cache"] = _load_cache()
 
         if name in _state["cache"]:
-            return _state["cache"][name]
+            return _state["cache"][name]  # may be "" (cached failure)
 
         if _state["client"] is None:
             _state["client"] = _init_client()
@@ -235,11 +253,12 @@ def create_llm_normalizer(provider: str, model: str, cache_dir: str = _MODULE_DI
             raw = _call_api(name)
             canonical = raw.strip().strip('"\'').split("\n")[0].strip()
             if not canonical:
-                canonical = name
-            group_id = ascii_norm(canonical)
+                group_id = ascii_norm(name) if use_fallback else ""
+            else:
+                group_id = ascii_norm(canonical)
         except Exception as e:
             print(f"  LLM error for '{name}': {e}")
-            group_id = ascii_norm(name)
+            group_id = ascii_norm(name) if use_fallback else ""
 
         _state["call_count"] += 1
         _state["cache"][name] = group_id
