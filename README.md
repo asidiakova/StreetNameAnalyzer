@@ -70,6 +70,9 @@ Available methods: `suffix_stripping`, `levenshtein`, `ngram`, `llm_gpt4o_mini`,
 | `WIKIDATA_LABEL_LANGUAGES`               | `["sk","cs","en","de","hu"]` | Languages fetched from Wikidata for label matching;                          |
 | `PROBLEM_ENTITIES_TOP_N`                 | `10`                         | Number of worst-performing entities shown in evaluation output               |
 | `COLLISIONS_DISPLAY_N`                   | `10`                         | Number of collision examples shown in evaluation output                      |
+| `LEVENSHTEIN_RATIO_THRESHOLD`            | `0.8`                        | Min Levenshtein.ratio (0–1) to merge into an existing cluster                |
+| `NGRAM_SIZE`                             | `3`                          | Character n-gram length for n-gram Jaccard clustering                        |
+| `NGRAM_JACCARD_THRESHOLD`                | `0.5`                        | Min Jaccard similarity (0–1) to merge into an existing cluster             |
 
 ## Project Structure
 
