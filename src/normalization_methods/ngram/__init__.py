@@ -3,17 +3,15 @@
 N-gram Jaccard similarity normalization method.
 """
 
+from src.config import NGRAM_JACCARD_THRESHOLD, NGRAM_SIZE
 from src.text_utils import preprocess_name
-
-N = 2
-THRESHOLD = 0.50
 
 _groups: dict[str, str] = {}
 _group_ngrams: dict[str, frozenset] = {}
 _mapping: dict[str, str] = {}
 
 
-def generate_ngrams(text: str, n: int = N) -> frozenset[str]:
+def generate_ngrams(text: str, n: int = NGRAM_SIZE) -> frozenset[str]:
     """
     Generate character n-grams from a preprocessed name.
 
@@ -45,7 +43,7 @@ def normalize_ngram(name: str) -> str:
 
     Preprocesses the name, generates character n-grams, then compares the
     n-gram set to existing group representatives using Jaccard similarity.
-    If the best match is >= THRESHOLD, the name joins that group.
+    If the best match is >= NGRAM_JACCARD_THRESHOLD, the name joins that group.
     Otherwise, a new group is created.
     """
     if name in _mapping:
@@ -65,7 +63,7 @@ def normalize_ngram(name: str) -> str:
             best_score = score
             best_match = rep
 
-    if best_match and best_score >= THRESHOLD:
+    if best_match and best_score >= NGRAM_JACCARD_THRESHOLD:
         group_id = _groups[best_match]
     else:
         group_id = preprocessed

@@ -13,7 +13,7 @@ INITIAL = re.compile(r"^[a-z]\.?$", re.IGNORECASE)
 STREET_TYPES = {
     "ulica", "ul", "cesta", "namestie", "nam", "trieda",
     "aleja", "park", "sady", "most", "nabr", "nabrezie",
-    "chodnik", "plac", "ut", "utca", "dolina",
+    "chodnik", "plac", "ut", "utca", "dolina", "rad"
 }
 
 

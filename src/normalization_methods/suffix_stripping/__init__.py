@@ -37,9 +37,6 @@ def normalize_key_suffix_stripping(name: str) -> str:
                 number = re.sub(r"\D", "", tokens[i])
                 return f"{number}_{nxt}"
 
-    if ORDINAL.match(tokens[0]) or tokens[0].isdigit():
-        return "_".join(tokens)
-
     tokens = [t for t in tokens if t not in STREET_TYPES]
     if not tokens:
         return ""
