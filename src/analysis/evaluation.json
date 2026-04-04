@@ -1,9 +1,9 @@
 {
   "_metadata": {
-    "osm_data_date": "2026-03-22",
-    "total_street_names": 11733,
-    "etymology_tagged": 1317,
-    "generated_at": "2026-03-23T10:39:18.369743+00:00",
+    "osm_data_date": null,
+    "total_street_names": null,
+    "etymology_tagged": null,
+    "generated_at": "2026-04-04T06:52:21.440798+00:00",
     "cache_dates": {
       "llm_gpt4o_mini": "2026-03-23",
       "llm_claude_haiku": "2026-03-23",
@@ -11,12 +11,12 @@
     }
   },
   "suffix_stripping": {
-    "grouping_rate": 0.9261,
-    "collision_rate": 0.0558,
+    "grouping_rate": 0.9299,
+    "collision_rate": 0.0522,
     "total_entities": 234,
     "total_variants": 767,
-    "total_groups": 269,
-    "colliding_groups": 15,
+    "total_groups": 268,
+    "colliding_groups": 14,
     "collisions": [
       {
         "group_id": "moyzes",
@@ -41,27 +41,6 @@
           {
             "wikidata_id": "Q12768593",
             "label": "Ján Paľo"
-          }
-        ]
-      },
-      {
-        "group_id": "rad",
-        "entities": [
-          {
-            "wikidata_id": "Q1102385",
-            "label": "Ján Palárik"
-          },
-          {
-            "wikidata_id": "Q508663",
-            "label": "Pavol Országh Hviezdoslav"
-          },
-          {
-            "wikidata_id": "Q532174",
-            "label": "Jan Šverma"
-          },
-          {
-            "wikidata_id": "Q588302",
-            "label": "Anton Bernolák"
           }
         ]
       },
@@ -424,14 +403,6 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q1102385",
-        "entity_label": "Ján Palárik",
-        "score": 0.6667,
-        "total_variants": 3,
-        "dominant_count": 2,
-        "unique_groups": 2
-      },
-      {
         "wikidata_id": "Q12771735",
         "entity_label": "Miloš Uher",
         "score": 0.6667,
@@ -496,14 +467,6 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q532174",
-        "entity_label": "Jan Šverma",
-        "score": 0.75,
-        "total_variants": 4,
-        "dominant_count": 3,
-        "unique_groups": 2
-      },
-      {
         "wikidata_id": "Q697179",
         "entity_label": "Matej Bel",
         "score": 0.75,
@@ -528,24 +491,8 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q508663",
-        "entity_label": "Pavol Országh Hviezdoslav",
-        "score": 0.8333,
-        "total_variants": 6,
-        "dominant_count": 5,
-        "unique_groups": 2
-      },
-      {
         "wikidata_id": "Q262637",
         "entity_label": "Samo Chalupka",
-        "score": 0.8571,
-        "total_variants": 7,
-        "dominant_count": 6,
-        "unique_groups": 2
-      },
-      {
-        "wikidata_id": "Q588302",
-        "entity_label": "Anton Bernolák",
         "score": 0.8571,
         "total_variants": 7,
         "dominant_count": 6,
@@ -586,11 +533,11 @@
     ]
   },
   "levenshtein": {
-    "grouping_rate": 0.6363,
-    "collision_rate": 0.0738,
+    "grouping_rate": 0.6384,
+    "collision_rate": 0.0742,
     "total_entities": 234,
     "total_variants": 767,
-    "total_groups": 447,
+    "total_groups": 445,
     "colliding_groups": 33,
     "collisions": [
       {
@@ -2029,14 +1976,6 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q588302",
-        "entity_label": "Anton Bernolák",
-        "score": 0.5714,
-        "total_variants": 7,
-        "dominant_count": 4,
-        "unique_groups": 3
-      },
-      {
         "wikidata_id": "Q385147",
         "entity_label": "Ján Nálepka",
         "score": 0.5833,
@@ -2087,14 +2026,6 @@
       {
         "wikidata_id": "Q1092622",
         "entity_label": "Pavol Horov",
-        "score": 0.6667,
-        "total_variants": 3,
-        "dominant_count": 2,
-        "unique_groups": 2
-      },
-      {
-        "wikidata_id": "Q1102385",
-        "entity_label": "Ján Palárik",
         "score": 0.6667,
         "total_variants": 3,
         "dominant_count": 2,
@@ -2429,6 +2360,14 @@
         "unique_groups": 2
       },
       {
+        "wikidata_id": "Q588302",
+        "entity_label": "Anton Bernolák",
+        "score": 0.7143,
+        "total_variants": 7,
+        "dominant_count": 5,
+        "unique_groups": 2
+      },
+      {
         "wikidata_id": "Q1004532",
         "entity_label": "Zoltán Fábry",
         "score": 0.75,
@@ -2527,7 +2466,7 @@
     ]
   },
   "ngram": {
-    "grouping_rate": 0.7816,
+    "grouping_rate": 0.7826,
     "collision_rate": 0.0637,
     "total_entities": 234,
     "total_variants": 767,
@@ -3276,14 +3215,6 @@
         "unique_groups": 2
       },
       {
-        "wikidata_id": "Q532174",
-        "entity_label": "Jan Šverma",
-        "score": 0.5,
-        "total_variants": 4,
-        "dominant_count": 2,
-        "unique_groups": 2
-      },
-      {
         "wikidata_id": "Q576032",
         "entity_label": "Slaná",
         "score": 0.5,
@@ -3686,6 +3617,14 @@
       {
         "wikidata_id": "Q48173",
         "entity_label": "Bedřich Smetana",
+        "score": 0.75,
+        "total_variants": 4,
+        "dominant_count": 3,
+        "unique_groups": 2
+      },
+      {
+        "wikidata_id": "Q532174",
+        "entity_label": "Jan Šverma",
         "score": 0.75,
         "total_variants": 4,
         "dominant_count": 3,
