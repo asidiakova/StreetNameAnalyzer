@@ -13139,5 +13139,83 @@
     ],
     "is_human": true,
     "primary_label": "Imre Madách"
+  },
+  "Q605521": {
+    "qid": "Q605521",
+    "labels": [
+      "Stará Ľubovňa",
+      "Lublau",
+      "Altlublau",
+      "Ólubló"
+    ],
+    "instance_of": [
+      "Q3957",
+      "Q6784672"
+    ],
+    "is_human": false,
+    "primary_label": "Stará Ľubovňa"
+  },
+  "Q250680": {
+    "qid": "Q250680",
+    "labels": [
+      "Kassai kormányprogram",
+      "Košický vládní program",
+      "Košice Program",
+      "Košický vládny program",
+      "Kaschauer Programm",
+      "Program československé vlády Národní fronty Čechů a Slováků přijatý 5. dubna 1945 v Košicích"
+    ],
+    "instance_of": [
+      "Q332308"
+    ],
+    "is_human": false,
+    "primary_label": "Košický vládny program"
+  },
+  "Q25381": {
+    "qid": "Q25381",
+    "labels": [
+      "Bernsteinkiefer",
+      "Bernstein",
+      "lyncirium",
+      "borostyán",
+      "amber",
+      "liggourion",
+      "Phytoinklusen",
+      "jantár",
+      "Gelbe Ambra",
+      "Gold des Nordens",
+      "Bernsteinwald",
+      "amber stone",
+      "Zooinklusen",
+      "Tränen der Götter",
+      "lynx stone",
+      "Bernsteininkluse",
+      "lyngourion",
+      "jantar"
+    ],
+    "instance_of": [],
+    "is_human": false,
+    "primary_label": "jantár"
+  },
+  "Q1757": {
+    "qid": "Q1757",
+    "labels": [
+      "Helsingfors",
+      "Helsinki",
+      "Helsinky",
+      "Hesa",
+      "Stadi",
+      "Helsingia",
+      "Helsingin kaupunki"
+    ],
+    "instance_of": [
+      "Q515",
+      "Q200250",
+      "Q856076",
+      "Q1549591",
+      "Q2264924"
+    ],
+    "is_human": false,
+    "primary_label": "Helsinki"
   }
 }
