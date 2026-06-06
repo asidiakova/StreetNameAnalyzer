@@ -1,13 +1,13 @@
 {
   "_metadata": {
-    "osm_data_date": null,
-    "total_street_names": null,
-    "etymology_tagged": null,
-    "generated_at": "2026-04-04T06:52:21.440798+00:00",
+    "osm_data_date": "2026-06-06",
+    "total_street_names": 11777,
+    "etymology_tagged": 1320,
+    "generated_at": "2026-06-06T08:18:07.613258+00:00",
     "cache_dates": {
-      "llm_gpt4o_mini": "2026-03-23",
-      "llm_claude_haiku": "2026-03-23",
-      "llm_gemini_flash": "2026-03-23"
+      "llm_gpt4o_mini": "2026-06-06",
+      "llm_claude_haiku": "2026-06-06",
+      "llm_gemini_flash": "2026-06-06"
     }
   },
   "suffix_stripping": {

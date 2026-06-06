@@ -348,6 +348,7 @@ Haškova,Q2754,Jaroslav Hašek,True,0.0
 Hattalova,Q1040777,Martin Hattala,True,0.9
 Hečkova,Q443963,František Hečko,True,1.0
 Hellova,Q730241,Jozef Karol Hell,True,1.0
+Helsinská,Q1757,Helsinki,False,0.7
 Herlianska,Q550565,Herľany,False,0.7
 Heyrovského,Q157701,Jaroslav Heyrovský,True,0.9
 H. Gavloviča,Q5934650,Hugolín Gavlovič,True,1.0
@@ -441,7 +442,6 @@ Jána Pavla II.,Q989,Ján Pavol II.,True,1.0
 Jána Poničana,Q12768607,Ján Poničan,True,1.0
 Jána Raka,Q12027461,Ján Rak,True,1.0
 Jána Smreka,Q1670526,Ján Smrek,True,1.0
-Jána Stanislava,Q12768642,Ján Stanislav,False,1.0
 Jána Švermu,Q532174,Jan Šverma,True,1.0
 Jána Zigmundíka,Q12768675,Ján Zigmundík,True,1.0
 Janka Alexyho,Q1682808,Janko Alexy,True,1.0
@@ -454,6 +454,7 @@ Janka Matúšku,Q975382,Janko Matúška,True,0.9
 Jánošíkova,Q706268,Juraj Jánošík,True,1.0
 Janovčíkova,Q109833600,Štefan Janovčík,True,1.0
 Janšákova,Q253963,Štefan Janšák,True,1.0
+Jantárové námestie,Q25381,jantár,False,1.0
 Japonský most,Q17,Japonsko,False,0.9
 Jarmočná,Q288514,výroční trh,False,0.0
 Jarná,Q1312,jar,False,0.9
@@ -709,6 +710,7 @@ L. Sáru,Q12770129,Ladislav Sára,True,0.9
 L. Svobodu,Q310000,Ludvík Svoboda,True,0.9
 Ľubietovská,Q223477,Ľubietová,False,0.9
 Ľubovnianska,Q1072570,Ľubovniansky hrad,False,0.9
+Ľubovnianska,Q605521,Stará Ľubovňa,False,0.9
 Lučenecká,Q728965,Lučenec,False,1.0
 Lúčkovská,Q376416,Janko Kráľ,True,0.0
 Ľuda Ondrejova,Q3504212,Ľudo Ondrejov,True,0.9
@@ -808,6 +810,7 @@ Mirka Nešpora,Q12771770,Mirko Nešpor,True,0.9
 M. J. Lermontova,Q46599,Michail Jurievič Lermontov,True,1.0
 M. Kukučína,Q1384769,Martin Kukučín,True,1.0
 Mládeže,Q12771770,Mirko Nešpor,True,0.0
+Mládežnícka,Q385147,Ján Nálepka,True,0.0
 Mladoboleslavská,Q191805,Mladá Boleslav,False,0.9
 Mliekarenská,Q637776,mlékárna,False,0.0
 Mlynská,Q44494,mlyn,False,1.0
@@ -1158,6 +1161,7 @@ Smetanovo námestie,Q48173,Bedřich Smetana,True,0.9
 Smreková,Q26782,smrek,False,1.0
 Š. Náhalku,Q13371654,Štefan Náhalka,True,0.9
 SNP,Q163780,Slovenské národné povstanie,False,1.0
+SNP,Q319962,Milan Rastislav Štefánik,True,0.0
 Socháňova,Q12044256,Pavol Socháň,True,1.0
 Šoltesovej,Q12765281,Elena Maróthy-Šoltésová,True,0.9
 Šoltésovej,Q12765281,Elena Maróthy-Šoltésová,True,0.9
@@ -1265,6 +1269,8 @@ Tretia,Q201,tři,False,0.0
 Trieda Andreja Hlinku,Q467797,Andrej Hlinka,True,1.0
 Trieda arm. gen. Svobodu,Q310000,Ludvík Svoboda,True,0.9
 Trieda arm. gen. Svobodu,Q467797,Andrej Hlinka,True,0.0
+Trieda Košického vládneho programu,Q250680,Košický vládny program,False,0.9
+Trieda KVP,Q250680,Košický vládny program,False,0.0
 Trieda SNP,Q163780,Slovenské národné povstanie,False,1.0
 Trnavská cesta,Q26175,Trnava,False,0.9
 Trnavské mýto,Q26175,Trnava,False,0.9
@@ -1370,7 +1376,6 @@ Z. Nejedlého,Q169038,Zdeněk Nejedlý,True,0.9
 Zochova,Q1566909,Ivan Branislav Zoch,True,1.0
 Zoltána Fábryho,Q1004532,Zoltán Fábry,True,1.0
 Zory Jesenskej,Q12779503,Zora Jesenská,True,0.9
-Zuzany Chalupovej,Q4597463,Zuzana Chalupová,True,0.9
 Zuzky Zgurišky,Q8075496,Zuzka Zguriška,True,0.9
 Zvonárska,Q474306,zvonař,False,0.7
 вулиця Іштвана Добо,Q513502,Štefan Dobo,True,1.0
